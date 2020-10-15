@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: gray;
+}
+
+.calendar-grid {
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 1rem 1rem;
+}
+
+.calendar-grid > div {
+    height: 50px;
+    background-color: green;
+}
