@@ -7,13 +7,31 @@ body {
     background-color: gray;
 }
 
+h1 {
+    text-align: center;
+}
+
+button {
+    padding: 1rem 1rem;
+}
+
+.calendar-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#calendar-header {
+    font-size: 20px;
+    font-weight: bold;
+    grid-column-start: span 7;
+    text-align: center;
+}
+
 .calendar-grid {
     display: grid;
-    width: 50%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 1rem;
-    margin: 1rem 1rem;
 }
 
 .calendar-grid > div {

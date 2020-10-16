@@ -7,15 +7,22 @@
     <title>Calendar Proto</title>
 </head>
 <body>
-    <h1>MonthName</h1>
-    <div class="calendar-grid" id="calendar">
-        <div>Sun</div>
-        <div>Mon</div>
-        <div>Tue</div>
-        <div>Wed</div>
-        <div>Thu</div>
-        <div>Fri</div>
-        <div>Sat</div>
+    <div class="calendar-container">
+        
+        <div class="calendar-grid" id="calendar">
+            <div id="calendar-header">
+                <button id="prev-month" type="button">&lt;</button>
+                <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
+                <button id="next-month" type="button">&gt;</button>
+            </div>
+            <div>Sun</div>
+            <div>Mán</div>
+            <div>Þri</div>
+            <div>Mið</div>
+            <div>Fim</div>
+            <div>Fös</div>
+            <div>Lau</div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
