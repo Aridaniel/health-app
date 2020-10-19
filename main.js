@@ -25,9 +25,7 @@ function changeMonth(ev) {
         displayMonthInCalendar(newMonth);
     }
     if(ev.currentTarget.id === 'next-month') {
-        console.log('Today before change: ' + today);
         today = new Date(today.getFullYear(), today.getMonth() + 1);
-        console.log('today after change: ' + today);
         let newMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
         displayMonthInCalendar(newMonth);
     }
@@ -55,8 +53,10 @@ function clearCalendar() {
 // Pass in an array of date objects in a month and display them in the calendar
 function displayMonthInCalendar(month) {
     clearCalendar();
+    let highlightedDay = new Date();
     let firstDayIndex = month[0].getDay();
     let currentDay = 0;
+    
     currentMonthElement.innerHTML = allMonths[month[0].getMonth()];
     currentYearElement.innerHTML = month[0].getFullYear();
     // Create 42 div elements (7 columns, 6 rows)
@@ -66,6 +66,10 @@ function displayMonthInCalendar(month) {
         // If i is equal or greater then firstDayIndex we know we are positioned on the correct weekday and we can start marking the dates
         if(i >= firstDayIndex && currentDay < month.length) {
             dayElement.innerHTML = month[currentDay].getDate();
+            
+            if(compareTwoDates(month[currentDay], highlightedDay)) {
+                dayElement.style.backgroundColor = 'crimson';
+            }
             // Incrementing currentDay to access the next day of the month array
             currentDay++;
         }
@@ -73,12 +77,24 @@ function displayMonthInCalendar(month) {
     }
 }
 
+function compareTwoDates(date1, date2) {
+    if(date1.getFullYear() + '-' + date1.getMonth() + '-' + date1.getDate() === date2.getFullYear() + '-' + date2.getMonth() + '-' + date2.getDate()) {
+        //dayElement.style.backgroundColor = 'crimson';
+        return true;
+    }
+    return false;
+}
+
 // Initialize the calendar with today as the month to display
 let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
 displayMonthInCalendar(daysInCurrentMonth);
 
 // ToDo: 
-// highlighta current day
-// gera all daga clickable
-// fela tóma reyti
+// gera alla daga clickable
 // Stíla 
+
+
+// Animation fyrir dagatalið
+// Ef við notum timout fyrir dagatalið þá þarf einhvernveginn að diseibla og reactiveita month takkana eftir animationið
+// setTimeout(() => {
+// }, 200 * (Math.pow(i, 0.6)));
