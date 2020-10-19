@@ -25,21 +25,36 @@ button {
     font-weight: bold;
     grid-column-start: span 7;
     text-align: center;
+    background-color: teal;
 }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
+    align-items: flex-end;
 }
 
-.calendar-grid div {
+.calendar-item {
     height: 50px;
+}
+
+.calendar-weekdays {
+    height: 20px;
+    background-color: tomato;
+}
+
+.calendar-filler {
+    background-color: white;
+}
+
+.calendar-date {
     background-color: green;
 }
 
 .current-day {
+    height: 50px;
     background-color: crimson;
 }
 

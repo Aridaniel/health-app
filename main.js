@@ -44,7 +44,7 @@ function getDaysInMonth(month, year) {
 
 // Remove every element that has the .date class from the site
 function clearCalendar() {
-    const datesArray = document.querySelectorAll('.date');
+    const datesArray = document.querySelectorAll('.calendar-item');
     for(let i = 0; i < datesArray.length; i++) {
         datesArray[i].remove();
     }
@@ -62,27 +62,37 @@ function displayMonthInCalendar(month) {
     // Create 42 div elements (7 columns, 6 rows)
     for(let i = 0; i < 42; i++) {
         let dayElement = document.createElement('div');
-        dayElement.classList.add('date');
+        dayElement.classList.add('calendar-item');
         // If i is equal or greater then firstDayIndex we know we are positioned on the correct weekday and we can start marking the dates
         if(i >= firstDayIndex && currentDay < month.length) {
             dayElement.innerHTML = month[currentDay].getDate();
-            
+            dayElement.classList.add('calendar-date');  
+            // Check if current day being inserted into the calendar is the same as the day today          
             if(compareTwoDates(month[currentDay], highlightedDay)) {
-                dayElement.style.backgroundColor = 'crimson';
+                dayElement.classList.remove('date');
+                dayElement.classList.add('current-day');
             }
             // Incrementing currentDay to access the next day of the month array
             currentDay++;
+        } else {
+            dayElement.classList.add('calendar-filler');
         }
+
+        dayElement.addEventListener('click', handleDateClick);
         calendarElement.appendChild(dayElement);
     }
 }
 
+// Used to compare two dates to each other and returns true if the year, month and date is the same
 function compareTwoDates(date1, date2) {
     if(date1.getFullYear() + '-' + date1.getMonth() + '-' + date1.getDate() === date2.getFullYear() + '-' + date2.getMonth() + '-' + date2.getDate()) {
-        //dayElement.style.backgroundColor = 'crimson';
         return true;
     }
     return false;
+}
+
+function handleDateClick(ev) {
+    console.log('Date clicked ' + ev.currentTarget.innerHTML);
 }
 
 // Initialize the calendar with today as the month to display
