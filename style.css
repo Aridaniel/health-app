@@ -45,6 +45,65 @@ nav ul {
     background: rgb(55, 92, 94);
 }
 
+/* Calendar */
+
+.calendar-control {
+    padding: 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.calendar-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#calendar-header {
+    font-size: 26px;
+    font-weight: bold;
+    grid-column-start: span 7;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.calendar-item {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.calendar-weekdays {
+    height: 20px;
+    font-weight: bold;
+}
+
+.calendar-filler {
+    background-color: white;
+}
+
+.calendar-date {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calendar-date:hover {
+    transform: scale(1.4);
+    cursor: default;
+}
+
+.current-day {
+    height: 50px;
+    border: 2px crimson dashed;
+}
+
 @media only screen and (min-width: 768px) {
     /* For desktop: */
     body {
@@ -75,12 +134,30 @@ nav ul {
         font-weight: 500;
     }
 
-  }
+    /* Calendar */
+
+    .calendar-container {
+        width: 45%;
+        margin: 2rem 10rem;
+    }
+
+    .calendar-item {
+        height: 60px;
+    }
+
+    .calendar-weekdays {
+        text-align: center;
+    }
+
+    .calendar-date {
+        line-height: 60px;
+    }
+}
 
 /* undirsíður */
 
 #app {
-    margin: 2em;
+    margin: 0em;
 }
 
 .page {
@@ -109,59 +186,7 @@ nav ul {
 
 
 
-/* Calendar */
 
-
-h1 {
-    text-align: center;
-}
-
-button {
-    padding: 1rem 1rem;
-}
-
-.calendar-container {
-    width: 50%;
-    margin: 0 auto;
-}
-
-#calendar-header {
-    font-size: 20px;
-    font-weight: bold;
-    grid-column-start: span 7;
-    text-align: center;
-    background-color: teal;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 0.5rem;
-    align-items: flex-end;
-}
-
-.calendar-item {
-    height: 50px;
-}
-
-.calendar-weekdays {
-    height: 20px;
-    background-color: tomato;
-}
-
-.calendar-filler {
-    background-color: white;
-}
-
-.calendar-date {
-    background-color: green;
-}
-
-.current-day {
-    height: 50px;
-    background-color: crimson;
-}
 
 /* Fade in effect for calendar dates
 .date {

@@ -23,35 +23,33 @@
         </div>
     
         <div class="page" id="calendarpage">
-
             <div class="calendar-container">
                 <div class="calendar-grid" id="calendar">
                     <div id="calendar-header">
-                        <button id="prev-month" type="button">&lt;</button>
+                        <button class="calendar-control" id="prev-month" type="button">&lt;</button>
                         <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
-                        <button id="next-month" type="button">&gt;</button>
+                        <button class="calendar-control" id="next-month" type="button">&gt;</button>
                     </div>
-                    <div>Sun</div>
-                    <div>Mán</div>
-                    <div>Þri</div>
-                    <div>Mið</div>
-                    <div>Fim</div>
-                    <div>Fös</div>
-                    <div>Lau</div>
+                    <div class="calendar-weekdays">Sun</div>
+                    <div class="calendar-weekdays">Mán</div>
+                    <div class="calendar-weekdays">Þri</div>
+                    <div class="calendar-weekdays">Mið</div>
+                    <div class="calendar-weekdays">Fim</div>
+                    <div class="calendar-weekdays">Fös</div>
+                    <div class="calendar-weekdays">Lau</div>
                 </div>
             </div>
-            
         </div>
 
         <div class="page" id="symptompage">
             <h2>Þetta er skrá líðan síða</h2>
         </div>
-
-
-
+        
     </main>
     <!-- js for structure and nav -->
     <script src="script.js"></script>
+    <!-- js for the illness class-->
+    <script src="condition.js"></script>
     <!-- js for calendar -->
     <script src="main.js"></script>
 </body>

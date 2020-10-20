@@ -11,6 +11,13 @@ const nextMonthElement = document.getElementById('next-month');
 // Initialize today as the date today
 let today = new Date();
 
+const newCondition = new Condition('Magaverkur', 'Entist í 3 tíma', new Date(2020, 8, 12), 'crimson');
+const anotherCondition = new Condition('Höfuðverkur', 'Var allann daginn.', new Date(2020, 8, 19), 'green');
+const thirdCondition = new Condition('Hálsbólga', 'Búið að vera í viku, fór til læknis.', new Date(2020, 9, 8), 'salmon');
+const fourthCondition = new Condition('Multiple', 'Búið að vera í viku, fór til læknis.', new Date(2020, 11, 8), 'purple');
+
+const conditionList = [newCondition, anotherCondition, thirdCondition, fourthCondition];
+
 // Add event listeners once the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     prevMonthElement.addEventListener('click', changeMonth);
@@ -69,7 +76,6 @@ function displayMonthInCalendar(month) {
             dayElement.classList.add('calendar-date');  
             // Check if current day being inserted into the calendar is the same as the day today          
             if(compareTwoDates(month[currentDay], highlightedDay)) {
-                dayElement.classList.remove('date');
                 dayElement.classList.add('current-day');
             }
             // Incrementing currentDay to access the next day of the month array
@@ -80,6 +86,23 @@ function displayMonthInCalendar(month) {
 
         dayElement.addEventListener('click', handleDateClick);
         calendarElement.appendChild(dayElement);
+    }
+    loadConditionsToCalendar(conditionList);
+}
+
+// Goes through a list of conditions and checks if any conditions year and month in the list matches the currently shown year and month
+// If it does, give the element a color and a data-date attribute
+function loadConditionsToCalendar(conditions) {
+    const currentYear = document.getElementById('current-year').innerHTML;
+    const currentMonth = document.getElementById('current-month').innerHTML;
+    let dateElements = document.querySelectorAll('.calendar-date');
+    for(let i = 0; i < conditions.length; i++) {
+        // If the current conditions year and month match the calendar year and month, give that element a different style
+        // TODO: maybe change the way we access the correct dateElements element, currently we're using the condition date as index.
+        if(conditions[i].date.getFullYear() === parseInt(currentYear) && allMonths[conditions[i].date.getMonth()] === currentMonth) {
+            dateElements[conditions[i].date.getDate() - 1].style.backgroundColor = conditions[i].color;
+            dateElements[conditions[i].date.getDate() - 1].setAttribute('data-date', conditions[i].date.getDate());
+        }
     }
 }
 
@@ -92,13 +115,24 @@ function compareTwoDates(date1, date2) {
 }
 
 function handleDateClick(ev) {
-    console.log('Date clicked ' + ev.currentTarget.innerHTML);
+    // If the element has a data-date attribute do something
+    if(ev.currentTarget.hasAttribute('data-date')) {
+        const clickedDate = ev.currentTarget.getAttribute('data-date');
+        const conditionName = getCondition(parseInt(clickedDate)).description;
+        console.log(conditionName);
+    }
+}
+
+// Currently using date to retrieve conditions
+// TODO: won´t work if there are multiple conditions with same date, will always return the first match it finds?
+// Maybe use an id field to distinguish conditions, or maybe use further checks with year and month?
+function getCondition(date) {
+    return conditionList.find(element => element.date.getDate() === date);
 }
 
 // Initialize the calendar with today as the month to display
 let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
 displayMonthInCalendar(daysInCurrentMonth);
-
 // ToDo: 
 // gera alla daga clickable
 // Stíla 
