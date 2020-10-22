@@ -1,0 +1,108 @@
+/* Calendar */
+
+.calendar-container {
+    width: 90%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.5rem;
+        align-items: flex-end;
+
+        #calendar-header {
+            font-size: 26px;
+            font-weight: bold;
+            grid-column-start: span 7;
+            text-align: center;
+
+            .calendar-control {
+                padding: 0.5rem 0.5rem;
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+            }
+
+            .calendar-text {
+                display: inline-block;
+                min-width: 12rem;
+            }
+        }
+
+        .calendar-weekdays {
+            height: 20px;
+            font-weight: bold;
+        }    
+    }
+}
+
+.calendar-advice {
+    display: none;
+    width: 90%;
+    font-size: 20px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.condition-preview {
+    display: flex;
+    align-items: stretch;
+    width: 90%;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    background-color: white;
+
+
+}
+
+.condition-icons {
+
+    button {
+        width: 100px;
+        background-color: rgb(201, 9, 201);
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    img {
+        width: 100px;
+        height: 56px;
+    }
+    
+}
+
+
+/* From js */
+
+.calendar-control {
+    padding: 0.5rem 0.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.calendar-item {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.calendar-date {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+
+    &:hover {
+        transform: scale(1.4);
+        cursor: default;
+    }
+}
+
+.current-day {
+    height: 40px;
+    border: 2px seagreen solid;
+}

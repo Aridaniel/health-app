@@ -1,0 +1,64 @@
+/* Color picker */
+.color-wrapper {
+    padding: 20px;
+    display: grid;
+    width: 210px;
+    height: 100%;
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    .colorHeader {
+        padding: 8px 3px;
+        margin: 10px 1px;
+        grid-column-start: span 4;
+        font-family: sans-serif;
+    }
+
+    #color-container {
+        display: flex;
+        grid-row-start: 2;
+        margin: auto;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+// classes from js
+
+.color-pick {
+    margin: 5px;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+.activeColor {
+    border: 2px solid black;
+}
+
+
+/* chosen color output */
+
+.output-wrapper {
+  display: flex;
+  margin: 20px;
+
+    #output-color {
+        width: 2rem;
+        height: 2rem;
+        color: gray;
+        border: 1px solid lightgray;
+        border-radius: 50%;
+        background-color: white;
+    }
+}

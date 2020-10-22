@@ -1,0 +1,44 @@
+/* Media query for desktop version */
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    body {
+        --nav-width: 200px;
+        margin: 0 0 0 var(--nav-width);
+        font-size: 18px;
+    }
+    
+    .nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--nav-width);
+        height: 100vh;
+        
+        ul {
+            display: block;
+        }
+    }
+
+   
+
+    /* Calendar */
+
+    .calendar-container {
+        width: 35%;
+        margin: 2rem 10rem;
+    }
+
+    .calendar-item {
+        height: 60px;
+    }
+
+    .calendar-weekdays {
+        text-align: center;
+    }
+
+    .calendar-date {
+        line-height: 60px;
+    }
+}

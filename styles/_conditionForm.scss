@@ -1,0 +1,45 @@
+/* Condition Form */
+
+/* The add modal background */
+.add-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: auto;
+    top: 0;
+    width: 300px;
+    height: 500px; 
+
+    /* Add modal Content/Box */
+    .add-modal-content {
+        background-color: white;
+        margin: 15% auto; 
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; 
+    }
+
+    /* The Close Button */
+    .close-modal {
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+
+        &:hover, 
+        &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+
+
+}
+
+
+/*  Custom validation message */
+.validation-message {
+    color: red;
+    font-size: .8rem;
+}
