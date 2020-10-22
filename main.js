@@ -2,6 +2,7 @@
 const allMonths = ['Janúar', 'Febrúar', 'Mars', 'Apríl', 'Maí', 'Júní', 'Júlí', 'Ágúst', 'September', 'Október', 'Nóvember', 'Desember'];
 
 // DOM element variables
+const calendarPage = document.getElementById('calendarpage');
 const calendarElement = document.getElementById('calendar');
 const currentMonthElement = document.getElementById('current-month');
 const currentYearElement = document.getElementById('current-year');
@@ -11,18 +12,23 @@ const nextMonthElement = document.getElementById('next-month');
 // Initialize today as the date today
 let today = new Date();
 
+/*
 const newCondition = new Condition('Magaverkur', 'Entist í 3 tíma', new Date(2020, 8, 12), 'crimson');
 const anotherCondition = new Condition('Höfuðverkur', 'Var allann daginn.', new Date(2020, 8, 19), 'green');
 const thirdCondition = new Condition('Hálsbólga', 'Búið að vera í viku, fór til læknis.', new Date(2020, 9, 8), 'salmon');
 const fourthCondition = new Condition('Svimi', 'Stóð yfir í 2 tíma', new Date(2020, 11, 8), 'purple');
-
 const conditionList = [newCondition, anotherCondition, thirdCondition, fourthCondition];
+*/
+
+const conditionList = [];
 let thisMonthsConditions = [];
 
 // Add event listeners once the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     prevMonthElement.addEventListener('click', changeMonth);
     nextMonthElement.addEventListener('click', changeMonth);
+    calendarPage.addEventListener('click', openCalendar);
+    console.log('Dom is loaded');
 });
 
 // Call this each time the next or previous month button is clicked
@@ -36,6 +42,14 @@ function changeMonth(ev) {
         today = new Date(today.getFullYear(), today.getMonth() + 1);
         let newMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
         displayMonthInCalendar(newMonth);
+    }
+}
+
+function openCalendar(ev) {
+    if(localStorage.getItem('conditions') != null) {
+        const conditionString = localStorage.getItem('conditions');
+        conditionList = JSON.parse(conditionString);
+        loadConditionsToCalendar(conditionList);
     }
 }
 
