@@ -14,9 +14,10 @@ let today = new Date();
 const newCondition = new Condition('Magaverkur', 'Entist í 3 tíma', new Date(2020, 8, 12), 'crimson');
 const anotherCondition = new Condition('Höfuðverkur', 'Var allann daginn.', new Date(2020, 8, 19), 'green');
 const thirdCondition = new Condition('Hálsbólga', 'Búið að vera í viku, fór til læknis.', new Date(2020, 9, 8), 'salmon');
-const fourthCondition = new Condition('Multiple', 'Búið að vera í viku, fór til læknis.', new Date(2020, 11, 8), 'purple');
+const fourthCondition = new Condition('Svimi', 'Stóð yfir í 2 tíma', new Date(2020, 11, 8), 'purple');
 
 const conditionList = [newCondition, anotherCondition, thirdCondition, fourthCondition];
+let thisMonthsConditions = [];
 
 // Add event listeners once the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -93,6 +94,7 @@ function displayMonthInCalendar(month) {
 // Goes through a list of conditions and checks if any conditions year and month in the list matches the currently shown year and month
 // If it does, give the element a color and a data-date attribute
 function loadConditionsToCalendar(conditions) {
+    thisMonthsConditions = [];
     const currentYear = document.getElementById('current-year').innerHTML;
     const currentMonth = document.getElementById('current-month').innerHTML;
     let dateElements = document.querySelectorAll('.calendar-date');
@@ -102,6 +104,7 @@ function loadConditionsToCalendar(conditions) {
         if(conditions[i].date.getFullYear() === parseInt(currentYear) && allMonths[conditions[i].date.getMonth()] === currentMonth) {
             dateElements[conditions[i].date.getDate() - 1].style.backgroundColor = conditions[i].color;
             dateElements[conditions[i].date.getDate() - 1].setAttribute('data-date', conditions[i].date.getDate());
+            thisMonthsConditions.push(conditions[i]);
         }
     }
 }
@@ -123,19 +126,17 @@ function handleDateClick(ev) {
     }
 }
 
-// Currently using date to retrieve conditions
-// TODO: won´t work if there are multiple conditions with same date, will always return the first match it finds?
-// Maybe use an id field to distinguish conditions, or maybe use further checks with year and month?
+// Currently working with 'thisMonthsConditions' array to retrieve correct condition
 function getCondition(date) {
-    return conditionList.find(element => element.date.getDate() === date);
+    return thisMonthsConditions.find(element => element.date.getDate() === date);
 }
 
 // Initialize the calendar with today as the month to display
 let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
 displayMonthInCalendar(daysInCurrentMonth);
 // ToDo: 
-// gera alla daga clickable
-// Stíla 
+// Gera display glugga fyrir veikindin þegar klikkað er á þau, mögulega einhverskonar overlay?
+
 
 
 // Animation fyrir dagatalið

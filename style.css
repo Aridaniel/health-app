@@ -45,17 +45,165 @@ nav ul {
     background: rgb(55, 92, 94);
 }
 
+/* Condition Form */
+
+/* The add modal background */
+.add-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: auto;
+    top: 0;
+    width: 300px;
+    height: 500px; 
+}
+
+/* Add modal Content/Box */
+.add-modal-content {
+    background-color: white;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+/* The Close Button */
+.close-modal {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+/*  Custom validation message */
+.validation-message {
+    color: red;
+    font-size: .8rem;
+}
+
+/* Color picker */
+.color-wrapper {
+    padding: 20px;
+    display: grid;
+    width: 210px;
+    height: 100%;
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.colorHeader {
+  padding: 8px 3px;
+  margin: 10px 1px;
+  grid-column-start: span 4;
+  font-family: sans-serif;
+}
+
+
+#color-container {
+    display: flex;
+    grid-row-start: 2;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color-pick {
+    margin: 5px;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.color-pick:hover {
+    transform: scale(1.1);
+}
+
+.activeColor {
+    border: 2px solid black;
+}
+
+#output-color {
+    width: 2rem;
+    height: 2rem;
+    color: gray;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.output-wrapper {
+  display: flex;
+  margin: 20px;
+}
+
 /* Calendar */
 
 .calendar-control {
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
     background-color: rgba(0, 0, 0, 0);
     border: none;
 }
 
+.calendar-text {
+    display: inline-block;
+    min-width: 12rem;
+}
+
 .calendar-container {
-    width: 95%;
+    width: 90%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem 2rem;
     margin: 0 auto;
+}
+
+.calendar-advice {
+    display: none;
+    width: 90%;
+    font-size: 20px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.condition-preview {
+    display: flex;
+    align-items: stretch;
+    width: 90%;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.condition-icons button {
+    width: 100px;
+    background-color: rgb(201, 9, 201);
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.condition-icons img {
+    width: 100px;
+    height: 56px;
+}
+
+.condition-preview p {
+    
+}
+
+.condition-button {
+
 }
 
 #calendar-header {
@@ -73,7 +221,7 @@ nav ul {
 }
 
 .calendar-item {
-    height: 50px;
+    height: 40px;
     border-radius: 50%;
 }
 
@@ -83,13 +231,13 @@ nav ul {
 }
 
 .calendar-filler {
-    background-color: white;
+    
 }
 
 .calendar-date {
     text-align: center;
     vertical-align: middle;
-    line-height: 50px;
+    line-height: 40px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -100,8 +248,8 @@ nav ul {
 }
 
 .current-day {
-    height: 50px;
-    border: 2px crimson dashed;
+    height: 40px;
+    border: 2px seagreen solid;
 }
 
 @media only screen and (min-width: 768px) {
@@ -137,7 +285,7 @@ nav ul {
     /* Calendar */
 
     .calendar-container {
-        width: 45%;
+        width: 35%;
         margin: 2rem 10rem;
     }
 

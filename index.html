@@ -27,7 +27,9 @@
                 <div class="calendar-grid" id="calendar">
                     <div id="calendar-header">
                         <button class="calendar-control" id="prev-month" type="button">&lt;</button>
-                        <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
+                        <div class="calendar-text">
+                            <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
+                        </div>
                         <button class="calendar-control" id="next-month" type="button">&gt;</button>
                     </div>
                     <div class="calendar-weekdays">Sun</div>
@@ -39,13 +41,67 @@
                     <div class="calendar-weekdays">Lau</div>
                 </div>
             </div>
+            <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
+            <div id="calendar-advice" class="calendar-advice">
+                Ýttu á lit á dagatalinu til að skoða nánar
+            </div>
+            <div id="condition-preview" class="condition-preview">
+                <div class="condition-descr">Hérna kemur lýsing á liðan sem notandinn skrifaði</div>
+                <div class="condition-icons">
+                    <button type="button" id="condition-button" class="condition-button">Condition</button>
+                    <img src="images/icon - StrengthBar.svg">
+                </div>
+            </div>
         </div>
 
         <div class="page" id="symptompage">
-            <h2>Þetta er skrá líðan síða</h2>
+            <form id="logForm">
+                <!-- The dropdown -->
+                <select name="velja-lidan" id="velja-lidan" required>
+                    <option value="" disabled selected>Velja líðan</option>
+                    <option value="flensa" data-color="red">Flensa</option>
+                    <option value="bakverkur" data-color="yellow">Bakverkur</option>
+                    <option value="halsbolga" data-color="blue">Hálsbólga</option>
+                </select>
+                <!-- Button to open add modal -->
+                <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við líðan</button>
+                <!-- Date input -->
+                <input type="date" id="log-date" name="log-date"><br>
+                <!-- Multi line textarea -->
+                <label for="annad">Lýstu líðan þinni nánar:</label><br>
+                <textarea name="annad" id="annad" cols="30" rows="10" value="" ></textarea><br>
+                <!-- Submit button -->
+                <button type="submit" form="logForm" id="submitBtn" value="stadfesta">Staðfesta</button>
+            </form>
+            <!-- The add modal -->
+            <div id="myAddModal" class="add-modal">
+                <div class="add-modal-content">
+                    <!-- Close (x) for modal -->
+                    <span class="close-modal">&times;</span>
+                    <form id="addForm">
+                        <!-- Text input field -->
+                        <label for="addInput">Bæta við líðan</label><br>
+                        <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
+                        <div class="color-wrapper">
+                            <h3 class="colorHeader">Veldu lit</h3>
+                            <div id="color-container"></div>
+                        </div>
+                        <div class="output-wrapper">
+                            <h3>Output Litur</h3>
+                           <div id="output-color"></div> 
+                        </div>
+                        <!-- Button to submit new option to dropdown -->
+                        <button type="button" form="addForm" value="beata-vid" id="addToDropDwnBtn">Bæta við</button>
+                    </form>
+                </div>
+            </div>
         </div>
         
     </main>
+    <!-- js for new condition -->
+    <script src="conditionForm.js"></script>
+    <!-- js for color picker -->
+    <script src="colorPicker.js"></script>
     <!-- js for structure and nav -->
     <script src="script.js"></script>
     <!-- js for the illness class-->
