@@ -23,7 +23,11 @@
         ul {
             display: block;
         }
+
         .nav-link {
+            margin: 0;
+            height: auto;
+            width: auto;
             text-decoration: none;
             color: $pure-white;
             background-color: $button-primary;
@@ -36,8 +40,6 @@
             }
         }
     }
-
-   
 
     /* Calendar */
 

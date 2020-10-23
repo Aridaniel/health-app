@@ -36,6 +36,9 @@ $accent-color: #add8e6; */
     display: block;
   }
   .nav .nav-link {
+    margin: 0;
+    height: auto;
+    width: auto;
     text-decoration: none;
     color: #FFFFFF;
     background-color: #489FB5;
@@ -346,6 +349,10 @@ nav ul {
 
 nav .nav-link {
   display: block;
+  margin: 0 0.5rem;
+  height: 50px;
+  width: 50px;
+  background-color: seagreen;
   padding: 12px 18px;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -356,7 +363,7 @@ nav .nav-link p {
 }
 
 nav .nav-link img {
-  display: inline-block;
+  display: none;
 }
 
 nav .nav-link:hover {
