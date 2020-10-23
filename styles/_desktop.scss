@@ -2,6 +2,10 @@
 
 @media only screen and (min-width: 768px) {
     /* For desktop: */
+    // Hide mobile header
+    .hide-desktop {
+        display: none;
+    }
     body {
         --nav-width: 200px;
         margin: 0 0 0 var(--nav-width);
@@ -18,6 +22,18 @@
         
         ul {
             display: block;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: $pure-white;
+            background-color: $button-primary;
+            font-weight: 500;
+            img {
+                display: none;
+            }
+            p {
+                display: inline-block;
+            }
         }
     }
 
@@ -41,4 +57,22 @@
     .calendar-date {
         line-height: 60px;
     }
+
+
+     // Veit ekki alveg með allt hér fyrir neðan!!
+    // #frontpage {
+    // position: absolute;
+    // z-index: 10;
+    .frontpage-img{
+        width: 10px;
+    }
+   
+    // Front page footer
+    .frontpage-footer {
+        background-color: $background-primary;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+   // }
 }

@@ -1,6 +1,77 @@
 @charset "UTF-8";
 /* Sass style-sheet */
 /* Partial Sass files  */
+/*  Variables store information that you want to use throughout your stylesheet using the $ symbol */
+/* Dæmi:
+$font-size: 2em;
+$primary-color: #e6d149;
+$accent-color: #add8e6; */
+/* Font */
+/* Colors */
+/* Button */
+/*
+.btn-1 {
+    @extend %button-style;
+  } */
+/* Media query for desktop version */
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .hide-desktop {
+    display: none;
+  }
+  body {
+    --nav-width: 200px;
+    margin: 0 0 0 var(--nav-width);
+    font-size: 18px;
+  }
+  .nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+  }
+  .nav ul {
+    display: block;
+  }
+  .nav .nav-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #489FB5;
+    font-weight: 500;
+  }
+  .nav .nav-link img {
+    display: none;
+  }
+  .nav .nav-link p {
+    display: inline-block;
+  }
+  /* Calendar */
+  .calendar-container {
+    width: 35%;
+    margin: 2rem 10rem;
+  }
+  .calendar-item {
+    height: 60px;
+  }
+  .calendar-weekdays {
+    text-align: center;
+  }
+  .calendar-date {
+    line-height: 60px;
+  }
+  .frontpage-img {
+    width: 10px;
+  }
+  .frontpage-footer {
+    background-color: #2F6584;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 /* Calendar */
 .calendar-container {
   width: 90%;
@@ -151,56 +222,6 @@
   font-size: .8rem;
 }
 
-/* Media query for desktop version */
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  body {
-    --nav-width: 200px;
-    margin: 0 0 0 var(--nav-width);
-    font-size: 18px;
-  }
-  .nav {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--nav-width);
-    height: 100vh;
-  }
-  .nav ul {
-    display: block;
-  }
-  /* Calendar */
-  .calendar-container {
-    width: 35%;
-    margin: 2rem 10rem;
-  }
-  .calendar-item {
-    height: 60px;
-  }
-  .calendar-weekdays {
-    text-align: center;
-  }
-  .calendar-date {
-    line-height: 60px;
-  }
-}
-
-/*  Variables store information that you want to use throughout your stylesheet using the $ symbol */
-/* Dæmi:
-$font-size: 2em;
-$primary-color: #e6d149;
-$accent-color: #add8e6; */
-/* Font */
-/* Colors */
-/* Button */
-/* %button-style {
-    
-}
-
-.btn-1 {
-    @extend %button-style;
-  } */
 /* Color picker */
 .color-wrapper {
   padding: 20px;
@@ -299,7 +320,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100px;
-  background: cadetblue;
+  background: #2F6584;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -326,15 +347,20 @@ nav ul {
 nav .nav-link {
   display: block;
   padding: 12px 18px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
   -ms-flex-line-pack: center;
       align-content: center;
 }
 
+nav .nav-link p {
+  display: none;
+}
+
+nav .nav-link img {
+  display: inline-block;
+}
+
 nav .nav-link:hover {
-  background: #203636;
+  background: #E76F51;
 }
 
 /* Pages */
@@ -354,14 +380,93 @@ nav .nav-link:hover {
 }
 
 #app #frontpage {
-  background-color: lavender;
+  background-color: #F3F3F3;
+}
+
+#app #frontpage main {
+  padding: 24px;
+}
+
+#app #frontpage main .frontpage-img {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+#app #frontpage .btn-type1 {
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #E76F51;
+  width: 334px;
+  font-size: 1rem;
+}
+
+#app #frontpage .btn-type1:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 #app #calendarpage {
-  background-color: lavender;
+  background-color: #F3F3F3;
 }
 
 #app #symptompage {
-  background-color: lavender;
+  background-color: #F3F3F3;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+.mobile-header {
+  background-color: #2F6584;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 24px;
+}
+
+.mobile-header .logo-mobile {
+  width: 40%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.mobile-header .profile {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.mobile-header .profile .profile-img {
+  width: 90px;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+
+.mobile-header .profile h4 {
+  color: #FFFFFF;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 /*# sourceMappingURL=style.css.map */
