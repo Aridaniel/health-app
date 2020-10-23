@@ -2,10 +2,10 @@
 
 
 /* Partial Sass files  */
+@import "./variables";
+@import "./desktop";
 @import "./calendar";
 @import "./conditionForm";
-@import "./desktop";
-@import "./variables";
 @import "./colorPicker";
 
 
@@ -24,6 +24,7 @@ body {
     padding: 0;
 }
 
+
 /* Navigation */
 
 nav {
@@ -32,7 +33,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100px;
-    background: $primary-color;
+    background: $background-primary;
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -47,13 +48,17 @@ nav {
     .nav-link {
         display: block;
         padding: 12px 18px;
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
+
         align-content: center;
+        p {
+            display: none;
+        }
+        img {
+            display: inline-block;
+        }
 
         &:hover {
-            background: $secondary-color;
+            background: $button-secondary;
         }
     }
 
@@ -77,19 +82,68 @@ nav {
 
 
     #frontpage {
-        background-color: $accent-color;
+        background-color: $background-secondary;
+        // Front page header
+        main {
+            padding: 24px;
+            .frontpage-img {
+                display: block;
+                margin: auto;
+                width: 80%;
+            }
+        }
+        
+        .btn-type1 {
+            @include button-style($button-secondary, 334px)
+        }
+
     }
 
     #calendarpage {
-        background-color: $accent-color;
+        background-color: $background-secondary;
     }
 
     #symptompage {
-        background-color: $accent-color;
+        background-color: $background-secondary;
     }
 }
 
 
+// Hide some desktop elements
+.hide-mobile {
+      display: none;
+ }
+
+
+// Mobile header
+.mobile-header {
+    background-color: $background-primary;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    .logo-mobile {
+        width: 40%;
+        order: 1;
+        align-self: flex-end;
+
+    }
+    .profile {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        .profile-img {
+            width: 90px;
+            border-radius: 50%;
+            margin-right: 25px;
+        }
+        h4 {
+            color: $pure-white;
+            align-self: flex-end;
+        }
+    }
+}
 
 
 

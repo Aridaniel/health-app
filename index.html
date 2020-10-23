@@ -7,29 +7,43 @@
     <title>Calendar Proto</title>
 </head>
 <body>
-
+   
+    <!-- Navigation -->
     <nav class="nav">
         <ul>
-            <li><a href="#" class="nav-link" data-target="frontpage">Forsíða</a></li>
-            <li><a href="#" class="nav-link" data-target="calendarpage" id="calendar-link">Dagatal</a></li>
-            <li><a href="#" class="nav-link" data-target="symptompage" id="log-condition">Skrá líðan</a></li>
+            <li><a href="#" class="nav-link" data-target="frontpage"><p>Forsíða</p><img src="images/Facebook_logo.svg" alt=""></a></li>
+            <li><a href="#" class="nav-link" data-target="calendarpage" id="calendar-link"><p>Dagatal</p><img src="" alt=""></a></li>
+            <li><a href="#" class="nav-link" data-target="symptompage" id="log-condition"><p>Skrá líðan</p><img src="" alt=""></a></li>
         </ul>
     </nav>
 
     <main id="app">
         
         <div class="page active" id="frontpage">
-            <div class="mobile-header">
+            <header class="mobile-header">
                 <img src="images/health_logo.svg" alt="logo">
-            </div>
-            <div>
-                <img src="images/forsidu_mynd.png" alt="mynd">
-                <p>Skráðu niður líðan þína og hafðu yfirsýn í dagatalinu.</p>
-                <button class="skra-lidan">Skrá líðan</button>
+            </header>
+            <main>
+                <img src="images/forsidu_mynd.png" alt="mynd" class="frontpage-img">
+                <h5>Líðan þín, allt á einum stað.</h5>
+                <p>Haltu utan um veikindi hvort sem þau eru andleg eða líkamleg og hafðu góða yfirsýn á dagatalinu þínu. </p>
+                <button onclick="document.location='#symptompage'" class="btn-type1">Skrá líðan</button>
+                <button onclick="document.location='#calendarpage'" class="btn-type1 hide-mobile">Dagatal</button>
+            </main>
+            <div class="frontpage-footer hide-mobile">
+
             </div>
         </div>
     
         <div class="page" id="calendarpage">
+             <!-- Mobile header -->
+            <header class="mobile-header hide-desktop">
+                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
+                <div class="profile">
+                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
+                    <h4>Jóna Jónsdóttir</h4>
+                </div>
+            </header>
             <div class="calendar-container">
                 <div class="calendar-grid" id="calendar">
                     <div id="calendar-header">
@@ -62,6 +76,14 @@
         </div>
 
         <div class="page" id="symptompage">
+             <!-- Mobile header -->
+            <header class="mobile-header hide-desktop">
+                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
+                <div class="profile">
+                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
+                    <h4>Jóna Jónsdóttir</h4>
+                </div>
+            </header>
             <form id="logForm">
                 <!-- The dropdown -->
                 <select name="velja-lidan" id="velja-lidan" required>

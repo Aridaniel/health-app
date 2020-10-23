@@ -93,15 +93,17 @@ function clearOptions() {
     }
 }
 
-// Fill the condition options with the names
+// Fill the condition options with the names of all unique conditions
 function loadOptionsFromStorage() {
     let allConditions = getConditionsFromStorage();
     let uniqueConditions = [];
     
     if(allConditions.length > 0) {
+        // Generate a unique array to fill the dropdown with
         for(let x = 0; x < allConditions.length; x++) {
             console.log('checking: ' + allConditions[x].description);
             if(uniqueConditions.length > 0) {
+                // If the find method finds the current description in the unique array, don't add it to the array
                 if(uniqueConditions.find(element => element.description === allConditions[x].description) === undefined) {
                     uniqueConditions.push(allConditions[x]);
                 }

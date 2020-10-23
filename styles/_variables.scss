@@ -8,18 +8,43 @@ $accent-color: #add8e6; */
 /* Font */
 
 /* Colors */
-$primary-color: cadetblue;
-$secondary-color: rgb(32, 54, 54);
-$accent-color: lavender;
+$background-primary: #2F6584;
+$background-secondary: #F3F3F3;
+$button-primary: #489FB5;
+$button-secondary: #E76F51;
+$pure-white: #FFFFFF;
+$grey-font: #393939;
+$drop-shadow: rgba(0, 0, 0, 0.25);
+
+
 
 /* Button */
 
-/* %button-style {
-    
+@mixin button-style($background-color, $width) {
+  border-radius: 10px;
+  border: none;
+  color: $pure-white;
+  padding: 7px;
+  background-color: $background-color;
+  width: $width;
+  font-size: 1rem;
+  &:hover {
+    box-shadow: 4px 4px 20px 2px $drop-shadow;
+  }
 }
 
+// %button-style {
+//     border-radius: 10px;
+//     color: $pure-white;
+//     &:hover {
+//       box-shadow: 4px 4px 20px 2px $drop-shadow;
+//     }
+// }
+
+/*
 .btn-1 {
     @extend %button-style;
   } */
 
 
+// Mixin for background color og width??
