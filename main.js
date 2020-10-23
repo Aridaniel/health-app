@@ -2,7 +2,7 @@
 const allMonths = ['Janúar', 'Febrúar', 'Mars', 'Apríl', 'Maí', 'Júní', 'Júlí', 'Ágúst', 'September', 'Október', 'Nóvember', 'Desember'];
 
 // DOM element variables
-const calendarPage = document.getElementById('calendarpage');
+const calendarPage = document.getElementById('calendar-link');
 const calendarElement = document.getElementById('calendar');
 const currentMonthElement = document.getElementById('current-month');
 const currentYearElement = document.getElementById('current-year');
@@ -20,7 +20,7 @@ const fourthCondition = new Condition('Svimi', 'Stóð yfir í 2 tíma', new Dat
 const conditionList = [newCondition, anotherCondition, thirdCondition, fourthCondition];
 */
 
-const conditionList = [];
+//let conditionList = [];
 let thisMonthsConditions = [];
 
 // Add event listeners once the DOM content is loaded
@@ -28,29 +28,37 @@ document.addEventListener('DOMContentLoaded', () => {
     prevMonthElement.addEventListener('click', changeMonth);
     nextMonthElement.addEventListener('click', changeMonth);
     calendarPage.addEventListener('click', openCalendar);
-    console.log('Dom is loaded');
 });
+
+// Fetches the condition list from storage, displays the month passed in as parameter and loads the conditions to the calendar
+function updateMonth(daysInMonth) {
+    let conditionsList = getConditionsFromStorage();
+    displayMonthInCalendar(daysInMonth);
+    if(conditionsList.length > 0) {
+        loadConditionsToCalendar(conditionsList);
+    }
+}
 
 // Call this each time the next or previous month button is clicked
 function changeMonth(ev) {
     if(ev.currentTarget.id === 'prev-month') {
         today = new Date(today.getFullYear(), today.getMonth() - 1);
         let newMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
-        displayMonthInCalendar(newMonth);
+        //displayMonthInCalendar(newMonth);
+        updateMonth(newMonth);
     }
     if(ev.currentTarget.id === 'next-month') {
         today = new Date(today.getFullYear(), today.getMonth() + 1);
         let newMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
-        displayMonthInCalendar(newMonth);
+        //displayMonthInCalendar(newMonth);
+        updateMonth(newMonth);
     }
 }
 
+// Function for the calendar icon in the navbar, first time you open it opens the current month, then the month last viewed by the user
 function openCalendar(ev) {
-    if(localStorage.getItem('conditions') != null) {
-        const conditionString = localStorage.getItem('conditions');
-        conditionList = JSON.parse(conditionString);
-        loadConditionsToCalendar(conditionList);
-    }
+    let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
+    updateMonth(daysInCurrentMonth);
 }
 
 // Returns an array of every day in given month and year as date objects
@@ -102,7 +110,7 @@ function displayMonthInCalendar(month) {
         dayElement.addEventListener('click', handleDateClick);
         calendarElement.appendChild(dayElement);
     }
-    loadConditionsToCalendar(conditionList);
+    //loadConditionsToCalendar(conditionList);
 }
 
 // Goes through a list of conditions and checks if any conditions year and month in the list matches the currently shown year and month
@@ -112,6 +120,7 @@ function loadConditionsToCalendar(conditions) {
     const currentYear = document.getElementById('current-year').innerHTML;
     const currentMonth = document.getElementById('current-month').innerHTML;
     let dateElements = document.querySelectorAll('.calendar-date');
+    // Tjekka á hvaða formi conditions er
     for(let i = 0; i < conditions.length; i++) {
         // If the current conditions year and month match the calendar year and month, give that element a different style
         // TODO: maybe change the way we access the correct dateElements element, currently we're using the condition date as index.
@@ -135,8 +144,8 @@ function handleDateClick(ev) {
     // If the element has a data-date attribute do something
     if(ev.currentTarget.hasAttribute('data-date')) {
         const clickedDate = ev.currentTarget.getAttribute('data-date');
-        const conditionName = getCondition(parseInt(clickedDate)).description;
-        console.log(conditionName);
+        const condition = getCondition(parseInt(clickedDate));
+        console.log('name: ' + condition.description + ' other: ' + condition.other);
     }
 }
 
@@ -146,10 +155,6 @@ function getCondition(date) {
 }
 
 // Initialize the calendar with today as the month to display
-let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
-displayMonthInCalendar(daysInCurrentMonth);
-// ToDo: 
-// Gera display glugga fyrir veikindin þegar klikkað er á þau, mögulega einhverskonar overlay?
 
 
 

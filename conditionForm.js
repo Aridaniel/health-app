@@ -1,21 +1,10 @@
+const logForm = document.getElementById('logForm');
+const logButton = document.getElementById('log-condition');
 const selectBox = document.getElementById('velja-lidan');
 const dateSelection = document.getElementById('log-date');
 const addToDropDwnBtn = document.getElementById('addToDropDwnBtn');
 const otherInfo = document.getElementById('annad');
-let conditionsInStorage = [];
-
-
-function loadConditionsToStorage(theList) {
-    localStorage.setItem('conditions', JSON.stringify(conditionsInStorage));
-}
-
-function getConditionsFromStorage() {
-    if(localStorage.getItem('conditions') != null) {
-        conditionsString = localStorage.getItem('conditions');
-        conditionsInStorage = JSON.parse(conditionsString);
-    }
-}
-getConditionsFromStorage();
+//let conditionsInStorage = [];
 
 // Handle submit event
 const handleSubmit = (e) => {
@@ -33,7 +22,7 @@ const handleSubmit = (e) => {
             // Custom validation
             if ( element.name === "velja-lidan") {
                 customErrorMessage = "*Þú verður að velja líðan!"  
-                success = false;                      
+                success = false;
             }
           
             else if (element.type === "date") {
@@ -55,17 +44,19 @@ const handleSubmit = (e) => {
             element.focus();
             break;
         }
-    } 
+    }
+
     const conditionName = selectBox.value;
     const other = otherInfo.value;
     const conditionDate = dateSelection.value;
     const conditionColor = selectBox.getAttribute('data-color');
     const newCondition = new Condition(conditionName, other, conditionDate, conditionColor);
-    conditionsInStorage.push(newCondition);
+    //conditionsInStorage.push(newCondition);
     if (success) {
         console.log('Success!');
-        loadConditionsToStorage(conditionsInStorage);
+        updateConditionsInStorage(newCondition);
         //location.reload()
+        logForm.reset();
     }
 };
 
@@ -76,11 +67,9 @@ function handleSelectChange(ev) {
     //ev.currentTarget.style.backgroundColor = ev.currentTarget.getAttribute('data-color'); // Breytir öllum options líka...
 }
 
-function addOptionEventListeners() {
-    document.querySelectorAll('option').forEach(item => {
-        console.log('item: ' + item);
-        item.addEventListener('click', handleOptionClick);
-    });
+function openLogPage(ev) {
+    clearOptions();
+    loadOptionsFromStorage();
 }
 
 // Event listener for submit event of all forms 
@@ -92,7 +81,47 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', handleSubmit);
     }
     selectBox.addEventListener('change', handleSelectChange);
+    logButton.addEventListener('click', openLogPage);
 });
+
+function clearOptions() {
+    let elements = document.querySelectorAll('option');
+    for(let i = 0; i < elements.length; i++) {
+        if (elements[i].hasAttribute('data-color')) {
+            elements[i].remove();
+        }
+    }
+}
+
+// Fill the condition options with the names
+function loadOptionsFromStorage() {
+    let allConditions = getConditionsFromStorage();
+    let uniqueConditions = [];
+    
+    if(allConditions.length > 0) {
+        for(let x = 0; x < allConditions.length; x++) {
+            console.log('checking: ' + allConditions[x].description);
+            if(uniqueConditions.length > 0) {
+                if(uniqueConditions.find(element => element.description === allConditions[x].description) === undefined) {
+                    uniqueConditions.push(allConditions[x]);
+                }
+            } else {
+                uniqueConditions.push(allConditions[x]);                
+            }
+        }
+
+        // Create an option for each unique condition
+        for(let i = 0; i < uniqueConditions.length; i++) {
+            const newOption = document.createElement('option');
+            const optionText = document.createTextNode(uniqueConditions[i].description);
+            newOption.setAttribute('data-color', uniqueConditions[i].color);
+            newOption.value = uniqueConditions[i].description;
+            newOption.style.backgroundColor = uniqueConditions[i].color;
+            newOption.appendChild(optionText);
+            selectBox.appendChild(newOption);
+        }
+    }
+}
 
 // Add new option to dropdown list and validate modal input
 function addOption() {
@@ -105,12 +134,16 @@ function addOption() {
     // If the modal input is valid the new option will be added to the dropdown and the modal disappear
     if ( inputElement.validity.valid === true ) {
         const optionText = document.createTextNode(inputValue);
+        // If no color is chosen
         if(chosenColor === '') {
             chosenColor = '#ffffff';
         }
-        console.log('Assigning color: ' + chosenColor);
+        //console.log('Assigning color: ' + chosenColor);
         // Add a data-color attribute to each option to know what color each condition should be
         newOption.setAttribute('data-color', chosenColor);
+        selectBox.setAttribute('data-color', chosenColor);
+        newOption.setAttribute('selected', 'selected');
+        newOption.value = inputValue;
         newOption.style.backgroundColor = chosenColor;
         newOption.appendChild(optionText);
         selectBox.appendChild(newOption);
@@ -129,7 +162,6 @@ function addOption() {
 };
 // Add an click event to button and call the addOption function
 addToDropDwnBtn.addEventListener('click', addOption);
-
 
 // Create add modal
 const addModal = document.getElementById("myAddModal");
