@@ -83,15 +83,26 @@
                     <h4>Jóna Jónsdóttir</h4>
                 </div>
             </header>
-            <form id="logForm">
+            <form id="logForm" class="condition-form">
                 <!-- The dropdown -->
-                <select name="velja-lidan" id="velja-lidan" required>
-                    <option value="" disabled selected>Velja líðan</option>
-                </select>
-                <!-- Button to open add modal -->
-                <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við líðan</button>
+                <div class="form-buttons"> 
+                    <select name="velja-lidan" id="velja-lidan" required>
+                        <option value="" disabled selected>Velja líðan</option>
+                    </select>
+                    <!-- Button to open add modal -->
+                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við líðan</button>
+                </div>
                 <!-- Date input -->
                 <input type="date" id="log-date" name="log-date" required><br>
+                <!-- Choosing strength -->
+                <div class="strength-wrapper">
+                    <h4>Veldu styrk líðans</h4>
+                    <div id="strength-container">
+                        <div class="strength-pick" id="strength-one"></div>
+                        <div class="strength-pick" id="strength-two"></div>
+                        <div class="strength-pick" id="strength-three"></div>
+                    </div>
+                </div>
                 <!-- Multi line textarea -->
                 <label for="annad">Lýstu líðan þinni nánar:</label><br>
                 <textarea name="annad" id="annad" cols="30" rows="10" value="" ></textarea><br>

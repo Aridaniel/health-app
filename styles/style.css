@@ -186,6 +186,37 @@ $accent-color: #add8e6; */
 }
 
 /* Condition Form */
+form {
+  height: 600px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  margin: 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  /*  .select {
+
+    }
+
+    .button {
+        @include button-style($button-primary);
+    } */
+}
+
+.form-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 /* The add modal background */
 .add-modal {
   display: none;
@@ -223,6 +254,66 @@ $accent-color: #add8e6; */
 .validation-message {
   color: red;
   font-size: .8rem;
+}
+
+/* Strength picker */
+.strength-wrapper {
+  width: 334px;
+  height: 106px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  padding: 10px 0 10px 0;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid lightgray;
+}
+
+#strength-container {
+  width: 100px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+#strength-container .strength-pick {
+  width: 24px;
+  cursor: pointer;
+  border: 2px solid #E76F51;
+  border-radius: 2px;
+}
+
+#strength-container .strength-pick:hover {
+  background: #E76F51;
+}
+
+#strength-container #strength-one {
+  height: 36px;
+}
+
+#strength-container #strength-two {
+  height: 54px;
+}
+
+#strength-container #strength-three {
+  height: 80px;
+}
+
+.strength-active {
+  background: #E76F51;
 }
 
 /* Color picker */

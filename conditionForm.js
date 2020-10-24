@@ -185,3 +185,31 @@ window.onclick = function(event) {
         addModal.style.display = "none";
     }
 }
+
+
+/* Strength picker */
+
+// Three strengths from html
+const strengthOne = document.getElementById('strength-one');
+const strengthTwo = document.getElementById('strength-two');
+const strengthThree = document.getElementById('strength-three');
+
+
+let strengthArray = [strengthOne, strengthTwo, strengthThree];
+
+// when clicking adding and removing color by index
+strengthArray.forEach(function (element, index) {
+    element.addEventListener('click', function() {
+        for (let i = 0; i < strengthArray.length; i++) {
+            if (i <= index) {
+            // adding background color
+            strengthArray[i].classList.add('strength-active');
+            } else {
+                // removing background color
+                strengthArray[i].classList.remove('strength-active');
+            }
+        }
+        // loop yfir strength array og lita aalla minn eða jafnt og index valinn
+        console.log('Strength = ' + index);
+    })
+});
