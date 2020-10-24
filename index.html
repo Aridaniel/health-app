@@ -66,10 +66,17 @@
                 Ýttu á lit á dagatalinu til að skoða nánar
             </div>
             <div id="condition-preview" class="condition-preview">
-                <div class="condition-descr">Hérna kemur lýsing á liðan sem notandinn skrifaði</div>
+                <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði</div>
                 <div class="condition-icons">
-                    <button type="button" id="condition-button" class="condition-button">Condition</button>
-                    <img src="images/icon - StrengthBar.svg">
+                    <div id="condition-label" class="condition-label">Condition</div>
+                    <!-- Strength bar display -->
+                    <div class="strength-display-wrapper" title="Styrkur einkenna">
+                        <div id="strength-display-container">
+                            <div class="strength-display-pick" id="strength-display-one"></div>
+                            <div class="strength-display-pick" id="strength-display-two"></div>
+                            <div class="strength-display-pick" id="strength-display-three"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,16 +142,16 @@
 
     </main>
     <!-- js for storage -->
-    <script src="storageFunctions.js"></script>
+    <script src="js/storageFunctions.js"></script>
     <!-- js for new condition -->
-    <script src="conditionForm.js"></script>
+    <script src="js/conditionForm.js"></script>
     <!-- js for color picker -->
-    <script src="colorPicker.js"></script>
+    <script src="js/colorPicker.js"></script>
     <!-- js for structure and nav -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <!-- js for the illness class-->
-    <script src="condition.js"></script>
+    <script src="js/condition.js"></script>
     <!-- js for calendar -->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

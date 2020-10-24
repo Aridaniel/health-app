@@ -18,8 +18,10 @@
 
 body {
     margin: 0 0 0 var(--nav-width);
+    margin-bottom: 100px;
     font-size: 18px;
     padding: 0;
+    background-color: $background-secondary;
 }
 
 /* Navigation */
@@ -75,7 +77,6 @@ nav {
         display: none;
         width: 100%;
         min-height: 100%;
-        position: fixed;
 
         &.active {
             display: block;

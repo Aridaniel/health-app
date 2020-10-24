@@ -4,6 +4,7 @@ const selectBox = document.getElementById('velja-lidan');
 const dateSelection = document.getElementById('log-date');
 const addToDropDwnBtn = document.getElementById('addToDropDwnBtn');
 const otherInfo = document.getElementById('annad');
+let chosenStrength = null;
 //let conditionsInStorage = [];
 
 // Handle submit event
@@ -49,8 +50,9 @@ const handleSubmit = (e) => {
     const conditionName = selectBox.value;
     const other = otherInfo.value;
     const conditionDate = dateSelection.value;
+    const conditionIntensity = chosenStrength;
     const conditionColor = selectBox.getAttribute('data-color');
-    const newCondition = new Condition(conditionName, other, conditionDate, conditionColor);
+    const newCondition = new Condition(conditionName, other, conditionDate, conditionIntensity, conditionColor);
     //conditionsInStorage.push(newCondition);
     if (success) {
         console.log('Success!');
@@ -68,6 +70,7 @@ function handleSelectChange(ev) {
 }
 
 function openLogPage(ev) {
+    chosenStrength = null;
     clearOptions();
     loadOptionsFromStorage();
 }
@@ -202,8 +205,8 @@ strengthArray.forEach(function (element, index) {
     element.addEventListener('click', function() {
         for (let i = 0; i < strengthArray.length; i++) {
             if (i <= index) {
-            // adding background color
-            strengthArray[i].classList.add('strength-active');
+                // adding background color
+                strengthArray[i].classList.add('strength-active');
             } else {
                 // removing background color
                 strengthArray[i].classList.remove('strength-active');
@@ -211,5 +214,6 @@ strengthArray.forEach(function (element, index) {
         }
         // loop yfir strength array og lita aalla minn eða jafnt og index valinn
         console.log('Strength = ' + index);
+        chosenStrength = index;
     })
 });

@@ -78,10 +78,13 @@ $accent-color: #add8e6; */
 /* Calendar */
 .calendar-container {
   width: 90%;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
+  padding-top: 1rem;
   margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .calendar-container .calendar-grid {
@@ -120,31 +123,36 @@ $accent-color: #add8e6; */
 }
 
 .calendar-advice {
-  display: none;
+  display: block;
   width: 90%;
   font-size: 20px;
   padding: 1rem 2rem;
-  margin: 0 auto;
+  margin: 1rem auto;
+  border-radius: 10px;
+  background-color: #FFFFFF;
 }
 
 .condition-preview {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 90%;
   padding: 1rem 2rem;
   margin: 0 auto;
   background-color: white;
 }
 
-.condition-icons button {
-  width: 100px;
-  background-color: #c909c9;
+.condition-icons .condition-label {
+  width: 140px;
   border-radius: 10px;
   border: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
   margin-bottom: 1rem;
   padding: 0.5rem 0;
 }
@@ -152,6 +160,58 @@ $accent-color: #add8e6; */
 .condition-icons img {
   width: 100px;
   height: 56px;
+}
+
+.condition-icons .strength-display-wrapper {
+  width: 85px;
+  height: 64;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  padding: 10px 0 10px 0;
+  margin: 0 auto;
+}
+
+.condition-icons .strength-display-wrapper #strength-display-container {
+  width: 100px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.condition-icons .strength-display-wrapper #strength-display-container .strength-display-pick {
+  width: 24px;
+  border: 2px solid #E76F51;
+  border-radius: 2px;
+}
+
+.condition-icons .strength-display-wrapper #strength-display-container #strength-display-one {
+  height: 36px;
+}
+
+.condition-icons .strength-display-wrapper #strength-display-container #strength-display-two {
+  height: 54px;
+}
+
+.condition-icons .strength-display-wrapper #strength-display-container #strength-display-three {
+  height: 80px;
+}
+
+.condition-icons .strength-display-active {
+  background: #E76F51;
 }
 
 /* From js */
@@ -403,8 +463,10 @@ form {
 
 body {
   margin: 0 0 0 var(--nav-width);
+  margin-bottom: 100px;
   font-size: 18px;
   padding: 0;
+  background-color: #F3F3F3;
 }
 
 /* Navigation */
@@ -470,7 +532,6 @@ nav .nav-link:hover {
   display: none;
   width: 100%;
   min-height: 100%;
-  position: fixed;
 }
 
 #app .page.active {

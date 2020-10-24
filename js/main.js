@@ -8,6 +8,14 @@ const currentMonthElement = document.getElementById('current-month');
 const currentYearElement = document.getElementById('current-year');
 const prevMonthElement = document.getElementById('prev-month');
 const nextMonthElement = document.getElementById('next-month');
+const calAdvice = document.getElementById('calendar-advice');
+const conditionPreview = document.getElementById('condition-preview');
+const conditionOther = document.getElementById('condition-other');
+const conditionBtn = document.getElementById('condition-label');
+const strenghtBar1 = document.getElementById('strength-display-one');
+const strenghtBar2 = document.getElementById('strength-display-two');
+const strenghtBar3 = document.getElementById('strength-display-three');
+const displayBars = [strenghtBar1, strenghtBar2, strenghtBar3];
 
 // Initialize today as the date today
 let today = new Date();
@@ -146,7 +154,31 @@ function handleDateClick(ev) {
         const clickedDate = ev.currentTarget.getAttribute('data-date');
         const condition = getCondition(parseInt(clickedDate));
         console.log('name: ' + condition.description + ' other: ' + condition.other);
+        conditionOther.innerHTML = condition.other;
+        conditionBtn.innerHTML = condition.description;
+        conditionBtn.style.backgroundColor = condition.color;
+        fillStrengthBars(condition.intensity);
+        showConditionInfo();
     }
+}
+
+function fillStrengthBars(intensity) {
+    // check if it has a value
+    if(intensity === null) {
+        return;
+    }
+    for(let i = 0; i < displayBars.length; i++) {
+        if(i <= intensity) {
+            displayBars[i].classList.add('strength-display-active');
+        } else {
+            displayBars[i].classList.remove('strength-display-active');
+        }
+    }
+}
+
+function showConditionInfo() {
+    calAdvice.style.display = 'none';
+    conditionPreview.style.display = 'flex';
 }
 
 // Currently working with 'thisMonthsConditions' array to retrieve correct condition

@@ -2,10 +2,13 @@
 
 .calendar-container {
     width: 90%;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     background-color: white;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
+    padding-top: 1rem;
     margin: 0 auto;
+    margin-top: 1rem;
 
     .calendar-grid {
         display: grid;
@@ -39,31 +42,33 @@
 }
 
 .calendar-advice {
-    display: none;
+    display: block;
     width: 90%;
     font-size: 20px;
     padding: 1rem 2rem;
-    margin: 0 auto;
+    margin: 1rem auto;
+    border-radius: 10px;
+    background-color: $pure-white;
 }
 
 .condition-preview {
-    display: flex;
+    display: none;
     align-items: stretch;
+    justify-content: space-evenly;
     width: 90%;
     padding: 1rem 2rem;
     margin: 0 auto;
     background-color: white;
-
-
 }
 
 .condition-icons {
-
-    button {
-        width: 100px;
-        background-color: rgb(201, 9, 201);
+    .condition-label {
+        width: 140px;
         border-radius: 10px;
         border: none;
+        text-align: center;
+        font-size: 18px;
+        color: white;
         margin-bottom: 1rem;
         padding: 0.5rem 0;
     }
@@ -72,9 +77,48 @@
         width: 100px;
         height: 56px;
     }
-    
-}
 
+    .strength-display-wrapper {
+        width: 85px;
+        height: 64;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: end;
+        padding: 10px 0 10px 0;
+        margin: 0 auto;
+
+        #strength-display-container {
+            width: 100px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        
+            .strength-display-pick {
+                width: 24px;
+                border: 2px solid #E76F51;
+                border-radius: 2px;
+            }
+        
+            #strength-display-one {
+                height: 36px;
+            }
+        
+            #strength-display-two {
+                height: 54px;
+            }
+        
+            #strength-display-three {
+                height: 80px;
+            }
+        }
+    }
+
+    // When ckicking it gets color
+    .strength-display-active {
+        background: #E76F51;
+    }
+}
 
 /* From js */
 
