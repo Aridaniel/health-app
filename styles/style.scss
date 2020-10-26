@@ -6,7 +6,6 @@
 @import "./desktop";
 @import "./calendar";
 @import "./conditionForm";
-@import "./colorPicker";
 
 /* Main structure */
 
@@ -89,6 +88,19 @@ nav {
         // Front page header
         main {
             padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                display: grid;
+                grid-template-rows: 1fr 60px 100px 100px;
+                text-align: center;
+                align-items: end;
+            }
+
+
             .frontpage-img {
                 display: block;
                 margin: auto;

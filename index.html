@@ -23,11 +23,13 @@
                 <img src="images/health_logo.svg" alt="logo">
             </header>
             <main>
-                <img src="images/forsidu_mynd.png" alt="mynd" class="frontpage-img">
-                <h5>Líðan þín, allt á einum stað.</h5>
-                <p>Haltu utan um veikindi hvort sem þau eru andleg eða líkamleg og hafðu góða yfirsýn á dagatalinu þínu. </p>
-                <button onclick="document.location='#symptompage'" class="btn-type1">Skrá líðan</button>
-                <button onclick="document.location='#calendarpage'" class="btn-type1 hide-mobile">Dagatal</button>
+                <div>
+                    <img src="images/forsidu_mynd.png" alt="mynd" class="frontpage-img">
+                    <h4>Líðan þín, allt á einum stað.</h4>
+                    <p>Haltu utan um veikindi hvort sem þau eru andleg eða líkamleg og hafðu góða yfirsýn á dagatalinu þínu. </p>
+                    <button onclick="document.location='#symptompage'" class="btn-type1">Skrá líðan</button>
+                    <button onclick="document.location='#calendarpage'" class="btn-type1 hide-mobile">Dagatal</button>
+                </div>
             </main>
             <div class="frontpage-footer hide-mobile">
 
@@ -46,19 +48,19 @@
             <div class="calendar-container">
                 <div class="calendar-grid" id="calendar">
                     <div id="calendar-header">
-                        <button class="calendar-control" id="prev-month" type="button">&lt;</button>
+                        <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg" alt="Previous month"></button>
                         <div class="calendar-text">
                             <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
                         </div>
-                        <button class="calendar-control" id="next-month" type="button">&gt;</button>
+                        <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg" alt="Next month"></button>
                     </div>
-                    <div class="calendar-weekdays">Sun</div>
-                    <div class="calendar-weekdays">Mán</div>
-                    <div class="calendar-weekdays">Þri</div>
-                    <div class="calendar-weekdays">Mið</div>
-                    <div class="calendar-weekdays">Fim</div>
-                    <div class="calendar-weekdays">Fös</div>
-                    <div class="calendar-weekdays">Lau</div>
+                    <div class="calendar-weekdays">S</div>
+                    <div class="calendar-weekdays">M</div>
+                    <div class="calendar-weekdays">Þ</div>
+                    <div class="calendar-weekdays">M</div>
+                    <div class="calendar-weekdays">F</div>
+                    <div class="calendar-weekdays">F</div>
+                    <div class="calendar-weekdays">L</div>
                 </div>
             </div>
             <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->

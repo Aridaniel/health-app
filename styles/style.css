@@ -78,13 +78,13 @@ $accent-color: #add8e6; */
 /* Calendar */
 .calendar-container {
   width: 90%;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 10px;
   background-color: white;
   padding: 0 2rem;
   padding-top: 1rem;
   margin: 0 auto;
   margin-top: 1rem;
+  border: 1px solid #EBEBEB;
 }
 
 .calendar-container .calendar-grid {
@@ -92,34 +92,61 @@ $accent-color: #add8e6; */
   display: grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
-  gap: 0.5rem;
+  gap: 0.8rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
 
 .calendar-container .calendar-grid #calendar-header {
-  font-size: 26px;
-  font-weight: bold;
   -ms-grid-column: span 7;
       grid-column-start: span 7;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-control {
   padding: 0.5rem 0.5rem;
   background-color: rgba(0, 0, 0, 0);
   border: none;
+  cursor: pointer;
+}
+
+.calendar-container .calendar-grid #calendar-header .calendar-control:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-text {
+  font-size: 24px;
+  font-weight: bold;
   display: inline-block;
   min-width: 12rem;
 }
 
 .calendar-container .calendar-grid .calendar-weekdays {
-  height: 20px;
+  height: 100%;
+  width: 100%;
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .calendar-advice {
@@ -130,6 +157,7 @@ $accent-color: #add8e6; */
   margin: 1rem auto;
   border-radius: 10px;
   background-color: #FFFFFF;
+  border: 1px solid #EBEBEB;
 }
 
 .condition-preview {
@@ -137,13 +165,16 @@ $accent-color: #add8e6; */
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 90%;
   padding: 1rem 2rem;
   margin: 0 auto;
+  margin-top: 20px;
   background-color: white;
+  border: 1px solid #EBEBEB;
+  border-radius: 10px;
 }
 
 .condition-icons .condition-label {
@@ -222,37 +253,45 @@ $accent-color: #add8e6; */
 }
 
 .calendar-item {
-  height: 40px;
+  height: 24px;
   border-radius: 50%;
 }
 
 .calendar-date {
-  text-align: center;
-  vertical-align: middle;
-  line-height: 40px;
-  font-size: 20px;
+  line-height: 24px;
+  font-size: 18px;
   font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .calendar-date:hover {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-  cursor: default;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
 }
 
 .current-day {
-  height: 40px;
-  border: 2px seagreen solid;
+  height: 100%;
+  border: 2px solid #E76F51;
 }
 
 /* Condition Form */
 .condition-form {
-  height: 600px;
+  height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[5];
-      grid-template-rows: repeat(5, 1fr);
-  margin: 24px;
+  -ms-grid-rows: 80px 80px 20px 120px 30px;
+      grid-template-rows: 80px 80px 20px 120px 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -295,9 +334,28 @@ $accent-color: #add8e6; */
           box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
-.condition-form textarea {
-  border: 1px solid lightgray;
+.condition-form input {
   border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #489FB5;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.condition-form input:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.condition-form textarea {
+  border: 1px solid #EBEBEB;
+  border-radius: 10px;
+  height: 100px;
 }
 
 .condition-form .confirm-btn {
@@ -331,8 +389,8 @@ $accent-color: #add8e6; */
   display: none;
   position: absolute;
   z-index: 1;
-  left: auto;
-  top: 180px;
+  left: 140px;
+  top: 170px;
   /* Add modal Content/Box */
   /* The Close Button */
 }
@@ -343,15 +401,15 @@ $accent-color: #add8e6; */
   padding: 20px;
   height: 100%;
   width: 300px;
-  border: 1px solid lightgray;
+  border: 1px solid #EBEBEB;
   border-radius: 10px;
-  padding: 40px 30px 40px 30px;
+  padding: 30px;
 }
 
 .add-modal .add-modal-content input {
   height: 40px;
   width: 100%;
-  border: 1px solid lightgray;
+  border: 1px solid #EBEBEB;
   border-radius: 10px;
 }
 
@@ -411,7 +469,7 @@ $accent-color: #add8e6; */
   padding: 10px 0 10px 0;
   border-radius: 10px;
   background: white;
-  border: 1px solid lightgray;
+  border: 1px solid #EBEBEB;
 }
 
 #strength-container {
@@ -619,6 +677,30 @@ nav .nav-link:hover {
 
 #app #frontpage main {
   padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app #frontpage main div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 60px 100px 100px;
+      grid-template-rows: 1fr 60px 100px 100px;
+  text-align: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 #app #frontpage main .frontpage-img {
