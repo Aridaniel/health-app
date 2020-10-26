@@ -1,5 +1,6 @@
 // js for navigation, changing pages and main structure
-const navElement = document.getElementById('nav-container');
+const navContainer = document.getElementById('nav-container');
+const navList = document.getElementById('nav-list');
 
 const app = {
     pages: [],
@@ -42,6 +43,15 @@ const app = {
         let currPage = ev.target.id;
         if(currPage === 'frontpage') {
             //hideNav();
+            //document.getElementById('calendar-header').classList.remove('hide-section');
+            document.body.style.marginLeft = '0';
+            navContainer.classList.remove('nav-sidebar');
+            navContainer.classList.add('nav');
+        } else {
+            //document.getElementById('calendar-header').classList.add('hide-section');
+            document.body.style.marginLeft = 'var(--nav-width)';
+            navContainer.classList.remove('nav');
+            navContainer.classList.add('nav-sidebar');
         }
     },
 
@@ -55,12 +65,14 @@ const app = {
 }
 
 // when everything has been read call the app.init function
-document.addEventListener('DOMContentLoaded', app.init);
+document.addEventListener('DOMContentLoaded', () => {
+    app.init();
+});
 
 function hideNav () {
-    navElement.style.display = 'none';
+    navList.style.display = 'none';
 }
 
-function ShowNav (displayProp) {
-    navElement.style.display = displayProp;
+function showNav (displayProp) {
+    navList.style.display = displayProp;
 }

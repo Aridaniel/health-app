@@ -40,6 +40,17 @@ nav {
     ul {
         display: flex;
         list-style: none;
+        #sidebar-logo {
+            display: none;
+        }
+
+        .sidebar-profile {
+            display: none;
+        }
+
+        h4 {
+            display: none;
+        }
     }
 
     .nav-link {
@@ -81,6 +92,10 @@ nav {
         }
     }
 
+    .nav-list {
+        display: block;
+    }
+
 
     #frontpage {
         background-color: $background-secondary;
@@ -88,9 +103,6 @@ nav {
         #frontpage-content {
             display: block;
             padding: 24px;
-            div {
-                
-            }
             
             h5 {
                 text-align: center;
@@ -129,6 +141,10 @@ nav {
         }
 
         @media only screen and (min-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
             #frontpage-content {
                 display: flex;
                 flex-direction: row;
@@ -178,10 +194,22 @@ nav {
 
     #calendarpage {
         background-color: $background-secondary;
+
+        @media only screen and (min-width: 768px) {
+            .mobile-header {
+                display: none;
+            }
+        }
     }
 
     #symptompage {
         background-color: $background-secondary;
+
+        @media only screen and (min-width: 768px) {
+            .mobile-header {
+                display: none;
+            }
+        }
     }
 }
 
@@ -202,7 +230,6 @@ nav {
         width: 40%;
         order: 1;
         align-self: flex-end;
-
     }
     .profile {
         order: 2;
@@ -219,8 +246,15 @@ nav {
             align-self: flex-end;
         }
     }
+
+    @media only screen and (min-width: 768px) {
+        
+    }
 }
 
+.hide-section {
+    display: none;
+}
 
 
 
