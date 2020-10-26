@@ -1,5 +1,5 @@
 /* Condition Form */
-form {
+.condition-form {
     height: 600px;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
@@ -7,13 +7,23 @@ form {
     justify-content: center;
     align-items: flex-end;
 
-/*  .select {
-
+    select {
+        @include button-style($button-primary, 152px);
     }
 
-    .button {
-        @include button-style($button-primary);
-    } */
+    button {
+        @include button-style($button-primary, 152px);
+        
+    }
+
+    textarea {
+        border: 1px solid lightgray;
+        border-radius: 10px;
+    }
+
+    .confirm-btn {
+        @include button-style($button-secondary, 100%)
+    }
 }
 
 .form-buttons {
@@ -24,26 +34,48 @@ form {
 /* The add modal background */
 .add-modal {
     display: none; 
-    position: fixed; 
+    position: absolute; 
     z-index: 1; 
     left: auto;
-    top: 0;
-    width: 300px;
-    height: 500px; 
+    top: 180px;
+    
 
     /* Add modal Content/Box */
     .add-modal-content {
+
         background-color: white;
         margin: 15% auto; 
         padding: 20px;
-        border: 1px solid #888;
-        width: 80%; 
+        height: 100%;
+        width: 300px;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 40px 30px 40px 30px;
+        
+
+        input {
+            height: 40px;
+            width: 100%;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+        }
+
+        button {
+            @include button-style($button-secondary, 100%)
+        }
+
+        .output-wrapper {
+            display: none;
+        }
+
+        
     }
 
     /* The Close Button */
     .close-modal {
         float: right;
         font-size: 28px;
+        padding: 0 0 24px;
         font-weight: bold;
 
         &:hover, 

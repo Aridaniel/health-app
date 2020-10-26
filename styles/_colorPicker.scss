@@ -1,18 +1,15 @@
 /* Color picker */
 .color-wrapper {
-    padding: 20px;
+    padding: 24px 0 24px 0;
     display: grid;
-    width: 210px;
+    width: 100%;
     height: 100%;
     grid-template-rows: 40px 1fr;
-    grid-template-columns: 1fr;
     align-items: center;
 
     .colorHeader {
-        padding: 8px 3px;
-        margin: 10px 1px;
         grid-column-start: span 4;
-        font-family: sans-serif;
+        padding-bottom: 24px;
     }
 
     #color-container {
@@ -21,7 +18,7 @@
         margin: auto;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
     }
 }
 
@@ -30,8 +27,8 @@
 
 .color-pick {
     margin: 5px;
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50%;
     background-color: white;
     transition: all 0.2s ease;
