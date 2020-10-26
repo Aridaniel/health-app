@@ -1,9 +1,8 @@
 /* Condition Form */
 .condition-form {
-    height: 600px;
+    height: 100%;
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    margin: 24px;
+    grid-template-rows: 80px 80px 20px 120px 30px;
     justify-content: center;
     align-items: flex-end;
 
@@ -13,12 +12,17 @@
 
     button {
         @include button-style($button-primary, 152px);
-        
+    }
+
+    input {
+        @include button-style($button-primary, 100%);
+        text-align: left;
     }
 
     textarea {
-        border: 1px solid lightgray;
+        border: $border;
         border-radius: 10px;
+        height: 100px;
     }
 
     .confirm-btn {
@@ -36,8 +40,8 @@
     display: none; 
     position: absolute; 
     z-index: 1; 
-    left: auto;
-    top: 180px;
+    left: 140px;
+    top: 170px;
     
 
     /* Add modal Content/Box */
@@ -48,15 +52,15 @@
         padding: 20px;
         height: 100%;
         width: 300px;
-        border: 1px solid lightgray;
+        border: $border;
         border-radius: 10px;
-        padding: 40px 30px 40px 30px;
+        padding: 30px;
         
 
         input {
             height: 40px;
             width: 100%;
-            border: 1px solid lightgray;
+            border: $border;
             border-radius: 10px;
         }
 
@@ -67,7 +71,6 @@
         .output-wrapper {
             display: none;
         }
-
         
     }
 
@@ -104,7 +107,7 @@
     padding: 10px 0 10px 0;
     border-radius: 10px; 
     background: white;
-    border: 1px solid lightgray;
+    border: $border;
 }
 
 #strength-container {
@@ -142,4 +145,67 @@
 // When ckicking it gets color
 .strength-active {
     background: #E76F51;
+}
+
+
+/* Color picker */
+.color-wrapper {
+    padding: 24px 0 24px 0;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 40px 1fr;
+    align-items: center;
+
+    .colorHeader {
+        grid-column-start: span 4;
+        padding-bottom: 24px;
+    }
+
+    #color-container {
+        display: flex;
+        grid-row-start: 2;
+        margin: auto;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+
+// classes from js
+
+.color-pick {
+    margin: 5px;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+.activeColor {
+    border: 2px solid black;
+}
+
+
+/* chosen color output */
+
+.output-wrapper {
+  display: flex;
+  margin: 20px;
+
+    #output-color {
+        width: 2rem;
+        height: 2rem;
+        color: gray;
+        border: 1px solid lightgray;
+        border-radius: 50%;
+        background-color: white;
+    }
 }
