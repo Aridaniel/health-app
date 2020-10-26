@@ -59,6 +59,7 @@ const handleSubmit = (e) => {
         updateConditionsInStorage(newCondition);
         //location.reload()
         logForm.reset();
+        
     }
 };
 

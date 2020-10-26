@@ -148,12 +148,12 @@ function compareTwoDates(date1, date2) {
     return false;
 }
 
+// Each time the user clicks a date with a condition, display detailed info
 function handleDateClick(ev) {
     // If the element has a data-date attribute do something
     if(ev.currentTarget.hasAttribute('data-date')) {
         const clickedDate = ev.currentTarget.getAttribute('data-date');
         const condition = getCondition(parseInt(clickedDate));
-        console.log('name: ' + condition.description + ' other: ' + condition.other);
         conditionOther.innerHTML = condition.other;
         conditionBtn.innerHTML = condition.description;
         conditionBtn.style.backgroundColor = condition.color;
@@ -165,6 +165,7 @@ function handleDateClick(ev) {
 function fillStrengthBars(intensity) {
     // check if it has a value
     if(intensity === null) {
+        displayBars.forEach(element => element.classList.remove('strength-display-active'));
         return;
     }
     for(let i = 0; i < displayBars.length; i++) {
