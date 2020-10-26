@@ -17,7 +17,6 @@
 }
 
 body {
-    margin: 0 0 0 var(--nav-width);
     margin-bottom: 100px;
     font-size: 18px;
     padding: 0;
@@ -87,17 +86,93 @@ nav {
     #frontpage {
         background-color: $background-secondary;
         // Front page header
-        main {
+        #frontpage-content {
+            display: block;
             padding: 24px;
+            div {
+                
+            }
+            
+            h5 {
+                text-align: center;
+                padding: 1rem 1rem;
+            }
+
+            p {
+                text-align: center;
+                padding: 1rem 1rem;
+            }
+
             .frontpage-img {
                 display: block;
                 margin: auto;
                 width: 80%;
             }
+
+            .frontpage-buttons {
+                display: block;
+            }
+
+            #log-button {
+                display: block;
+                margin-top: 1rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #calendar-button {
+                display: none;
+            }
         }
         
         .btn-type1 {
             @include button-style($button-secondary, 334px)
+        }
+
+        @media only screen and (min-width: 768px) {
+            #frontpage-content {
+                display: flex;
+                flex-direction: row;
+                div {
+                    margin: 0 1rem;
+                    /* All flex items have same width */
+                    flex: 1 1 0px;
+                }
+
+                .frontpage-img {
+                    width: 470px;
+                    height: 420px;
+                }
+
+                h5 {
+                    text-align: start;
+                    padding: 1rem 1rem;
+                }
+    
+                p {
+                    text-align: start;
+                    padding: 1rem 1rem;
+                }
+
+                .frontpage-buttons {
+                    display: flex;
+                    margin-top: 2rem;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                }
+
+                #log-button {
+                    margin-top: 0.5rem;
+                    width: 16rem;
+                }
+
+                #calendar-button {
+                    margin-top: 0.5rem;
+                    display: block;
+                    width: 16rem;
+                }
+
+            }
         }
 
     }
@@ -116,7 +191,6 @@ nav {
 .hide-mobile {
       display: none;
  }
-
 
 // Mobile header
 .mobile-header {

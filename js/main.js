@@ -2,7 +2,8 @@
 const allMonths = ['Janúar', 'Febrúar', 'Mars', 'Apríl', 'Maí', 'Júní', 'Júlí', 'Ágúst', 'September', 'Október', 'Nóvember', 'Desember'];
 
 // DOM element variables
-const calendarPage = document.getElementById('calendar-link');
+const calendarLink = document.getElementById('calendar-link');
+const calendarButton = document.getElementById('calendar-button');
 const calendarElement = document.getElementById('calendar');
 const currentMonthElement = document.getElementById('current-month');
 const currentYearElement = document.getElementById('current-year');
@@ -35,7 +36,8 @@ let thisMonthsConditions = [];
 document.addEventListener('DOMContentLoaded', () => {
     prevMonthElement.addEventListener('click', changeMonth);
     nextMonthElement.addEventListener('click', changeMonth);
-    calendarPage.addEventListener('click', openCalendar);
+    calendarLink.addEventListener('click', openCalendar);
+    calendarButton.addEventListener('click', openCalendar);
 });
 
 // Fetches the condition list from storage, displays the month passed in as parameter and loads the conditions to the calendar

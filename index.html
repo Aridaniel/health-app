@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="nav-container">
         <ul>
             <li><a href="#" class="nav-link" data-target="frontpage">Forsíða<img src="" alt=""></a></li>
             <li><a href="#" class="nav-link" data-target="calendarpage" id="calendar-link">Dagatal<img src="" alt=""></a></li>
@@ -22,13 +22,19 @@
             <header class="mobile-header">
                 <img src="images/health_logo.svg" alt="logo">
             </header>
-            <main>
-                <img src="images/forsidu_mynd.png" alt="mynd" class="frontpage-img">
-                <h5>Líðan þín, allt á einum stað.</h5>
-                <p>Haltu utan um veikindi hvort sem þau eru andleg eða líkamleg og hafðu góða yfirsýn á dagatalinu þínu. </p>
-                <button onclick="document.location='#symptompage'" class="btn-type1">Skrá líðan</button>
-                <button onclick="document.location='#calendarpage'" class="btn-type1 hide-mobile">Dagatal</button>
-            </main>
+            <div id="frontpage-content">
+                <div>
+                    <img src="images/forsidu_mynd.png" alt="mynd" class="frontpage-img">
+                </div>
+                <div>
+                    <h5>Líðan þín, allt á einum stað.</h5>
+                    <p>Haltu utan um veikindi hvort sem þau eru andleg eða líkamleg og hafðu góða yfirsýn á dagatalinu þínu. </p>
+                    <div class="frontpage-buttons">
+                        <button class="btn-type1 nav-link" data-target="symptompage" id="log-button">Skrá líðan</button>
+                        <button class="btn-type1 nav-link" data-target="calendarpage" id="calendar-button">Dagatal</button>
+                    </div>
+                </div>
+            </div>
             <div class="frontpage-footer hide-mobile">
 
             </div>

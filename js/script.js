@@ -1,4 +1,5 @@
 // js for navigation, changing pages and main structure
+const navElement = document.getElementById('nav-container');
 
 const app = {
     pages: [],
@@ -36,6 +37,14 @@ const app = {
         document.getElementById(currentPage).dispatchEvent(app.show);
     },
 
+    pageShown: function(ev) {
+        console.log('Page: ' + ev.target.id + ' shown');
+        let currPage = ev.target.id;
+        if(currPage === 'frontpage') {
+            //hideNav();
+        }
+    },
+
     poppin: function(ev) {
         console.log(location.hash, 'popstate event');
         let hash = location.hash.replace('#', '');
@@ -48,3 +57,10 @@ const app = {
 // when everything has been read call the app.init function
 document.addEventListener('DOMContentLoaded', app.init);
 
+function hideNav () {
+    navElement.style.display = 'none';
+}
+
+function ShowNav (displayProp) {
+    navElement.style.display = displayProp;
+}

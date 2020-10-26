@@ -1,5 +1,6 @@
 const logForm = document.getElementById('logForm');
-const logButton = document.getElementById('log-condition');
+const logLink = document.getElementById('log-condition');
+const logButton = document.getElementById('log-button');
 const selectBox = document.getElementById('velja-lidan');
 const dateSelection = document.getElementById('log-date');
 const addToDropDwnBtn = document.getElementById('addToDropDwnBtn');
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', handleSubmit);
     }
     selectBox.addEventListener('change', handleSelectChange);
+    logLink.addEventListener('click', openLogPage);
     logButton.addEventListener('click', openLogPage);
 });
 
