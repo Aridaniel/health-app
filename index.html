@@ -114,7 +114,7 @@
                 <label for="annad">Lýstu líðan þinni nánar:</label><br>
                 <textarea name="annad" id="annad" cols="30" rows="10" value="" ></textarea><br>
                 <!-- Submit button -->
-                <button type="submit" form="logForm" id="submitBtn" value="stadfesta">Staðfesta</button>
+                <button class="confirm-btn" type="submit" form="logForm" id="submitBtn" value="stadfesta">Staðfesta</button>
             </form>
             <!-- The add modal -->
             <div id="myAddModal" class="add-modal">
@@ -123,14 +123,14 @@
                     <span class="close-modal">&times;</span>
                     <form id="addForm">
                         <!-- Text input field -->
-                        <label for="addInput">Bæta við líðan</label><br>
+                        <label for="addInput"><h4>Bæta við líðan</h4></label><br>
                         <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
                         <div class="color-wrapper">
-                            <h3 class="colorHeader">Veldu lit</h3>
+                            <h4 class="colorHeader">Veldu lit</h4>
                             <div id="color-container"></div>
                         </div>
                         <div class="output-wrapper">
-                            <h3>Valinn litur</h3>
+                            <h3>Output Litur</h3>
                            <div id="output-color"></div> 
                         </div>
                         <!-- Button to submit new option to dropdown -->

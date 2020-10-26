@@ -27,6 +27,8 @@ $drop-shadow: rgba(0, 0, 0, 0.25);
   padding: 7px;
   background-color: $background-color;
   width: $width;
+  height: 50px;
+  text-align: center;
   font-size: 1rem;
   &:hover {
     box-shadow: 4px 4px 20px 2px $drop-shadow;

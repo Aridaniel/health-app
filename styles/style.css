@@ -246,7 +246,7 @@ $accent-color: #add8e6; */
 }
 
 /* Condition Form */
-form {
+.condition-form {
   height: 600px;
   display: -ms-grid;
   display: grid;
@@ -259,13 +259,62 @@ form {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  /*  .select {
+}
 
-    }
+.condition-form select {
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #489FB5;
+  width: 152px;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+}
 
-    .button {
-        @include button-style($button-primary);
-    } */
+.condition-form select:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.condition-form button {
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #489FB5;
+  width: 152px;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.condition-form button:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.condition-form textarea {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.condition-form .confirm-btn {
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #E76F51;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.condition-form .confirm-btn:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 .form-buttons {
@@ -280,12 +329,10 @@ form {
 /* The add modal background */
 .add-modal {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   left: auto;
-  top: 0;
-  width: 300px;
-  height: 500px;
+  top: 180px;
   /* Add modal Content/Box */
   /* The Close Button */
 }
@@ -294,13 +341,45 @@ form {
   background-color: white;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  height: 100%;
+  width: 300px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 40px 30px 40px 30px;
+}
+
+.add-modal .add-modal-content input {
+  height: 40px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.add-modal .add-modal-content button {
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #E76F51;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.add-modal .add-modal-content button:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.add-modal .add-modal-content .output-wrapper {
+  display: none;
 }
 
 .add-modal .close-modal {
   float: right;
   font-size: 28px;
+  padding: 0 0 24px;
   font-weight: bold;
 }
 
@@ -378,26 +457,22 @@ form {
 
 /* Color picker */
 .color-wrapper {
-  padding: 20px;
+  padding: 24px 0 24px 0;
   display: -ms-grid;
   display: grid;
-  width: 210px;
+  width: 100%;
   height: 100%;
   -ms-grid-rows: 40px 1fr;
       grid-template-rows: 40px 1fr;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .color-wrapper .colorHeader {
-  padding: 8px 3px;
-  margin: 10px 1px;
   -ms-grid-column: span 4;
       grid-column-start: span 4;
-  font-family: sans-serif;
+  padding-bottom: 24px;
 }
 
 .color-wrapper #color-container {
@@ -412,15 +487,15 @@ form {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .color-pick {
   margin: 5px;
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 50%;
   background-color: white;
   -webkit-transition: all 0.2s ease;
@@ -559,6 +634,8 @@ nav .nav-link:hover {
   padding: 7px;
   background-color: #E76F51;
   width: 334px;
+  height: 50px;
+  text-align: center;
   font-size: 1rem;
 }
 
