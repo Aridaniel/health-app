@@ -15,9 +15,10 @@
                 <img src="images/profile_pic.jpg" alt="Profile image" class="sidebar-profile">
                 <h4>Jóna Jónsdóttir</h4>
             </div>
-            <li><a href="#" class="nav-link" data-target="frontpage">Forsíða<img src="" alt=""></a></li>
-            <li><a href="#" class="nav-link" data-target="calendarpage" id="calendar-link">Dagatal<img src="" alt=""></a></li>
-            <li><a href="#" class="nav-link" data-target="symptompage" id="log-condition">Skrá líðan<img src="" alt=""></a></li>
+            <li><a href="#" class="nav-link" data-target="frontpage" id="front-page"><h2>Forsíða</h2><img src="images/Icon-home.svg" alt="Forsíða"></a></li>
+            <li><a href="#" class="nav-link" data-target="symptompage" id="log-condition"><h2>Skrá líðan</h2><img src="images/Icon-plus.svg" alt="Skrá líðan"></a></li>
+            <li><a href="#" class="nav-link" data-target="calendarpage" id="calendar-link"><h2>Dagatal</h2><img src="images/Icon-calendar.svg" alt="Dagatal"></a></li>
+            
         </ul>
     </nav>
 
@@ -45,6 +46,65 @@
             </div>
         </div>
     
+        <div class="page" id="symptompage">
+            <!-- Mobile header -->
+           <header class="mobile-header hide-desktop">
+               <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
+               <div class="profile">
+                   <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
+                   <h4>Jóna Jónsdóttir</h4>
+               </div>
+           </header>
+           <form id="logForm" class="condition-form">
+               <!-- The dropdown -->
+               <div class="form-buttons"> 
+                   <select name="velja-lidan" id="velja-lidan" required>
+                       <option value="" disabled selected>Velja líðan</option>
+                   </select>
+                   <!-- Button to open add modal -->
+                   <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við líðan</button>
+               </div>
+               <!-- Date input -->
+               <input type="date" id="log-date" name="log-date" required><br>
+               <!-- Choosing strength -->
+               <div class="strength-wrapper">
+                   <h4>Veldu styrk líðans</h4>
+                   <div id="strength-container">
+                       <div class="strength-pick" id="strength-one"></div>
+                       <div class="strength-pick" id="strength-two"></div>
+                       <div class="strength-pick" id="strength-three"></div>
+                   </div>
+               </div>
+               <!-- Multi line textarea -->
+               <label for="annad">Lýstu líðan þinni nánar:</label><br>
+               <textarea name="annad" id="annad" cols="30" rows="10" value="" ></textarea><br>
+               <!-- Submit button -->
+               <button class="confirm-btn" type="submit" form="logForm" id="submitBtn" value="stadfesta">Staðfesta</button>
+           </form>
+           <!-- The add modal -->
+           <div id="myAddModal" class="add-modal">
+               <div class="add-modal-content">
+                   <!-- Close (x) for modal -->
+                   <span class="close-modal">&times;</span>
+                   <form id="addForm">
+                       <!-- Text input field -->
+                       <label for="addInput"><h4>Bæta við líðan</h4></label><br>
+                       <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
+                       <div class="color-wrapper">
+                           <h4 class="colorHeader">Veldu lit</h4>
+                           <div id="color-container"></div>
+                       </div>
+                       <div class="output-wrapper">
+                           <h3>Output Litur</h3>
+                          <div id="output-color"></div> 
+                       </div>
+                       <!-- Button to submit new option to dropdown -->
+                       <button type="button" form="addForm" value="beata-vid" id="addToDropDwnBtn">Bæta við</button>
+                   </form>
+               </div>
+           </div>
+       </div>
+
         <div class="page" id="calendarpage">
              <!-- Mobile header -->
             <header class="mobile-header" id="calendar-header">
@@ -88,72 +148,6 @@
                             <div class="strength-display-pick" id="strength-display-three"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page" id="symptompage">
-             <!-- Mobile header -->
-            <header class="mobile-header hide-desktop">
-                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
-                <div class="profile">
-                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <h4>Jóna Jónsdóttir</h4>
-                </div>
-            </header>
-            <form id="logForm" class="condition-form">
-                <!-- The dropdown -->
-                <div class="form-buttons"> 
-                    <select name="velja-lidan" id="velja-lidan" required>
-                        <option value="" disabled selected>Velja líðan</option>
-                    </select>
-                    <!-- Button to open add modal -->
-                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við líðan</button>
-                </div>
-                <!-- Date input -->
-                <input type="date" id="log-date" name="log-date" required><br>
-                <!-- Choosing strength -->
-                <div class="strength-wrapper">
-                    <h4>Veldu styrk líðans</h4>
-                    <div id="strength-container">
-                        <div class="strength-pick" id="strength-one"></div>
-                        <div class="strength-pick" id="strength-two"></div>
-                        <div class="strength-pick" id="strength-three"></div>
-                    </div>
-                </div>
-                <!-- Multi line textarea -->
-                <label for="annad">Lýstu líðan þinni nánar:</label><br>
-                <textarea name="annad" id="annad" cols="30" rows="10" value="" ></textarea><br>
-                <!-- Submit button -->
-                <button class="confirm-btn" type="submit" form="logForm" id="submitBtn" value="stadfesta">Staðfesta</button>
-                <!-- Success Message -->
-                <div id="mySuccessMessage" class="success-message">
-                    <div class="success-content">
-                       <h4>Skráning staðfest</h4>
-                       <button type="button" id="close-success">Loka</button>
-                     </div>
-                </div>
-            </form>
-            <!-- The add modal -->
-            <div id="myAddModal" class="add-modal">
-                <div class="add-modal-content">
-                    <!-- Close (x) for modal -->
-                    <span class="close-modal">&times;</span>
-                    <form id="addForm">
-                        <!-- Text input field -->
-                        <label for="addInput"><h4>Bæta við líðan</h4></label><br>
-                        <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
-                        <div class="color-wrapper">
-                            <h4 class="colorHeader">Veldu lit</h4>
-                            <div id="color-container"></div>
-                        </div>
-                        <div class="output-wrapper">
-                            <h3>Output Litur</h3>
-                           <div id="output-color"></div> 
-                        </div>
-                        <!-- Button to submit new option to dropdown -->
-                        <button type="button" form="addForm" value="beata-vid" id="addToDropDwnBtn">Bæta við</button>
-                    </form>
                 </div>
             </div>
         </div>
