@@ -40,7 +40,7 @@ $accent-color: #add8e6; */
     width: 186px;
     height: 41px;
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .nav-sidebar ul .sidebar-profile {
     display: block;
@@ -48,11 +48,14 @@ $accent-color: #add8e6; */
     height: 155px;
     border-radius: 50%;
     margin: 1rem auto;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
   }
   .nav-sidebar ul h4 {
     display: block;
     text-align: center;
-    padding-bottom: 2rem;
+    margin-bottom: 4.5rem;
+    color: #F3F3F3;
   }
   .nav-sidebar .nav-link {
     margin: 0;
@@ -62,6 +65,8 @@ $accent-color: #add8e6; */
     color: #FFFFFF;
     background-color: #489FB5;
     font-weight: 500;
+    margin-bottom: 3.55rem;
+    text-align: center;
   }
   .nav-sidebar h2 {
     display: block;
@@ -96,7 +101,7 @@ $accent-color: #add8e6; */
 
 /* Calendar */
 .calendar-container {
-  width: 90%;
+  width: 300px;
   border-radius: 10px;
   background-color: white;
   padding: 0 2rem;

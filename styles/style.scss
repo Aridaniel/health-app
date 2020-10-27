@@ -36,10 +36,13 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
+
+
     ul {
         display: flex;
         list-style: none;
+
+
         #sidebar-logo {
             display: none;
         }
@@ -58,13 +61,16 @@ nav {
         margin: 0 1rem;
         height: 50px;
         width: 50px;
-        padding: 12px ;
-        
+        padding: 12px;
         align-content: center;
+
     }
+
     h2 {
         display: none;
+
     }
+
     img {
         display: block;
         height: 100%;
@@ -89,16 +95,18 @@ nav {
 
     .nav-list {
         display: block;
+
     }
 
 
     #frontpage {
         background-color: $background-secondary;
+
         // Front page header
         #frontpage-content {
             display: block;
             padding: 24px;
-            
+
             h5 {
                 text-align: center;
                 padding: 1rem 1rem;
@@ -130,7 +138,7 @@ nav {
                 display: none;
             }
         }
-        
+
         .btn-type1 {
             @include button-style($button-secondary, 334px)
         }
@@ -139,11 +147,12 @@ nav {
             #nav-list {
                 display: none;
             }
-        
-            
+
+
             #frontpage-content {
                 display: flex;
                 flex-direction: row;
+
                 div {
                     margin: 0 1rem;
                     /* All flex items have same width */
@@ -159,7 +168,7 @@ nav {
                     text-align: start;
                     padding: 1rem 1rem;
                 }
-    
+
                 p {
                     text-align: start;
                     padding: 1rem 1rem;
@@ -211,8 +220,8 @@ nav {
 
 // Hide some desktop elements
 .hide-mobile {
-      display: none;
- }
+    display: none;
+}
 
 // Mobile header
 .mobile-header {
@@ -221,36 +230,34 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 24px;
+
     .logo-mobile {
         width: 40%;
         order: 1;
         align-self: flex-end;
     }
+
     .profile {
         order: 2;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+
         .profile-img {
             width: 90px;
             border-radius: 50%;
             margin-right: 25px;
         }
+
         h4 {
             color: $pure-white;
             align-self: flex-end;
         }
     }
 
-    @media only screen and (min-width: 768px) {
-        
-    }
+    @media only screen and (min-width: 768px) {}
 }
 
 .hide-section {
     display: none;
 }
-
-
-
-
