@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <title>Calendar Proto</title>
 </head>
 <body>
@@ -51,7 +54,7 @@
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
                 <div class="profile">
                     <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <h4>Jóna Jónsdóttir</h4>
+                    <p>Jóna Jónsdóttir</p>
                 </div>
             </header>
             <div class="calendar-container">
@@ -98,7 +101,7 @@
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
                 <div class="profile">
                     <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <h4>Jóna Jónsdóttir</h4>
+                    <p>Jóna Jónsdóttir</p>
                 </div>
             </header>
             <form id="logForm" class="condition-form">
@@ -108,13 +111,13 @@
                         <option value="" disabled selected>Velja líðan</option>
                     </select>
                     <!-- Button to open add modal -->
-                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við líðan</button>
+                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við</button>
                 </div>
                 <!-- Date input -->
                 <input type="date" id="log-date" name="log-date" required><br>
                 <!-- Choosing strength -->
                 <div class="strength-wrapper">
-                    <h4>Veldu styrk líðans</h4>
+                    <p>Veldu styrk líðans</p>
                     <div id="strength-container">
                         <div class="strength-pick" id="strength-one"></div>
                         <div class="strength-pick" id="strength-two"></div>
@@ -134,7 +137,7 @@
                     <span class="close-modal">&times;</span>
                     <form id="addForm">
                         <!-- Text input field -->
-                        <label for="addInput"><h4>Bæta við líðan</h4></label><br>
+                        <label for="addInput"><h4>Bæta við</h4></label><br>
                         <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
                         <div class="color-wrapper">
                             <h4 class="colorHeader">Veldu lit</h4>

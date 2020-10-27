@@ -6,7 +6,7 @@
 $font-size: 2em;
 $primary-color: #e6d149;
 $accent-color: #add8e6; */
-/* Font */
+/* Fonts */
 /* Colors */
 /* Button */
 /*
@@ -165,6 +165,7 @@ $accent-color: #add8e6; */
 .calendar-container .calendar-grid #calendar-header {
   -ms-grid-column: span 7;
       grid-column-start: span 7;
+  font-family: "Inter", sans-serif;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,6 +200,7 @@ $accent-color: #add8e6; */
 }
 
 .calendar-container .calendar-grid .calendar-weekdays {
+  font-family: "Inter", sans-serif;
   height: 100%;
   width: 100%;
   font-weight: bold;
@@ -374,6 +376,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .condition-form select:hover {
@@ -391,6 +396,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .condition-form button:hover {
@@ -408,6 +416,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
   text-align: left;
 }
 
@@ -432,6 +443,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .condition-form .confirm-btn:hover {
@@ -487,6 +501,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .add-modal .add-modal-content button:hover {
@@ -663,6 +680,54 @@ body {
   font-size: 18px;
   padding: 0;
   background-color: #F3F3F3;
+  /* font-family: 'Saira', sans-serif; */
+}
+
+p {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+/* nav ul div h4{
+    @include phoneHeader;
+    color: #D8D5D5;
+} */
+h4 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+  color: #D8D5D5;
+}
+
+h5 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+.calendar-advice {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+.strength-wrapper p {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+label {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
 }
 
 /* Navigation */
@@ -762,6 +827,7 @@ nav .nav-link:hover {
 #app #frontpage #frontpage-content h5 {
   text-align: center;
   padding: 1rem 1rem;
+  font-weight: bold;
 }
 
 #app #frontpage #frontpage-content p {
@@ -800,6 +866,9 @@ nav .nav-link:hover {
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 #app #frontpage .btn-type1:hover {
@@ -929,10 +998,14 @@ nav .nav-link:hover {
   margin-right: 25px;
 }
 
-.mobile-header .profile h4 {
-  color: #FFFFFF;
+.mobile-header .profile p {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+  color: #D8D5D5;
 }
 
 .hide-section {
