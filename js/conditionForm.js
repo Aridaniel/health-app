@@ -72,7 +72,7 @@ const handleSubmit = (e) => {
 
 function closeMessage() {
     successMessage.style.display = "none";
-    
+    openCalendar();
     /*location.href = "/#calendar-page";*/
 };
 
