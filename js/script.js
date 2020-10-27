@@ -27,7 +27,7 @@ const app = {
     nav: function(ev) {
         ev.preventDefault();
         // taking the current page and getting the data target
-        let currentPage = ev.target.getAttribute('data-target');
+        let currentPage = this.getAttribute('data-target');
         // first we remove the active class from one of the pages
         document.querySelector('.active').classList.remove('active');
         // adding the class active to show the correct page
@@ -76,3 +76,4 @@ function hideNav () {
 function showNav (displayProp) {
     navList.style.display = displayProp;
 }
+
