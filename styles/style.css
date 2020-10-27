@@ -104,11 +104,11 @@ $accent-color: #add8e6; */
   width: 300px;
   border-radius: 10px;
   background-color: white;
-  padding: 0 2rem;
-  padding-top: 1rem;
+  padding: 2rem;
   margin: 0 auto;
   margin-top: 1rem;
   border: 1px solid #EBEBEB;
+  max-width: 540px;
 }
 
 .calendar-container .calendar-grid {
@@ -116,7 +116,7 @@ $accent-color: #add8e6; */
   display: grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
-  gap: 0.8rem;
+  gap: 1rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -140,7 +140,6 @@ $accent-color: #add8e6; */
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-control {
-  padding: 0.5rem 0.5rem;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
@@ -182,6 +181,7 @@ $accent-color: #add8e6; */
   border-radius: 10px;
   background-color: #FFFFFF;
   border: 1px solid #EBEBEB;
+  max-width: 540px;
 }
 
 .condition-preview {
@@ -270,12 +270,6 @@ $accent-color: #add8e6; */
 }
 
 /* From js */
-.calendar-control {
-  padding: 0.5rem 0.5rem;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-
 .calendar-item {
   height: 24px;
   border-radius: 50%;
@@ -296,6 +290,7 @@ $accent-color: #add8e6; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto;
 }
 
 .calendar-date:hover {
@@ -309,6 +304,19 @@ $accent-color: #add8e6; */
     width: 100%;
     border: 2px solid $button-secondary; */
   color: #E76F51;
+}
+
+@media only screen and (min-width: 768px) {
+  .calendar-page {
+    margin: 200px 40px 200px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .calendar-advice {
+    margin: 20px 40px 0 40px;
+    max-width: 400px;
+  }
 }
 
 /* Condition Form */
@@ -415,8 +423,8 @@ $accent-color: #add8e6; */
   display: none;
   position: absolute;
   z-index: 1;
-  left: 140px;
-  top: 170px;
+  top: 112px;
+  width: 100%;
   /* Add modal Content/Box */
   /* The Close Button */
 }
@@ -617,8 +625,7 @@ $accent-color: #add8e6; */
   display: none;
   position: absolute;
   z-index: 1;
-  left: 0;
-  top: 170px;
+  width: 100%;
 }
 
 .success-content {
