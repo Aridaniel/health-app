@@ -18,13 +18,13 @@
                 <h4>Jóna Jónsdóttir</h4>
             </div>
             <li><a href="#" class="nav-link" data-target="frontpage" id="front-page">
-                    <h2>Forsíða</h2><img src="images/Icon-home.svg" alt="Forsíða">
+                    <h2>Forsíða</h2><img src="images/Icon-home.svg" alt="Forsíða" class="icon">
                 </a></li>
             <li><a href="#" class="nav-link" data-target="symptompage" id="log-condition">
-                    <h2>Skrá líðan</h2><img src="images/Icon-plus.svg" alt="Skrá líðan">
+                    <h2>Skrá líðan</h2><img src="images/Icon-plus.svg" alt="Skrá líðan" class="icon">
                 </a></li>
             <li><a href="#" class="nav-link" data-target="calendarpage" id="calendar-link">
-                    <h2>Dagatal</h2><img src="images/Icon-calendar.svg" alt="Dagatal">
+                    <h2>Dagatal</h2><img src="images/Icon-calendar.svg" alt="Dagatal" class="icon">
                 </a></li>
         </ul>
     </nav>
@@ -33,13 +33,13 @@
 
         <div class="page active" id="frontpage">
             <header class="mobile-header">
-                <img src="images/health_logo.svg" alt="logo">
+                <img src="images/health_logo.svg" alt="logo" class="frontpage-logo">
             </header>
-            <div id="frontpage-content">
+            <div class="frontpage-mainbox" id="frontpage-content">
                 <div>
                     <img src="images/forsidu_mynd.png" alt="mynd" class="frontpage-img">
                 </div>
-                <div>
+                <div class="frontpage-textbox">
                     <h5>Líðan þín, allt á einum stað.</h5>
                     <p>Haltu utan um veikindi hvort sem þau eru andleg eða líkamleg og hafðu góða yfirsýn á dagatalinu
                         þínu. </p>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="frontpage-footer hide-mobile">
+            <div class="frontpage-footer">
 
             </div>
         </div>
@@ -134,43 +134,41 @@
                     <h4>Jóna Jónsdóttir</h4>
                 </div>
             </header>
-            <div class="calendar-page">
-                <div class="calendar-container">
-                    <div class="calendar-grid" id="calendar">
-                        <div id="calendar-header">
-                            <button class="calendar-control" id="prev-month" type="button"><img
-                                    src="images/previous.svg" alt="Previous month"></button>
-                            <div class="calendar-text">
-                                <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
-                            </div>
-                            <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg"
-                                    alt="Next month"></button>
+            <div class="calendar-container">
+                <div class="calendar-grid" id="calendar">
+                    <div id="calendar-header">
+                        <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg"
+                                alt="Previous month"></button>
+                        <div class="calendar-text">
+                            <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
                         </div>
-                        <div class="calendar-weekdays">S</div>
-                        <div class="calendar-weekdays">M</div>
-                        <div class="calendar-weekdays">Þ</div>
-                        <div class="calendar-weekdays">M</div>
-                        <div class="calendar-weekdays">F</div>
-                        <div class="calendar-weekdays">F</div>
-                        <div class="calendar-weekdays">L</div>
+                        <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg"
+                                alt="Next month"></button>
                     </div>
+                    <div class="calendar-weekdays">S</div>
+                    <div class="calendar-weekdays">M</div>
+                    <div class="calendar-weekdays">Þ</div>
+                    <div class="calendar-weekdays">M</div>
+                    <div class="calendar-weekdays">F</div>
+                    <div class="calendar-weekdays">F</div>
+                    <div class="calendar-weekdays">L</div>
                 </div>
-                <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
-                <div id="calendar-advice" class="calendar-advice">
-                    Ýttu á lit á dagatalinu til að skoða nánar
+            </div>
+            <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
+            <div id="calendar-advice" class="calendar-advice">
+                Ýttu á lit á dagatalinu til að skoða nánar
+            </div>
+            <div id="condition-preview" class="condition-preview">
+                <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði
                 </div>
-                <div id="condition-preview" class="condition-preview">
-                    <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði
-                    </div>
-                    <div class="condition-icons">
-                        <div id="condition-label" class="condition-label">Condition</div>
-                        <!-- Strength bar display -->
-                        <div class="strength-display-wrapper" title="Styrkur einkenna">
-                            <div id="strength-display-container">
-                                <div class="strength-display-pick" id="strength-display-one"></div>
-                                <div class="strength-display-pick" id="strength-display-two"></div>
-                                <div class="strength-display-pick" id="strength-display-three"></div>
-                            </div>
+                <div class="condition-icons">
+                    <div id="condition-label" class="condition-label">Condition</div>
+                    <!-- Strength bar display -->
+                    <div class="strength-display-wrapper" title="Styrkur einkenna">
+                        <div id="strength-display-container">
+                            <div class="strength-display-pick" id="strength-display-one"></div>
+                            <div class="strength-display-pick" id="strength-display-two"></div>
+                            <div class="strength-display-pick" id="strength-display-three"></div>
                         </div>
                     </div>
                 </div>

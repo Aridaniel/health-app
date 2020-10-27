@@ -4,6 +4,11 @@
 
     /* For desktop: */
     // Hide mobile header
+
+    .icon {
+        display: none;
+    }
+
     .hide-desktop {
         display: none;
     }
@@ -33,12 +38,6 @@
                 margin-top: 2rem;
             }
 
-            .img.sidebar-profile {
-
-                opacity: 10;
-
-            }
-
             .sidebar-profile {
                 display: block;
                 width: 155px;
@@ -59,17 +58,17 @@
 
             .nav-link {
                 margin: 0;
-                height: auto;
+                height: 47px;
                 width: auto;
                 text-decoration: none;
                 color: $pure-white;
                 background-color: $button-primary;
-                font-weight: 500;
-                margin-bottom: 3.55rem;
+                font-weight: 300;
+                margin-bottom: 50px;
                 text-align: center;
 
                 &:hover {
-                    color: chocolate;
+                    background-color: $button-secondary
                 }
             }
 
@@ -82,41 +81,31 @@
             }
         }
 
+    }
 
-        /* Calendar */
+    /* Calendar */
 
-        .calendar-container {
-            width: 35%;
-            margin: 2rem 10rem;
-        }
+    .calendar-container {
+        width: 35%;
+        margin: 2rem 10rem;
+    }
 
-        .calendar-item {
-            height: 60px;
-        }
+    .calendar-item {
+        height: 60px;
+    }
 
-        .calendar-weekdays {
-            text-align: center;
-        }
+    .calendar-weekdays {
+        text-align: center;
+    }
 
-        .calendar-date {
-            line-height: 60px;
-        }
+    .calendar-date {
+        line-height: 60px;
+    }
+}
 
+// Veit ekki alveg með allt hér fyrir neðan!!
+// #frontpage {
+// position: absolute;
+// z-index: 10;
 
-        // Veit ekki alveg með allt hér fyrir neðan!!
-        // #frontpage {
-        // position: absolute;
-        // z-index: 10;
-        .frontpage-img {
-            width: 10px;
-        }
-
-        // Front page footer
-        .frontpage-footer {
-            background-color: $background-primary;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-        }
-
-        // }
+// Front page footer

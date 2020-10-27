@@ -16,6 +16,9 @@ $accent-color: #add8e6; */
 /* Media query for desktop version */
 @media only screen and (min-width: 768px) {
   /* For desktop: */
+  .icon {
+    display: none;
+  }
   .hide-desktop {
     display: none;
   }
@@ -57,21 +60,24 @@ $accent-color: #add8e6; */
     margin-bottom: 4.5rem;
     color: #F3F3F3;
   }
-  .nav-sidebar .nav-link {
+  .nav-sidebar ul .nav-link {
     margin: 0;
-    height: auto;
+    height: 47px;
     width: auto;
     text-decoration: none;
     color: #FFFFFF;
     background-color: #489FB5;
-    font-weight: 500;
-    margin-bottom: 3.55rem;
+    font-weight: 300;
+    margin-bottom: 50px;
     text-align: center;
   }
-  .nav-sidebar h2 {
+  .nav-sidebar ul .nav-link:hover {
+    background-color: #E76F51;
+  }
+  .nav-sidebar ul h2 {
     display: block;
   }
-  .nav-sidebar img {
+  .nav-sidebar ul img {
     display: none;
   }
   /* Calendar */
@@ -88,20 +94,11 @@ $accent-color: #add8e6; */
   .calendar-date {
     line-height: 60px;
   }
-  .frontpage-img {
-    width: 10px;
-  }
-  .frontpage-footer {
-    background-color: #2F6584;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-  }
 }
 
 /* Calendar */
 .calendar-container {
-  width: 300px;
+  width: 90%;
   border-radius: 10px;
   background-color: white;
   padding: 2rem;
@@ -774,9 +771,16 @@ nav img {
   background-color: #F3F3F3;
 }
 
+#app #frontpage .frontpage-logo {
+  margin-right: auto;
+  margin-left: 10rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
 #app #frontpage #frontpage-content {
   display: block;
-  padding: 24px;
+  padding-top: 10px;
 }
 
 #app #frontpage #frontpage-content h5 {
@@ -793,6 +797,7 @@ nav img {
   display: block;
   margin: auto;
   width: 80%;
+  padding-bottom: 3rem;
 }
 
 #app #frontpage #frontpage-content .frontpage-buttons {
@@ -839,6 +844,21 @@ nav img {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    display: flex;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
   #app #frontpage #frontpage-content div {
     margin: 0 1rem;
@@ -846,38 +866,49 @@ nav img {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 0px;
             flex: 1 1 0px;
+    padding-top: 2rem;
   }
   #app #frontpage #frontpage-content .frontpage-img {
     width: 470px;
     height: 420px;
   }
-  #app #frontpage #frontpage-content h5 {
+  #app #frontpage #frontpage-content .frontpage-textbox h5 {
+    text-align: start;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+  }
+  #app #frontpage #frontpage-content .frontpage-textbox p {
     text-align: start;
     padding: 1rem 1rem;
   }
-  #app #frontpage #frontpage-content p {
-    text-align: start;
-    padding: 1rem 1rem;
-  }
-  #app #frontpage #frontpage-content .frontpage-buttons {
+  #app #frontpage #frontpage-content .frontpage-textbox .frontpage-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 2rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    margin-top: 7rem;
   }
-  #app #frontpage #frontpage-content #log-button {
+  #app #frontpage #frontpage-content .frontpage-textbox #log-button {
     margin-top: 0.5rem;
-    width: 16rem;
+    width: 10rem;
   }
-  #app #frontpage #frontpage-content #calendar-button {
+  #app #frontpage #frontpage-content .frontpage-textbox #calendar-button {
     margin-top: 0.5rem;
     display: block;
-    width: 16rem;
+    width: 10rem;
   }
 }
 
