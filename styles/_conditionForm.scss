@@ -40,8 +40,8 @@
     display: none; 
     position: absolute; 
     z-index: 1; 
-    left: 140px;
-    top: 170px;
+    top: 112px;
+    width: 100%;
     
 
     /* Add modal Content/Box */
@@ -209,3 +209,36 @@
         background-color: white;
     }
 }
+
+
+/* Success Message */
+
+.success-message {
+    display: none; 
+    position: absolute; 
+    z-index: 1;
+    width: 100%;
+}
+    .success-content {
+        background-color: white;
+        margin: 15% auto; 
+        padding: 20px;
+        height: 100%;
+        width: 300px;
+        border: $border;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+            padding: 10px 0 10px 0;
+        }
+      
+        button {
+            @include button-style($button-secondary, 100%)
+        }   
+    }

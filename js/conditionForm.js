@@ -5,7 +5,11 @@ const selectBox = document.getElementById('velja-lidan');
 const dateSelection = document.getElementById('log-date');
 const addToDropDwnBtn = document.getElementById('addToDropDwnBtn');
 const otherInfo = document.getElementById('annad');
+const successMessage = document.getElementById('mySuccessMessage');
+const closeSuccess = document.getElementById('close-success');
 let chosenStrength = null;
+
+
 //let conditionsInStorage = [];
 
 // Handle submit event
@@ -23,17 +27,17 @@ const handleSubmit = (e) => {
         if (element.validity.valid !== true) {
             // Custom validation
             if ( element.name === "velja-lidan") {
-                customErrorMessage = "*Þú verður að velja líðan!"  
+                customErrorMessage = "*Þú verður að velja líðan"  
                 success = false;
             }
           
             else if (element.type === "date") {
-                customErrorMessage = "*Þú verður að velja dagssetningu!"
+                customErrorMessage = "*Þú verður að velja dagssetningu"
                 success = false;     
             }
             
             else if (element.name === "annad") {
-                customErrorMessage = "*Þú verður að skrifa eitthvað!"
+                customErrorMessage = "*Þú verður að skrifa eitthvað"
                 success = false;     
             }            
             // Create a new div next to relevant element and display the custom error message
@@ -60,8 +64,16 @@ const handleSubmit = (e) => {
         updateConditionsInStorage(newCondition);
         //location.reload()
         logForm.reset();
-        
+        successMessage.style.display = "block";
     }
+};
+
+
+
+function closeMessage() {
+    successMessage.style.display = "none";
+    openCalendar();
+    /*location.href = "/#calendar-page";*/
 };
 
 // When the selection element is changed, fetch the color that is bound to the currently selected option
@@ -88,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectBox.addEventListener('change', handleSelectChange);
     logLink.addEventListener('click', openLogPage);
     logButton.addEventListener('click', openLogPage);
+    closeSuccess.addEventListener('click', closeMessage);
 });
 
 function clearOptions() {

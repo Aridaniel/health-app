@@ -80,10 +80,13 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
+
+
     ul {
         display: flex;
         list-style: none;
+
+
         #sidebar-logo {
             display: none;
         }
@@ -99,24 +102,22 @@ nav {
 
     .nav-link {
         display: block;
-        margin: 0 0.5rem;
+        margin: 0 1rem;
         height: 50px;
         width: 50px;
-        background-color: seagreen;
-        padding: 12px 18px;
-        
+        padding: 12px;
         align-content: center;
 
-        p {
-            display: none;
-        }
-        img {
-            display: none;
-        }
+    }
 
-        &:hover {
-            background: $button-secondary;
-        }
+    h2 {
+        display: none;
+
+    }
+
+    img {
+        display: block;
+        height: 100%;
     }
 
 }
@@ -138,6 +139,7 @@ nav {
 
     .nav-list {
         display: block;
+
     }
 
 
@@ -148,9 +150,6 @@ nav {
         #frontpage-content {
             display: block;
             padding: 24px;
-            
-
-
 
             h5 {
                 text-align: center;
@@ -188,19 +187,21 @@ nav {
                 display: none;
             }
         }
-        
+
         .btn-type1 {
             @include button-style($button-secondary, 334px)
         }
 
         @media only screen and (min-width: 768px) {
-            .nav-list {
+            #nav-list {
                 display: none;
             }
-            
+
+
             #frontpage-content {
                 display: flex;
                 flex-direction: row;
+
                 div {
                     margin: 0 1rem;
                     /* All flex items have same width */
@@ -216,7 +217,7 @@ nav {
                     text-align: start;
                     padding: 1rem 1rem;
                 }
-    
+
                 p {
                     text-align: start;
                     padding: 1rem 1rem;
@@ -239,7 +240,6 @@ nav {
                     display: block;
                     width: 16rem;
                 }
-
             }
         }
 
@@ -269,8 +269,8 @@ nav {
 
 // Hide some desktop elements
 .hide-mobile {
-      display: none;
- }
+    display: none;
+}
 
 // Mobile header
 .mobile-header {
@@ -279,16 +279,19 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 24px;
+
     .logo-mobile {
         width: 40%;
         order: 1;
         align-self: flex-end;
     }
+
     .profile {
         order: 2;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+
         .profile-img {
             width: 90px;
             border-radius: 50%;
@@ -302,15 +305,9 @@ nav {
         }
     }
 
-    @media only screen and (min-width: 768px) {
-        
-    }
+    @media only screen and (min-width: 768px) {}
 }
 
 .hide-section {
     display: none;
 }
-
-
-
-
