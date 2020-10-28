@@ -23,7 +23,7 @@ body {
 }
 
 /* Navigation */
-
+// Yup
 nav {
     position: fixed;
     bottom: 0;
@@ -92,7 +92,7 @@ nav {
         }
     }
 
-    .nav-list {
+    #nav-list {
         display: block;
     }
 
@@ -141,7 +141,7 @@ nav {
         }
 
         @media only screen and (min-width: 768px) {
-            .nav-list {
+            #nav-list {
                 display: none;
             }
             
@@ -226,11 +226,13 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 24px;
+
     .logo-mobile {
         width: 40%;
         order: 1;
         align-self: flex-end;
     }
+    
     .profile {
         order: 2;
         display: flex;

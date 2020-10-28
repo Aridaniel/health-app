@@ -1,7 +1,11 @@
-function updateConditionsInStorage(newCondition) {
+function addConditionToStorage(newCondition) {
     let conditionList = getConditionsFromStorage();
     conditionList.push(newCondition);
     localStorage.setItem('conditions', JSON.stringify(conditionList));
+}
+
+function updateListInStorage(newList) {
+    localStorage.setItem('conditions', JSON.stringify(newList));
 }
 
 function getConditionsFromStorage() {

@@ -1,10 +1,13 @@
 const logForm = document.getElementById('logForm');
 const logLink = document.getElementById('log-condition');
 const logButton = document.getElementById('log-button');
-const selectBox = document.getElementById('velja-lidan');
+//const selectBox = document.getElementById('velja-lidan');
+const selectButton = document.getElementById('select-condition');
+const dropdownOptions = document.getElementById('dropdown-options');
 const dateSelection = document.getElementById('log-date');
 const addToDropDwnBtn = document.getElementById('addToDropDwnBtn');
 const otherInfo = document.getElementById('annad');
+const selectError = document.getElementById('select-error');
 let chosenStrength = null;
 //let conditionsInStorage = [];
 
@@ -15,19 +18,28 @@ const handleSubmit = (e) => {
     let success = true;
     const form = e.target,
     elements = form.elements;
-    // Loop through elements in form       
+    if(selectButton.innerHTML === 'Velja líðan') {
+        selectError.innerHTML = "*Þú verður að velja líðan!";
+        console.log('nothing picked'); 
+        success = false;
+    } else {
+        selectError.innerHTML = '';
+    }
+
+    // Loop through elements in form      
     for (let i = 0, len = elements.length; i < len; i++) {
         const element = elements[i];
         
         let customErrorMessage = "";
         if (element.validity.valid !== true) {
             // Custom validation
-            if ( element.name === "velja-lidan") {
+            /*
+            if (element.name === "velja-lidan") {
                 customErrorMessage = "*Þú verður að velja líðan!"  
                 success = false;
-            }
+            }*/
           
-            else if (element.type === "date") {
+            if (element.type === "date") {
                 customErrorMessage = "*Þú verður að velja dagssetningu!"
                 success = false;     
             }
@@ -48,35 +60,52 @@ const handleSubmit = (e) => {
         }
     }
 
-    const conditionName = selectBox.value;
+    const conditionName = selectButton.innerHTML;
     const other = otherInfo.value;
     const conditionDate = dateSelection.value;
     const conditionIntensity = chosenStrength;
-    const conditionColor = selectBox.getAttribute('data-color');
+    const conditionColor = selectButton.getAttribute('data-color');
     const newCondition = new Condition(conditionName, other, conditionDate, conditionIntensity, conditionColor);
     //conditionsInStorage.push(newCondition);
     if (success) {
         console.log('Success!');
-        updateConditionsInStorage(newCondition);
+        console.log('pushed: ' + newCondition);
+        addConditionToStorage(newCondition);
         //location.reload()
         logForm.reset();
         
     }
 };
 
+// Handle select change yrði öðruvísi
 // When the selection element is changed, fetch the color that is bound to the currently selected option
-function handleSelectChange(ev) {
-    // þetta er ekkert ruglandi ég veit...
-    ev.currentTarget.setAttribute('data-color', ev.currentTarget.item(ev.currentTarget.selectedIndex).getAttribute('data-color'));
-    //ev.currentTarget.style.backgroundColor = ev.currentTarget.getAttribute('data-color'); // Breytir öllum options líka...
+function optionChosen(ev) {
+    console.log('clicked');
+    // Get the delete element
+    const delButton = ev.currentTarget.lastChild;
+    // If user didn't click the ex: proceed with option change
+    if(!delButton.contains(ev.target)) {
+        selectButton.style.backgroundColor = ev.currentTarget.getAttribute('data-color');
+        selectButton.setAttribute('data-color', ev.currentTarget.getAttribute('data-color'));
+        selectButton.innerHTML = ev.currentTarget.firstChild.innerHTML;
+        toggleDropDown();
+    } else {
+        console.log('remove clicked');
+    }
 }
 
 function openLogPage(ev) {
     chosenStrength = null;
+    hideDropdown();
     clearOptions();
     loadOptionsFromStorage();
 }
 
+function hideDropdown() {
+    if(!dropdownOptions.classList.contains('hide-dropdown')) {
+        dropdownOptions.classList.add('hide-dropdown');
+    }
+}
 // Event listener for submit event of all forms 
 document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('form');
@@ -85,20 +114,32 @@ document.addEventListener('DOMContentLoaded', () => {
         form.noValidate = true;
         form.addEventListener('submit', handleSubmit);
     }
-    selectBox.addEventListener('change', handleSelectChange);
+    //selectBox.addEventListener('change', handleSelectChange);
+    selectButton.addEventListener('click', showDropDown);
     logLink.addEventListener('click', openLogPage);
     logButton.addEventListener('click', openLogPage);
 });
 
-function clearOptions() {
-    let elements = document.querySelectorAll('option');
-    for(let i = 0; i < elements.length; i++) {
-        if (elements[i].hasAttribute('data-color')) {
-            elements[i].remove();
-        }
+function showDropDown(ev) {
+    toggleDropDown();
+}
+
+function toggleDropDown() {
+    if(dropdownOptions.classList.contains('hide-dropdown')) {
+        dropdownOptions.classList.remove('hide-dropdown');
+    } else {
+        dropdownOptions.classList.add('hide-dropdown');
     }
 }
 
+// Þyrfti að breyta þessu eftir hvernig dropdownið væri útfært
+function clearOptions() {
+    while(dropdownOptions.hasChildNodes()) {
+        dropdownOptions.removeChild(dropdownOptions.lastChild);
+    }
+}
+
+// Þetta væri sama virkni nema önnur element búin til...
 // Fill the condition options with the names of all unique conditions
 function loadOptionsFromStorage() {
     let allConditions = getConditionsFromStorage();
@@ -119,28 +160,74 @@ function loadOptionsFromStorage() {
 
         // Create an option for each unique condition
         for(let i = 0; i < uniqueConditions.length; i++) {
-            const newOption = document.createElement('option');
-            const optionText = document.createTextNode(uniqueConditions[i].description);
+            const newOption = document.createElement('div');
+            const optionDescr = document.createElement('div');
+            const delButton = document.createElement('div');
+            optionDescr.innerHTML = uniqueConditions[i].description;
+            delButton.innerHTML = 'X';
+            delButton.addEventListener('click', deleteItem);
             newOption.setAttribute('data-color', uniqueConditions[i].color);
-            newOption.value = uniqueConditions[i].description;
+            newOption.classList.add('dropdown-item');
             newOption.style.backgroundColor = uniqueConditions[i].color;
-            newOption.appendChild(optionText);
-            selectBox.appendChild(newOption);
+            newOption.addEventListener('click', optionChosen);
+            newOption.appendChild(optionDescr);
+            newOption.appendChild(delButton);
+            //selectBox.appendChild(newOption);
+            dropdownOptions.appendChild(newOption);
         }
     }
 }
 
+function deleteItem(ev) {
+    // First get the whole condition list
+    let allConditions = getConditionsFromStorage();
+    const itemName = ev.currentTarget.parentNode.firstChild.innerHTML;
+    for(let i = 0; i < allConditions.length; i++) {
+        if(allConditions[i].description === itemName) {
+            allConditions.splice(i, 1);
+        }
+    }
+    updateListInStorage(allConditions);
+    clearOptions();
+    loadOptionsFromStorage(allConditions);
+    //if(allConditions.length > 0) {
+    //    console.log('removing');
+    //    dropdownOptions.classList.remove('hide-dropdown');
+    //}
+    resetSelectButton();
+}
+
+function removeOption(item) {
+    document.querySelectorAll('.dropdown-item').forEach(function(element, index) {
+        console.log('comparing ' + element.firstChild.innerHTML + ' width ' + item)
+        if(element.firstChild.innerHTML === item) {
+            console.log('found: ' + element.firstChild.innerHTML)
+        }
+    });
+}
+
+function resetSelectButton() {
+    selectButton.innerHTML = 'Velja líðan';
+    selectButton.setAttribute('data-color', '');
+    selectButton.style.removeProperty('background-color');
+}
+
+// Add option væri eins nema input valitidy væri öðruvísi og önnur element yrðu búin til...
 // Add new option to dropdown list and validate modal input
 function addOption() {
-    const newOption = document.createElement('option');
+    const newOption = document.createElement('div');
+    const optionDescr = document.createElement('div');
+    const delButton = document.createElement('div');
     const inputValue = document.querySelector('#addInput').value;
     const inputElement = document.querySelector('#addInput');
+    
     //newOption.setAttribute('data-color', colorPicked);
-    let chosenColor = outputColor.style.backgroundColor;
+    let activeColor = document.querySelector('.activeColor');
+    console.log('activeCol: ' + activeColor);
+    let chosenColor = activeColor.style.backgroundColor;
     
     // If the modal input is valid the new option will be added to the dropdown and the modal disappear
     if ( inputElement.validity.valid === true ) {
-        const optionText = document.createTextNode(inputValue);
         // If no color is chosen
         if(chosenColor === '') {
             chosenColor = '#ffffff';
@@ -148,12 +235,19 @@ function addOption() {
         //console.log('Assigning color: ' + chosenColor);
         // Add a data-color attribute to each option to know what color each condition should be
         newOption.setAttribute('data-color', chosenColor);
-        selectBox.setAttribute('data-color', chosenColor);
-        newOption.setAttribute('selected', 'selected');
-        newOption.value = inputValue;
+        newOption.classList.add('dropdown-item');
+        //selectBox.setAttribute('data-color', chosenColor);
+        optionDescr.innerHTML = inputValue;
+        delButton.innerHTML = 'X';
         newOption.style.backgroundColor = chosenColor;
-        newOption.appendChild(optionText);
-        selectBox.appendChild(newOption);
+        newOption.addEventListener('click', optionChosen);
+        //selectBox.appendChild(newOption);
+        newOption.appendChild(optionDescr);
+        newOption.appendChild(delButton);
+        dropdownOptions.appendChild(newOption);
+        selectButton.style.backgroundColor = chosenColor;
+        selectButton.setAttribute('data-color', chosenColor);
+        selectButton.innerHTML = inputValue;
         inputElement.value = '';
         addModal.style.display = "none";
     } else {
@@ -164,9 +258,10 @@ function addOption() {
         div.appendChild(document.createTextNode(message));
         div.classList.add('validation-message');
         parent.insertBefore(div, inputElement.nextSibling);
-        inputElement.focus(); 
+        inputElement.focus();
     }
 };
+
 // Add an click event to button and call the addOption function
 addToDropDwnBtn.addEventListener('click', addOption);
 
@@ -182,13 +277,23 @@ openModuleBtn.onclick = function() {
 
 // Click on <span> x and close the modal
 span.onclick = function() {
-addModal.style.display = "none";
+    addModal.style.display = "none";
 }
 
 // Click anywhere outside modal and close it
 window.onclick = function(event) {
     if (event.target == addModal) {
         addModal.style.display = "none";
+    }   
+}
+
+window.onmousedown = function(event) {
+    // Hide dropdown options when clicked outside
+    if (dropdownOptions.contains(event.target) || selectButton.contains(event.target)){
+        // Clicked in box or the button
+    } else{
+        // Clicked outside the box
+        hideDropdown();
     }
 }
 
