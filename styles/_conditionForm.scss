@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: flex-end;
 
+
     select {
         @include button-style($button-primary, 152px);
     }
@@ -17,7 +18,7 @@
     input {
         @include button-style($button-primary, 100%);
         text-align: left;
-    }
+    }    
 
     textarea {
         border: $border;
@@ -243,3 +244,23 @@
             @include button-style($button-secondary, 100%)
         }   
     }
+
+@media only screen and (min-width: 768px) {
+
+    .condition-form {
+        display: flex;
+        select {
+            width: 320px;
+        }
+    
+        button {
+            width: 320px;
+        }
+    
+        input {
+            width: 320px;
+            text-align: left;
+        }    
+    }
+    
+}
