@@ -681,6 +681,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .success-content button:hover {
@@ -843,45 +846,40 @@ nav img {
   padding-bottom: 1rem;
 }
 
-#app #frontpage #frontpage-content {
-  display: block;
-  padding-top: 10px;
-}
-
-#app #frontpage #frontpage-content h5 {
+#app #frontpage h5 {
   text-align: center;
   padding: 1rem 1rem;
   font-weight: bold;
 }
 
-#app #frontpage #frontpage-content p {
+#app #frontpage p {
   text-align: center;
   padding: 1rem 1rem;
 }
 
-#app #frontpage #frontpage-content .frontpage-img {
+#app #frontpage .frontpage-img {
   display: block;
   margin: auto;
   width: 80%;
   padding-bottom: 3rem;
 }
 
-#app #frontpage #frontpage-content .frontpage-buttons {
+#app #frontpage .frontpage-buttons {
   display: block;
 }
 
-#app #frontpage #frontpage-content #log-button {
+#app #frontpage #log-button {
   display: block;
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-#app #frontpage #frontpage-content #calendar-button {
+#app #frontpage #calendar-button {
   display: none;
 }
 
-#app #frontpage .btn-type1 {
+#app .btn-type1 {
   border-radius: 10px;
   border: none;
   color: #FFFFFF;
@@ -896,40 +894,37 @@ nav img {
   font-size: 20px;
 }
 
-#app #frontpage .btn-type1:hover {
+#app .btn-type1:hover {
   -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
           box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 @media only screen and (min-width: 768px) {
-  #app #frontpage #nav-list {
+  #app #nav-list {
     display: none;
   }
-  #app #frontpage #frontpage-content {
+  #app #frontpage-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    display: flex;
-    -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-flex-line-pack: stretch;
         align-content: stretch;
     margin-left: 10rem;
     margin-right: 10rem;
   }
-  #app #frontpage #frontpage-content div {
+  #app #frontpage-content div {
     margin: 0 1rem;
     /* All flex items have same width */
     -webkit-box-flex: 1;
@@ -937,20 +932,24 @@ nav img {
             flex: 1 1 0px;
     padding-top: 2rem;
   }
-  #app #frontpage #frontpage-content .frontpage-img {
+  #app #frontpage-content .frontpage-img {
     width: 470px;
     height: 420px;
   }
-  #app #frontpage #frontpage-content .frontpage-textbox h5 {
+  #app #frontpage-content .frontpage-textbox {
+    max-width: 500px;
+    background-color: cyan;
+  }
+  #app #frontpage-content .frontpage-textbox h5 {
     text-align: start;
     padding: 1rem 1rem;
     margin-top: 2rem;
   }
-  #app #frontpage #frontpage-content .frontpage-textbox p {
+  #app #frontpage-content .frontpage-textbox p {
     text-align: start;
     padding: 1rem 1rem;
   }
-  #app #frontpage #frontpage-content .frontpage-textbox .frontpage-buttons {
+  #app #frontpage-content .frontpage-textbox .frontpage-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -970,33 +969,33 @@ nav img {
         align-content: stretch;
     margin-top: 7rem;
   }
-  #app #frontpage #frontpage-content .frontpage-textbox #log-button {
+  #app #frontpage-content .frontpage-textbox #log-button {
     margin-top: 0.5rem;
     width: 10rem;
   }
-  #app #frontpage #frontpage-content .frontpage-textbox #calendar-button {
+  #app #frontpage-content .frontpage-textbox #calendar-button {
     margin-top: 0.5rem;
     display: block;
     width: 10rem;
   }
 }
 
-#app #calendarpage {
+#calendarpage {
   background-color: #F3F3F3;
 }
 
 @media only screen and (min-width: 768px) {
-  #app #calendarpage .mobile-header {
+  #calendarpage .mobile-header {
     display: none;
   }
 }
 
-#app #symptompage {
+#symptompage {
   background-color: #F3F3F3;
 }
 
 @media only screen and (min-width: 768px) {
-  #app #symptompage .mobile-header {
+  #symptompage .mobile-header {
     display: none;
   }
 }
