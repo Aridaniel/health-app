@@ -31,37 +31,23 @@ p {
 
 h2 {
     @include desktopFrontpage-menu;
-<<<<<<< HEAD
     color: #FFFFFF;
     
 
 }
 h3
 {
-    
+    @include desktopBody
 }
-=======
-
-
-}
-
-h4 {
-    @include desktopFrontpage-menu;
-
->>>>>>> 1ba60f1cef6f8da72159dd1c687a06d9feab4139
 
 h4 {
     @include phoneHeader;
     color: #D8D5D5;
 }
 
-<<<<<<< HEAD
 
 
 h6{
-=======
-h6 {
->>>>>>> 1ba60f1cef6f8da72159dd1c687a06d9feab4139
     @include desktopFrontpage-menu;
 
 
