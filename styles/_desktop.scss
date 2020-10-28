@@ -19,13 +19,17 @@
         font-size: 18px;
     }
 
+    .nav {
+        height: 170px;
+    }
+
     .nav-sidebar {
         display: block;
         position: fixed;
         top: 0;
         left: 0;
         width: var(--nav-width);
-        height: 100vh;
+        height: 200vh;
 
         ul {
             display: block;
