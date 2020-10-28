@@ -1,16 +1,26 @@
 /* Media query for desktop version */
 
 @media only screen and (min-width: 768px) {
+
     /* For desktop: */
     // Hide mobile header
+
+    .icon {
+        display: none;
+    }
+
     .hide-desktop {
         display: none;
     }
-    
+
     body {
         --nav-width: 340px;
         /*margin: 0 0 0 var(--nav-width);*/
         font-size: 18px;
+    }
+
+    .nav {
+        height: 170px;
     }
 
     .nav-sidebar {
@@ -19,16 +29,17 @@
         top: 0;
         left: 0;
         width: var(--nav-width);
-        height: 100vh;
-        
+        height: 200vh;
+
         ul {
             display: block;
+
             #sidebar-logo {
                 display: inline;
                 width: 186px;
                 height: 41px;
                 margin-left: 1rem;
-                margin-top: 1rem;
+                margin-top: 2rem;
             }
 
             .sidebar-profile {
@@ -37,31 +48,43 @@
                 height: 155px;
                 border-radius: 50%;
                 margin: 1rem auto;
+                margin-top: 4rem;
+                margin-bottom: 1rem;
             }
 
             h4 {
                 display: block;
                 text-align: center;
-                padding-bottom: 2rem;
+                margin-bottom: 4.5rem;
+                color: $background-secondary;
+            }
+
+
+            .nav-link {
+                margin: 0;
+                height: 47px;
+                width: auto;
+                text-decoration: none;
+                color: $pure-white;
+                background-color: $button-primary;
+                font-weight: 300;
+                margin-bottom: 50px;
+                text-align: center;
+
+                &:hover {
+                    background-color: $button-secondary
+                }
+            }
+
+            h2 {
+                display: block;
+            }
+
+            img {
+                display: none;
             }
         }
 
-        .nav-link {
-            margin: 0;
-            height: auto;
-            width: auto;
-            text-decoration: none;
-            color: $pure-white;
-            background-color: $button-primary;
-            font-weight: 500;
-           
-        }
-        h2 {
-            display: block;
-        }
-        img {
-            display: none;
-        }
     }
     
     .nav {
@@ -81,6 +104,28 @@
             display: flex;
             display: none;
             list-style: none;
+        }
+        
+        .nav-link {
+            display: block;
+            margin: 0 0.5rem;
+            height: 50px;
+            width: 50px;
+            background-color: seagreen;
+            padding: 12px 18px;
+            
+            align-content: center;
+    
+            p {
+                display: none;
+            }
+            img {
+                display: none;
+            }
+    
+            &:hover {
+                background: $button-secondary;
+            }
         }
     }
     /* Calendar */
@@ -102,7 +147,6 @@
         line-height: 60px;
     }
 
-
     .frontpage-img{
         width: 10px;
     }
@@ -114,4 +158,5 @@
         position: absolute;
         bottom: 0;
     }
+
 }
