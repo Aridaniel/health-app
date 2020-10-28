@@ -39,11 +39,8 @@ const app = {
     },
 
     pageShown: function(ev) {
-        console.log('Page: ' + ev.target.id + ' shown');
         let currPage = ev.target.id;
         if(currPage === 'frontpage') {
-            //hideNav();
-            //document.getElementById('calendar-header').classList.remove('hide-section');
             document.body.style.marginLeft = '0';
             navContainer.classList.remove('nav-sidebar');
             navContainer.classList.add('nav');
