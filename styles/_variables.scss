@@ -8,9 +8,10 @@ $accent-color: #add8e6; */
 
 
 /* Fonts */
+
 $mainFont : 'Saira', sans-serif;
 $calenderFont : 'Inter', sans-serif;
-;
+
 
 $mainTextColor : #393939;
 $HeaderTextColor : #FFFCF9;
@@ -23,8 +24,15 @@ $fontSizeBig : 24px;
 $fontSizeDesktopHeadlines : 36px;
 
 
+$fontWeightSmall : 200;
+$fontWeightMedium : 300;
+$fontWeightLarge : 400;
 
 
+
+
+
+/* Phone mixin */
 
  @mixin phoneBody{
   font-family: $mainFont;
@@ -51,9 +59,14 @@ $fontSizeDesktopHeadlines : 36px;
   color: $mainTextColor;
   font-size: $fontSizeLarge;
   line-height: auto;
+  font-weight: $fontWeightMedium;
   
 
  }
+
+
+
+ /* Desktop Mixin */
 
  @mixin desktopBody{
   font-family: $mainFont;
@@ -68,8 +81,10 @@ $fontSizeDesktopHeadlines : 36px;
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeBig;
+  font-weight: $fontWeightMedium ;
   line-height: auto;
   line-height: 160.4%;
+  color: #E76F51;
 
   letter-spacing: 1%;
 

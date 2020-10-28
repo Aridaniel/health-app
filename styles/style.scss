@@ -31,14 +31,21 @@ p {
 
 h2{
     @include desktopFrontpage-menu;
+    color: #FFFFFF;
     
 
 }
-h4{
-    @include desktopFrontpage-menu;
+h3
+{
     
-
 }
+
+h4 {
+    @include phoneHeader;
+    color: #D8D5D5;
+}
+
+
 
 h6{
     @include desktopFrontpage-menu;
@@ -46,10 +53,7 @@ h6{
 
 }
 
-h4 {
-    @include phoneHeader;
-    color: #D8D5D5;
-}
+
 
 h5 {
     @include phoneHeader

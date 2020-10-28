@@ -7,6 +7,8 @@ $font-size: 2em;
 $primary-color: #e6d149;
 $accent-color: #add8e6; */
 /* Fonts */
+/* Phone mixin */
+/* Desktop Mixin */
 /* Colors */
 /* Button */
 /*
@@ -58,7 +60,7 @@ $accent-color: #add8e6; */
     display: block;
     text-align: center;
     margin-bottom: 4.5rem;
-    color: #F3F3F3;
+    /* color: $background-secondary; */
   }
   .nav-sidebar ul .nav-link {
     margin: 0;
@@ -924,27 +926,12 @@ h2 {
   font-family: "Saira", sans-serif;
   color: #393939;
   font-size: 24px;
+  font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
+  color: #E76F51;
   letter-spacing: 1%;
-}
-
-h4 {
-  font-family: "Saira", sans-serif;
-  color: #393939;
-  font-size: 24px;
-  line-height: auto;
-  line-height: 160.4%;
-  letter-spacing: 1%;
-}
-
-h6 {
-  font-family: "Saira", sans-serif;
-  color: #393939;
-  font-size: 24px;
-  line-height: auto;
-  line-height: 160.4%;
-  letter-spacing: 1%;
+  color: #FFFFFF;
 }
 
 h4 {
@@ -952,7 +939,19 @@ h4 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 300;
   color: #D8D5D5;
+}
+
+h6 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: auto;
+  line-height: 160.4%;
+  color: #E76F51;
+  letter-spacing: 1%;
 }
 
 h5 {
@@ -960,6 +959,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 300;
 }
 
 .calendar-advice {
@@ -967,6 +967,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 300;
 }
 
 .strength-wrapper p {
@@ -974,6 +975,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 300;
 }
 
 label {
@@ -981,6 +983,7 @@ label {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 300;
 }
 
 .calendar-advice {
@@ -1297,6 +1300,7 @@ nav img {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 300;
   color: #D8D5D5;
 }
 
