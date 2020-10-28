@@ -29,20 +29,21 @@ p {
     @include phoneBody
 }
 
-h2{
+h2 {
     @include desktopFrontpage-menu;
-    
 
-}
-h4{
-    @include desktopFrontpage-menu;
-    
 
 }
 
-h6{
+h4 {
     @include desktopFrontpage-menu;
-    
+
+
+}
+
+h6 {
+    @include desktopFrontpage-menu;
+
 
 }
 
@@ -69,13 +70,11 @@ label {
     @include phoneHeader;
 }
 
-.calendar-advice
-{
+.calendar-advice {
     @include phoneBody;
 }
 
-.condition-descr
-{
+.condition-descr {
     @include phoneBody
 }
 
@@ -84,12 +83,9 @@ label {
 /* Media query fyrir fonta */
 
 
-@media only screen and (min-width: 768px)
-{
-    p{
+@media only screen and (min-width: 768px) {
+    p {
         @include desktopBody
-    
-        
     }
 
 }
@@ -174,17 +170,8 @@ nav {
 
     }
 
-    // ------ Á þetta ekki að vera í desktop möppunni ? Vildi ekki færa það yfir ef ég vææri að rugla í einhverju en þetta 
-    // ------ var hér og líka smá í desktop möppunni, spurning að copya þetta og færa yfir í desktop? -Kristbjörg
-
     #frontpage {
         background-color: $background-secondary;
-
-
-        // Front page header
-        // #frontpage-content {
-        //     display: block;
-        //     padding-top: 10px;
 
         h5 {
             text-align: center;
@@ -220,12 +207,15 @@ nav {
         #calendar-button {
             display: none;
         }
-    //}
+
+        //}
     }
 
     .btn-type1 {
         @include button-style($button-secondary, 334px)
     }
+
+    //------------- Desktop frontpage !! ----------------// 
 
     @media only screen and (min-width: 768px) {
         #nav-list {
@@ -234,54 +224,61 @@ nav {
         }
 
         .frontpage-logo {
-            margin-right: auto;
-            margin-left: 10rem;
-            padding-top: 2rem;
-            padding-bottom: 1rem;
+            // margin-right: auto;
+            // margin-left: 10rem;
+            max-width: 20rem;
+            display: flex;
+            padding-left: 2.5rem;
+            align-items: stretch;
+            // padding-top: 2rem;
+            // padding-bottom: 1rem;
         }
 
-        
-        //------------- Desktop frontpage !! ----------------// 
         #frontpage-content {
             display: flex;
             flex-direction: row-reverse;
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            //align-content: stretch;
             // margin-left: 10rem;
             // margin-right: 10rem;
-            //background-color: aqua;
-            //height: 70vh;
+            // background-color: aqua;
+            height: 80vh;
+            overflow: hidden;
 
 
-            div {
-                margin: 0 1rem;
-                /* All flex items have same width */
-                //flex: 1 1 0px;
-                //padding-top: 2rem;
-                //background-color: blueviolet;
-            }
+            // div {
+            //     // margin: 1rem;
+            //     /* All flex items have same width */
+            //     //flex: 1 1 0px;
+            //     //padding-top: 2rem;
+            //     // background-color: blueviolet;
+            // }
 
             .frontpage-img {
-                width: 100%;
                 max-width: 40rem;
                 min-width: 25rem;
-               // background-color: chocolate;
+                // background-color: chocolate;
             }
 
             .frontpage-textbox {
                 max-width: 500px;
+                padding-left: 2rem;
+                //background-color: salmon;
+
 
                 h5 {
                     text-align: start;
                     padding: 1rem 1rem;
-                    margin-top: 2rem;
+                    font-size: $fontSizeDesktopHeadlines;
+                    @include desktopFrontpage-menu;
                 }
 
                 p {
                     text-align: start;
-                    padding: 1rem 1rem;
+                    padding: 1rem 1rem 3rem;
+                    font-size: $fontSizeBig;
+                    @include desktopFrontpage-menu;
                 }
 
                 .frontpage-buttons {
@@ -303,6 +300,7 @@ nav {
                     margin-top: 0.5rem;
                     display: block;
                     width: 10rem;
+                    margin-left: 15px;
                 }
             }
 
@@ -351,6 +349,7 @@ nav {
         order: 1;
         align-self: flex-end;
     }
+
     .profile {
         order: 2;
         display: flex;
