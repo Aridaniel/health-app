@@ -900,13 +900,6 @@ $accent-color: #add8e6; */
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
   font-size: 18px;
   padding: 0;
   background-color: #F3F3F3;
@@ -1019,9 +1012,7 @@ label {
 
 /* Navigation */
 nav {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1129,12 +1120,10 @@ nav img {
 #app #frontpage #log-button {
   display: block;
   margin: 0 auto;
-  margin-bottom: 2rem;
 }
 
 #app #frontpage #calendar-button {
   display: none;
-  margin-bottom: 2rem;
 }
 
 #app .btn-type1 {

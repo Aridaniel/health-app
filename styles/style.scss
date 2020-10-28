@@ -16,8 +16,6 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column-reverse;
     font-size: 18px;
     padding: 0;
     background-color: $background-secondary;
@@ -98,7 +96,7 @@ label {
 /* Navigation */
 // Yup
 nav {
-    flex: 0 0 100px;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -204,12 +202,10 @@ nav {
         #log-button {
             display: block;
             margin: 0 auto;
-            margin-bottom: 2rem;
         }
 
         #calendar-button {
             display: none;
-            margin-bottom: 2rem;
         }
 
         //}
