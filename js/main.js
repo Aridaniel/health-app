@@ -18,18 +18,9 @@ const strenghtBar2 = document.getElementById('strength-display-two');
 const strenghtBar3 = document.getElementById('strength-display-three');
 const displayBars = [strenghtBar1, strenghtBar2, strenghtBar3];
 
-// Initialize today as the date today
+// Initialize today as the date today, then use the variable for navigating the months
 let today = new Date();
-
-/*
-const newCondition = new Condition('Magaverkur', 'Entist í 3 tíma', new Date(2020, 8, 12), 'crimson');
-const anotherCondition = new Condition('Höfuðverkur', 'Var allann daginn.', new Date(2020, 8, 19), 'green');
-const thirdCondition = new Condition('Hálsbólga', 'Búið að vera í viku, fór til læknis.', new Date(2020, 9, 8), 'salmon');
-const fourthCondition = new Condition('Svimi', 'Stóð yfir í 2 tíma', new Date(2020, 11, 8), 'purple');
-const conditionList = [newCondition, anotherCondition, thirdCondition, fourthCondition];
-*/
-
-//let conditionList = [];
+// List to be filled with the current month's conditions
 let thisMonthsConditions = [];
 
 // Add event listeners once the DOM content is loaded
@@ -54,18 +45,16 @@ function changeMonth(ev) {
     if(ev.currentTarget.id === 'prev-month') {
         today = new Date(today.getFullYear(), today.getMonth() - 1);
         let newMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
-        //displayMonthInCalendar(newMonth);
         updateMonth(newMonth);
     }
     if(ev.currentTarget.id === 'next-month') {
         today = new Date(today.getFullYear(), today.getMonth() + 1);
         let newMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
-        //displayMonthInCalendar(newMonth);
         updateMonth(newMonth);
     }
 }
 
-// Function for the calendar icon in the navbar, first time you open it opens the current month, then the month last viewed by the user
+// Function for the calendar nav-links on the page, first time you open it opens the current month, then the month last viewed by the user
 function openCalendar(ev) {
     let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
     updateMonth(daysInCurrentMonth);
@@ -91,7 +80,7 @@ function clearCalendar() {
     }
 }
 
-// Pass in an array of date objects in a month and display them in the calendar
+// Pass in an array of days in a month and display them in the calendar
 function displayMonthInCalendar(month) {
     clearCalendar();
     let highlightedDay = new Date();

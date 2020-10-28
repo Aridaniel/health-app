@@ -178,6 +178,7 @@ $accent-color: #add8e6; */
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 0%;
+  font-weight: 400;
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-control {
@@ -231,6 +232,7 @@ $accent-color: #add8e6; */
   font-size: 18px;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: 300;
 }
 
 /* Condition container next to calendar, when items have been selected */
@@ -255,6 +257,7 @@ $accent-color: #add8e6; */
   font-size: 18px;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: 300;
 }
 
 .condition-icons .condition-label {
@@ -908,19 +911,17 @@ h2 {
   font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
-  color: #E76F51;
   letter-spacing: 1%;
+  color: #FFFFFF;
 }
 
-h4 {
+h3 {
   font-family: "Saira", sans-serif;
   color: #393939;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: auto;
+  font-size: 18px;
   line-height: 160.4%;
-  color: #E76F51;
-  letter-spacing: 1%;
+  letter-spacing: 2%;
+  font-weight: 300;
 }
 
 h4 {
@@ -939,7 +940,6 @@ h6 {
   font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
-  color: #E76F51;
   letter-spacing: 1%;
 }
 
@@ -997,6 +997,7 @@ label {
     font-size: 18px;
     line-height: 160.4%;
     letter-spacing: 2%;
+    font-weight: 300;
   }
 }
 
@@ -1187,7 +1188,6 @@ nav img {
     font-weight: 300;
     line-height: auto;
     line-height: 160.4%;
-    color: #E76F51;
     letter-spacing: 1%;
   }
   #app #frontpage-content .frontpage-textbox p {
@@ -1200,7 +1200,6 @@ nav img {
     font-weight: 300;
     line-height: auto;
     line-height: 160.4%;
-    color: #E76F51;
     letter-spacing: 1%;
   }
   #app #frontpage-content .frontpage-textbox .frontpage-buttons {
