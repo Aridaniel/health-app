@@ -1,10 +1,12 @@
 /* Calendar */
 
+
+/* Calender grid and look mobile first */
 .calendar-container {
     width: 90%;
     border-radius: 10px;
     background-color: white;
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
     margin: 0 auto;
     margin-top: 1rem;
     border: $border;
@@ -23,7 +25,7 @@
             justify-content: space-between;
             align-items: center;
             align-content: center;
-            
+            @include desktopHeadlines;
 
             .calendar-control {
                 background-color: rgba(0, 0, 0, 0);
@@ -40,21 +42,23 @@
                 font-weight: bold;
                 display: inline-block;
                 min-width: 12rem;
-                
             }
         }
 
         .calendar-weekdays {
             height: 100%;
             width: 100%;
-            /* font-weight: bold; */
+            font-weight: bold;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: $calenderFont;
+            color: $grey-font;
         }    
     }
 }
 
+/* Container saying press date to see more */
 .calendar-advice {
     display: block;
     width: 90%;
@@ -65,8 +69,10 @@
     background-color: $pure-white;
     border: $border;
     max-width: 540px;
+    @include desktopBody;
 }
 
+/* Condition container next to calendar, when items have been selected */
 .condition-preview {
     display: none;
     align-items: stretch;
@@ -78,6 +84,7 @@
     background-color: white;
     border: $border;
     border-radius: 10px;
+    max-width: 540px;
     @include desktopBody;
 }
 
@@ -141,10 +148,7 @@
     }
 }
 
-/* From js */
-
-
-
+/* Calender numbers */
 .calendar-item {
     height: 24px;
     border-radius: 50%;
@@ -152,14 +156,15 @@
 
 .calendar-date {
     line-height: 24px;
-    font-size: 18px;
-    font-weight: bold;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
+    font-family: $calenderFont;
+    color: $grey-font;
+    font-size: 16px;
 
     &:hover {
         transform: scale(1.2);
@@ -167,22 +172,61 @@
     }
 }
 
+/* Border indicating what day is today */
 .current-day {
-    /* height: 100%;
-    width: 100%;
-    border: 2px solid $button-secondary; */
-    color: $button-secondary;
+    height: 1.6rem;
+    width: 1.6rem;
+    border: 2px solid $background-primary; 
+    border-radius: 50%;
 }
 
+/* Medium desktop size */
 @media only screen and (min-width: 768px) {
+    
     .calendar-page {
-        margin: 200px 40px 200px 40px;
+        margin-top: 100px;
+    }
+
+    .calendar-container {
+
+        .calendar-grid {
+        gap: 2rem;
+        }
+    }
+
+    .calendar-date {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .current-day {
+        height: 2rem;
+        width: 2rem;
+    }  
+}
+
+/* Large desktop size */
+@media only screen and (min-width: 1400px) {
+    
+    .calendar-page {
         display: flex;
+        justify-content: center;
+        margin-top: 200px; 
+    }
+
+    .calendar-container {
+        margin: 0 5rem 0 0;
     }
 
     .calendar-advice {
         margin: 20px 40px 0 40px;
         max-width: 400px;
+        margin: 0;
     }
-    
+
+    .condition-preview {
+        margin: 20px 40px 0 40px;
+        max-width: 400px;
+        margin: 0;
+    } 
 }
