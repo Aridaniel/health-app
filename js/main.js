@@ -69,6 +69,7 @@ function changeMonth(ev) {
 function openCalendar(ev) {
     let daysInCurrentMonth = getDaysInMonth(today.getMonth(), today.getFullYear());
     updateMonth(daysInCurrentMonth);
+    hideConditionInfo();
 }
 
 // Returns an array of every day in given month and year as date objects
@@ -184,16 +185,11 @@ function showConditionInfo() {
     conditionPreview.style.display = 'flex';
 }
 
+function hideConditionInfo() {
+    conditionPreview.style.display = 'none';
+}
+
 // Currently working with 'thisMonthsConditions' array to retrieve correct condition
 function getCondition(date) {
     return thisMonthsConditions.find(element => element.date.getDate() === date);
 }
-
-// Initialize the calendar with today as the month to display
-
-
-
-// Animation fyrir dagatalið
-// Ef við notum timout fyrir dagatalið þá þarf einhvernveginn að diseibla og reactiveita month takkana eftir animationið
-// setTimeout(() => {
-// }, 200 * (Math.pow(i, 0.6)));

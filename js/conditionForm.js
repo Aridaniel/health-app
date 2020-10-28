@@ -38,11 +38,6 @@ const handleSubmit = (e) => {
         let customErrorMessage = "";
         if (element.validity.valid !== true) {
             // Custom validation
-            /*
-            if (element.name === "velja-lidan") {
-                customErrorMessage = "*Þú verður að velja líðan!"  
-                success = false;
-            }*/
           
             if (element.type === "date") {
                 customErrorMessage = "*Þú verður að velja dagssetningu!"
@@ -88,7 +83,7 @@ function optionChosen(ev) {
     console.log('clicked');
     // Get the delete element
     const delButton = ev.currentTarget.lastChild;
-    // If user didn't click the ex: proceed with option change
+    // If user didn't click the delete icon: proceed with option change
     if(!delButton.contains(ev.target)) {
         selectButton.style.backgroundColor = ev.currentTarget.getAttribute('data-color');
         selectButton.setAttribute('data-color', ev.currentTarget.getAttribute('data-color'));
@@ -99,12 +94,14 @@ function optionChosen(ev) {
     }
 }
 
+// Everytime the log page is opened reset certain things
 function openLogPage(ev) {
     chosenStrength = null;
     hideDropdown();
     clearOptions();
     loadOptionsFromStorage();
     resetSelectButton();
+    strengthArray.forEach(element => element.classList.remove('strength-active'));
 }
 
 function hideDropdown() {
@@ -113,6 +110,7 @@ function hideDropdown() {
     }
 }
 
+// Function that closes the success message window
 function closeMessage() {
     successMessage.style.display = "none";
     openCalendar();
@@ -155,35 +153,23 @@ function clearOptions() {
 
 // Fill the condition options with the names of all unique conditions
 function loadOptionsFromStorage() {
-    let allConditions = getConditionsFromStorage();
-    //let uniqueConditions = [];
+    // Get all the dropdown items from storage
+    let allOptions = getDropdownItemsFromStorage();
     
-    if(allConditions.length > 0) {
-        // Generate a unique array to fill the dropdown with
-        /*
-        for(let x = 0; x < allConditions.length; x++) {
-            if(uniqueConditions.length > 0) {
-                // If the find method finds the current description in the unique array, don't add it to the array
-                if(uniqueConditions.find(element => element.description === allConditions[x].description) === undefined) {
-                    uniqueConditions.push(allConditions[x]);
-                }
-            } else {
-                uniqueConditions.push(allConditions[x]);                
-            }
-        }
-        */
-        // Create an option for each unique condition
-        for(let i = 0; i < allConditions.length; i++) {
+    if(allOptions.length > 0) {
+
+        // Create an option for each dropdown item
+        for(let i = 0; i < allOptions.length; i++) {
             const newOption = document.createElement('div');
             const optionDescr = document.createElement('div');
             const delButton = document.createElement('div');
-            optionDescr.innerHTML = allConditions[i].description;
+            optionDescr.innerHTML = allOptions[i].description;
             delButton.innerHTML = 'X';
             delButton.addEventListener('click', deleteItem);
-            newOption.setAttribute('data-color', allConditions[i].color);
-            newOption.setAttribute('data-date', allConditions[i].date);
+            newOption.setAttribute('data-color', allOptions[i].color);
+            //newOption.setAttribute('data-date', allConditions[i].date);
             newOption.classList.add('dropdown-item');
-            newOption.style.backgroundColor = allConditions[i].color;
+            newOption.style.backgroundColor = allOptions[i].color;
             newOption.addEventListener('click', optionChosen);
             newOption.appendChild(optionDescr);
             newOption.appendChild(delButton);
@@ -195,32 +181,19 @@ function loadOptionsFromStorage() {
 
 // Function for when the delete icon is clicked
 function deleteItem(ev) {
-    // First get the whole condition list
-    let allConditions = getConditionsFromStorage();
-    let itemDate = new Date(ev.currentTarget.parentNode.getAttribute('data-date'));
-    //const itemName = ev.currentTarget.parentNode.firstChild.innerHTML;
-    for(let i = 0; i < allConditions.length; i++) {
-        if(compareTwoDates(allConditions[i].date, itemDate)) {
-            allConditions.splice(i, 1);
+    console.log('deleting');
+    // First get the whole dropdown item list
+    let allOptions = getDropdownItemsFromStorage();
+    const itemName = ev.currentTarget.parentNode.firstChild.innerHTML;
+    for(let i = 0; i < allOptions.length; i++) {
+        if(allOptions[i].description === itemName) {
+            allOptions.splice(i, 1);
         }
     }
-    updateListInStorage(allConditions);
+    updateDropdownItems(allOptions);
     clearOptions();
-    loadOptionsFromStorage(allConditions);
-    //if(allConditions.length > 0) {
-    //    console.log('removing');
-    //    dropdownOptions.classList.remove('hide-dropdown');
-    //}
+    loadOptionsFromStorage(allOptions);
     resetSelectButton();
-}
-
-function removeOption(item) {
-    document.querySelectorAll('.dropdown-item').forEach(function(element, index) {
-        console.log('comparing ' + element.firstChild.innerHTML + ' width ' + item)
-        if(element.firstChild.innerHTML === item) {
-            console.log('found: ' + element.firstChild.innerHTML)
-        }
-    });
 }
 
 function resetSelectButton() {
@@ -252,7 +225,7 @@ function addOption() {
         // Add a data-color attribute to each option to know what color each condition should be
         newOption.setAttribute('data-color', chosenColor);
         newOption.classList.add('dropdown-item');
-        //selectBox.setAttribute('data-color', chosenColor);
+
         optionDescr.innerHTML = inputValue;
         delButton.innerHTML = 'X';
         newOption.style.backgroundColor = chosenColor;
@@ -261,6 +234,12 @@ function addOption() {
         newOption.appendChild(optionDescr);
         newOption.appendChild(delButton);
         dropdownOptions.appendChild(newOption);
+        // Add the item to saved condition list
+        const newItem = new SavedCondition(inputValue, chosenColor);
+        addNewItemToStorage(newItem);
+        // Refresh dropdown list
+        clearOptions();
+        loadOptionsFromStorage();
         selectButton.style.backgroundColor = chosenColor;
         selectButton.setAttribute('data-color', chosenColor);
         selectButton.innerHTML = inputValue;
@@ -312,7 +291,6 @@ window.onmousedown = function(event) {
         hideDropdown();
     }
 }
-
 
 /* Strength picker */
 
