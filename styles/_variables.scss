@@ -58,9 +58,10 @@ $fontWeightLarge : 400;
   color: $mainTextColor;
   font-size: $fontSizeLarge;
   line-height: auto;
-  font-weight: $fontWeightMedium;
-  
+  font-weight: $fontWeightLarge;
 
+
+}
 
 
 
@@ -84,7 +85,7 @@ $fontWeightLarge : 400;
   font-weight: $fontWeightMedium ;
   line-height: auto;
   line-height: 160.4%;
-  color: #E76F51;
+  
 
   letter-spacing: 1%;
 
@@ -105,14 +106,12 @@ $fontWeightLarge : 400;
 
 }
 
-  {
+@mixin desktopButton{
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeBig;
   line-height: auto;
   letter-spacing: 1%;
-
-
 }
 
 

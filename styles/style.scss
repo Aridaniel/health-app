@@ -274,7 +274,9 @@ nav {
                     text-align: start;
                     padding: 1rem 1rem;
                     font-size: $fontSizeDesktopHeadlines;
-                    @include desktopFrontpage-menu;
+                    @include desktopFrontpage-menu();
+                    font-weight: bold;
+
                 }
 
                 p {

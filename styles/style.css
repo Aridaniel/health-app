@@ -178,6 +178,7 @@ $accent-color: #add8e6; */
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 0%;
+  font-weight: 400;
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-control {
@@ -231,6 +232,7 @@ $accent-color: #add8e6; */
   font-size: 18px;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: 300;
 }
 
 /* Condition container next to calendar, when items have been selected */
@@ -255,6 +257,7 @@ $accent-color: #add8e6; */
   font-size: 18px;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: 300;
 }
 
 .condition-icons .condition-label {
@@ -907,9 +910,17 @@ h2 {
   font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
-  color: #E76F51;
   letter-spacing: 1%;
   color: #FFFFFF;
+}
+
+h3 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 18px;
+  line-height: 160.4%;
+  letter-spacing: 2%;
+  font-weight: 300;
 }
 
 h4 {
@@ -917,7 +928,7 @@ h4 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
   color: #D8D5D5;
 }
 
@@ -928,7 +939,6 @@ h6 {
   font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
-  color: #E76F51;
   letter-spacing: 1%;
 }
 
@@ -937,7 +947,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .calendar-advice {
@@ -945,7 +955,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .strength-wrapper p {
@@ -953,7 +963,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 label {
@@ -961,7 +971,7 @@ label {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .calendar-advice {
@@ -986,6 +996,7 @@ label {
     font-size: 18px;
     line-height: 160.4%;
     letter-spacing: 2%;
+    font-weight: 300;
   }
 }
 
@@ -1158,9 +1169,6 @@ nav img {
     height: 80vh;
     overflow: hidden;
   }
-  #app #frontpage-content div {
-    /* All flex items have same width */
-  }
   #app #frontpage-content .frontpage-img {
     max-width: 40rem;
     min-width: 25rem;
@@ -1176,9 +1184,11 @@ nav img {
     font-family: "Saira", sans-serif;
     color: #393939;
     font-size: 24px;
+    font-weight: 300;
     line-height: auto;
     line-height: 160.4%;
     letter-spacing: 1%;
+    font-weight: bold;
   }
   #app #frontpage-content .frontpage-textbox p {
     text-align: start;
@@ -1187,6 +1197,7 @@ nav img {
     font-family: "Saira", sans-serif;
     color: #393939;
     font-size: 24px;
+    font-weight: 300;
     line-height: auto;
     line-height: 160.4%;
     letter-spacing: 1%;
@@ -1297,7 +1308,7 @@ nav img {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
   color: #D8D5D5;
 }
 
