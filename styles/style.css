@@ -1067,7 +1067,7 @@ nav img {
 
 #app #frontpage #log-button {
   display: block;
-  margin: auto 1rem;
+  margin: 0 auto;
 }
 
 #app #frontpage #calendar-button {

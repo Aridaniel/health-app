@@ -22,6 +22,7 @@ const handleSubmit = (e) => {
     let success = true;
     const form = e.target,
     elements = form.elements;
+    // Validate first the dropdown selection
     if(selectButton.innerHTML === 'Velja líðan') {
         selectError.innerHTML = "*Þú verður að velja líðan!";
         console.log('nothing picked'); 
@@ -66,7 +67,7 @@ const handleSubmit = (e) => {
 
     const conditionName = selectButton.innerHTML;
     const other = otherInfo.value;
-    const conditionDate = dateSelection.value;
+    const conditionDate = new Date(dateSelection.value);
     const conditionIntensity = chosenStrength;
     const conditionColor = selectButton.getAttribute('data-color');
     const newCondition = new Condition(conditionName, other, conditionDate, conditionIntensity, conditionColor);
@@ -103,6 +104,7 @@ function openLogPage(ev) {
     hideDropdown();
     clearOptions();
     loadOptionsFromStorage();
+    resetSelectButton();
 }
 
 function hideDropdown() {
@@ -151,14 +153,14 @@ function clearOptions() {
     }
 }
 
-// Þetta væri sama virkni nema önnur element búin til...
 // Fill the condition options with the names of all unique conditions
 function loadOptionsFromStorage() {
     let allConditions = getConditionsFromStorage();
-    let uniqueConditions = [];
+    //let uniqueConditions = [];
     
     if(allConditions.length > 0) {
         // Generate a unique array to fill the dropdown with
+        /*
         for(let x = 0; x < allConditions.length; x++) {
             if(uniqueConditions.length > 0) {
                 // If the find method finds the current description in the unique array, don't add it to the array
@@ -169,18 +171,19 @@ function loadOptionsFromStorage() {
                 uniqueConditions.push(allConditions[x]);                
             }
         }
-
+        */
         // Create an option for each unique condition
-        for(let i = 0; i < uniqueConditions.length; i++) {
+        for(let i = 0; i < allConditions.length; i++) {
             const newOption = document.createElement('div');
             const optionDescr = document.createElement('div');
             const delButton = document.createElement('div');
-            optionDescr.innerHTML = uniqueConditions[i].description;
+            optionDescr.innerHTML = allConditions[i].description;
             delButton.innerHTML = 'X';
             delButton.addEventListener('click', deleteItem);
-            newOption.setAttribute('data-color', uniqueConditions[i].color);
+            newOption.setAttribute('data-color', allConditions[i].color);
+            newOption.setAttribute('data-date', allConditions[i].date);
             newOption.classList.add('dropdown-item');
-            newOption.style.backgroundColor = uniqueConditions[i].color;
+            newOption.style.backgroundColor = allConditions[i].color;
             newOption.addEventListener('click', optionChosen);
             newOption.appendChild(optionDescr);
             newOption.appendChild(delButton);
@@ -190,12 +193,14 @@ function loadOptionsFromStorage() {
     }
 }
 
+// Function for when the delete icon is clicked
 function deleteItem(ev) {
     // First get the whole condition list
     let allConditions = getConditionsFromStorage();
-    const itemName = ev.currentTarget.parentNode.firstChild.innerHTML;
+    let itemDate = new Date(ev.currentTarget.parentNode.getAttribute('data-date'));
+    //const itemName = ev.currentTarget.parentNode.firstChild.innerHTML;
     for(let i = 0; i < allConditions.length; i++) {
-        if(allConditions[i].description === itemName) {
+        if(compareTwoDates(allConditions[i].date, itemDate)) {
             allConditions.splice(i, 1);
         }
     }
@@ -235,7 +240,6 @@ function addOption() {
     
     //newOption.setAttribute('data-color', colorPicked);
     let activeColor = document.querySelector('.activeColor');
-    console.log('activeCol: ' + activeColor);
     let chosenColor = activeColor.style.backgroundColor;
     
     // If the modal input is valid the new option will be added to the dropdown and the modal disappear
@@ -333,7 +337,6 @@ strengthArray.forEach(function (element, index) {
             }
         }
         // loop yfir strength array og lita aalla minn eða jafnt og index valinn
-        console.log('Strength = ' + index);
         chosenStrength = index;
     })
 });
