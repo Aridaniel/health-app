@@ -86,26 +86,22 @@
                     <p>Jóna Jónsdóttir</p>
                 </div>
             </header>
-            <form id="logForm" class="condition-form">
-                
-                
-                
+
+            <form id="logForm" class="condition-form">  
                 <!-- The dropdown -->
-                <div class="form-buttons"> 
-                    <div class="dropdown">
-                        <button type="button" class="dropbtn" id="select-condition">Velja líðan</button>
-                        <div class="select-error" id="select-error"></div>
-                        <div class="dropdown-content hide-dropdown" id="dropdown-options">
-                        </div>
+                <div class="dropdown">
+                    <button type="button" class="dropbtn" id="select-condition">Velja líðan</button>
+                    <div class="select-error" id="select-error"></div>
+                    <div class="dropdown-content hide-dropdown" id="dropdown-options">
                     </div>
-                    <!--
-                    <select name="velja-lidan" id="velja-lidan" required>
-                        <option value="" disabled selected>Velja líðan<p>X</p></option>
-                    </select>
-                    -->
-                    <!-- Button to open add modal -->
-                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við</button>
                 </div>
+                <!--
+                <select name="velja-lidan" id="velja-lidan" required>
+                    <option value="" disabled selected>Velja líðan<p>X</p></option>
+                </select>
+                -->
+                <!-- Button to open add modal -->
+                <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn" class="open-modal-btn">Bæta við</button>
                 
                 
                 
@@ -124,9 +120,10 @@
                 </div>
                 
                 <!-- Multi line textarea -->
+                <div class="text-area">
                 <label for="annad">Lýstu líðan þinni nánar:</label><br>
                 <textarea name="annad" id="annad" cols="30" rows="10" value=""></textarea><br>
-                
+                </div>
                 
                 <!-- Submit button -->
                 <button class="confirm-btn" type="submit" form="logForm" id="submitBtn"
