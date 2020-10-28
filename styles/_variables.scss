@@ -8,8 +8,10 @@ $accent-color: #add8e6; */
 
 
 /* Fonts */
-$mainFont : 'Saira', sans-serif;
-$calenderFont : 'Inter', sans-serif;
+$mainFont : 'Saira',
+sans-serif;
+$calenderFont : 'Inter',
+sans-serif;
 ;
 
 $mainTextColor : #393939;
@@ -26,45 +28,45 @@ $fontSizeDesktopHeadlines : 36px;
 
 
 
- @mixin phoneBody{
+@mixin phoneBody {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
   letter-spacing: 1%;
-  
 
-  
- }
 
- @mixin phoneBigButton
- {
+
+}
+
+@mixin phoneBigButton {
   font-family: $mainFont;
-  color: $HeaderTextColor ;
+  color: $HeaderTextColor;
   font-size: $fontSizeLarge;
-  
-  
 
- }
- @mixin phoneHeader
- {
+
+
+}
+
+@mixin phoneHeader {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeLarge;
   line-height: auto;
-  
 
- }
 
- @mixin desktopBody{
+}
+
+@mixin desktopBody {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeMedium;
   line-height: 160.4%;
   letter-spacing: 2%;
-  
+
 
 }
- @mixin desktopFrontpage-menu{
+
+@mixin desktopFrontpage-menu {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeBig;
@@ -73,10 +75,11 @@ $fontSizeDesktopHeadlines : 36px;
 
   letter-spacing: 1%;
 
-  
+
 
 }
- @mixin desktopHeadlines{
+
+@mixin desktopHeadlines {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeDesktopHeadlines;
@@ -84,16 +87,17 @@ $fontSizeDesktopHeadlines : 36px;
   line-height: 160.4%;
   letter-spacing: 0%;
 
-  
+
 
 }
- @mixin desktopButton{
+
+  {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeBig;
   line-height: auto;
   letter-spacing: 1%;
-  
+
 
 }
 
@@ -135,6 +139,7 @@ $border: 1px solid #EBEBEB;
   text-align: center;
   font-size: 1rem;
   @include phoneBigButton;
+
   &:hover {
     box-shadow: 4px 4px 20px 2px $drop-shadow;
   }
