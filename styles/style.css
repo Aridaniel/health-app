@@ -72,6 +72,15 @@ $accent-color: #add8e6; */
     font-weight: 300;
     margin-bottom: 50px;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav-sidebar ul .nav-link:hover {
     background-color: #E76F51;
@@ -743,7 +752,7 @@ $accent-color: #add8e6; */
 }
 
 .activeColor {
-  border: 2px solid black;
+  border: 2px solid #2F6584;
 }
 
 /* chosen color output */
