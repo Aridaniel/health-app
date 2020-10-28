@@ -26,10 +26,8 @@ body {
 
 
 //Font styles
-p{
+p {
     @include phoneBody
-
-    
 }
 
 h2{
@@ -49,29 +47,26 @@ h6{
 
 }
 
-h4{
+h4 {
     @include phoneHeader;
     color: #D8D5D5;
 }
 
-h5
-{
+h5 {
     @include phoneHeader
 }
 
 
-.calendar-advice
-{
+.calendar-advice {
     @include phoneHeader
 }
 
-.strength-wrapper p{
+.strength-wrapper p {
     @include phoneHeader;
-    
+
 }
 
-label
-{
+label {
     @include phoneHeader;
 }
 
@@ -180,80 +175,102 @@ nav {
 
     }
 
+    // ------ Á þetta ekki að vera í desktop möppunni ? Vildi ekki færa það yfir ef ég vææri að rugla í einhverju en þetta 
+    // ------ var hér og líka smá í desktop möppunni, spurning að copya þetta og færa yfir í desktop? -Kristbjörg
 
     #frontpage {
         background-color: $background-secondary;
 
+
+        .frontpage-logo {
+            margin-right: auto;
+            margin-left: 10rem;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+
         // Front page header
-        #frontpage-content {
+        // #frontpage-content {
+        //     display: block;
+        //     padding-top: 10px;
+
+        h5 {
+            text-align: center;
+            padding: 1rem 1rem;
+            font-weight: bold;
+        }
+
+        p {
+            text-align: center;
+            padding: 1rem 1rem;
+
+
+        }
+
+        .frontpage-img {
             display: block;
-            padding: 24px;
+            margin: auto;
+            width: 80%;
+            padding-bottom: 3rem;
+        }
 
-            h5 {
-                text-align: center;
-                padding: 1rem 1rem;
-                
-                font-weight: bold;
-            }
+        .frontpage-buttons {
+            display: block;
 
-            p {
-                text-align: center;
-                padding: 1rem 1rem;
-                
+        }
 
+        #log-button {
+            display: block;
+            margin-top: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #calendar-button {
+            display: none;
+        }
+    }
+
+    .btn-type1 {
+        @include button-style($button-secondary, 334px)
+    }
+
+    @media only screen and (min-width: 768px) {
+        #nav-list {
+            display: none;
+
+        }
+
+        //------------- Desktop frontpage !! ----------------// 
+        #frontpage-content {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: stretch;
+            margin-left: 10rem;
+            margin-right: 10rem;
+
+            div {
+                margin: 0 1rem;
+                /* All flex items have same width */
+                flex: 1 1 0px;
+                padding-top: 2rem;
             }
 
             .frontpage-img {
-                display: block;
-                margin: auto;
-                width: 80%;
+                width: 470px;
+                height: 420px;
             }
 
-            .frontpage-buttons {
-                display: block;
-                
-            }
-
-            #log-button {
-                display: block;
-                margin-top: 1rem;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            #calendar-button {
-                display: none;
-            }
-        }
-
-        .btn-type1 {
-            @include button-style($button-secondary, 334px)
-        }
-
-        @media only screen and (min-width: 768px) {
-            #nav-list {
-                display: none;
-            }
-
-
-            #frontpage-content {
-                display: flex;
-                flex-direction: row;
-
-                div {
-                    margin: 0 1rem;
-                    /* All flex items have same width */
-                    flex: 1 1 0px;
-                }
-
-                .frontpage-img {
-                    width: 470px;
-                    height: 420px;
-                }
+            .frontpage-textbox {
+                max-width: 500px;
 
                 h5 {
                     text-align: start;
                     padding: 1rem 1rem;
+                    margin-top: 2rem;
                 }
 
                 p {
@@ -263,46 +280,51 @@ nav {
 
                 .frontpage-buttons {
                     display: flex;
-                    margin-top: 2rem;
-                    justify-content: space-evenly;
+                    flex-direction: row-reverse;
                     flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: stretch;
+                    align-content: stretch;
+                    margin-top: 7rem;
                 }
 
                 #log-button {
                     margin-top: 0.5rem;
-                    width: 16rem;
+                    width: 10rem;
                 }
 
                 #calendar-button {
                     margin-top: 0.5rem;
                     display: block;
-                    width: 16rem;
+                    width: 10rem;
                 }
             }
-        }
 
-    }
-
-    #calendarpage {
-        background-color: $background-secondary;
-
-        @media only screen and (min-width: 768px) {
-            .mobile-header {
-                display: none;
-            }
         }
     }
 
-    #symptompage {
-        background-color: $background-secondary;
+}
 
-        @media only screen and (min-width: 768px) {
-            .mobile-header {
-                display: none;
-            }
+#calendarpage {
+    background-color: $background-secondary;
+
+    @media only screen and (min-width: 768px) {
+        .mobile-header {
+            display: none;
         }
     }
 }
+
+#symptompage {
+    background-color: $background-secondary;
+
+    @media only screen and (min-width: 768px) {
+        .mobile-header {
+            display: none;
+        }
+    }
+}
+
 
 
 // Hide some desktop elements
@@ -335,8 +357,9 @@ nav {
             border-radius: 50%;
             margin-right: 25px;
         }
+
         p {
-            
+
             align-self: flex-end;
             @include phoneHeader;
             color: #D8D5D5;

@@ -16,6 +16,9 @@ $accent-color: #add8e6; */
 /* Media query for desktop version */
 @media only screen and (min-width: 768px) {
   /* For desktop: */
+  .icon {
+    display: none;
+  }
   .hide-desktop {
     display: none;
   }
@@ -30,7 +33,7 @@ $accent-color: #add8e6; */
     top: 0;
     left: 0;
     width: var(--nav-width);
-    height: 100vh;
+    height: 200vh;
   }
   .nav-sidebar ul {
     display: block;
@@ -57,22 +60,73 @@ $accent-color: #add8e6; */
     margin-bottom: 4.5rem;
     color: #F3F3F3;
   }
-  .nav-sidebar .nav-link {
+  .nav-sidebar ul .nav-link {
     margin: 0;
-    height: auto;
+    height: 47px;
     width: auto;
     text-decoration: none;
     color: #FFFFFF;
     background-color: #489FB5;
-    font-weight: 500;
-    margin-bottom: 3.55rem;
+    font-weight: 300;
+    margin-bottom: 50px;
     text-align: center;
   }
-  .nav-sidebar h2 {
+  .nav-sidebar ul .nav-link:hover {
+    background-color: #E76F51;
+  }
+  .nav-sidebar ul h2 {
     display: block;
   }
-  .nav-sidebar img {
+  .nav-sidebar ul img {
     display: none;
+  }
+  .nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 170px;
+    background: #2F6584;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: none;
+    list-style: none;
+  }
+  .nav .nav-link {
+    display: block;
+    margin: 0 0.5rem;
+    height: 50px;
+    width: 50px;
+    background-color: seagreen;
+    padding: 12px 18px;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .nav .nav-link p {
+    display: none;
+  }
+  .nav .nav-link img {
+    display: none;
+  }
+  .nav .nav-link:hover {
+    background: #E76F51;
   }
   /* Calendar */
   .calendar-container {
@@ -101,7 +155,7 @@ $accent-color: #add8e6; */
 
 /* Calendar */
 .calendar-container {
-  width: 300px;
+  width: 90%;
   border-radius: 10px;
   background-color: white;
   padding: 2rem;
@@ -684,11 +738,32 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .success-content button:hover {
   -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
           box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (min-width: 768px) {
+  .condition-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .condition-form select {
+    width: 320px;
+  }
+  .condition-form button {
+    width: 320px;
+  }
+  .condition-form input {
+    width: 320px;
+    text-align: left;
+  }
 }
 
 /* Main structure */
@@ -839,44 +914,47 @@ nav img {
   background-color: #F3F3F3;
 }
 
-#app #frontpage #frontpage-content {
-  display: block;
-  padding: 24px;
+#app #frontpage .frontpage-logo {
+  margin-right: auto;
+  margin-left: 10rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
-#app #frontpage #frontpage-content h5 {
+#app #frontpage h5 {
   text-align: center;
   padding: 1rem 1rem;
   font-weight: bold;
 }
 
-#app #frontpage #frontpage-content p {
+#app #frontpage p {
   text-align: center;
   padding: 1rem 1rem;
 }
 
-#app #frontpage #frontpage-content .frontpage-img {
+#app #frontpage .frontpage-img {
   display: block;
   margin: auto;
   width: 80%;
+  padding-bottom: 3rem;
 }
 
-#app #frontpage #frontpage-content .frontpage-buttons {
+#app #frontpage .frontpage-buttons {
   display: block;
 }
 
-#app #frontpage #frontpage-content #log-button {
+#app #frontpage #log-button {
   display: block;
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-#app #frontpage #frontpage-content #calendar-button {
+#app #frontpage #calendar-button {
   display: none;
 }
 
-#app #frontpage .btn-type1 {
+#app .btn-type1 {
   border-radius: 10px;
   border: none;
   color: #FFFFFF;
@@ -891,81 +969,107 @@ nav img {
   font-size: 20px;
 }
 
-#app #frontpage .btn-type1:hover {
+#app .btn-type1:hover {
   -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
           box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 @media only screen and (min-width: 768px) {
-  #app #frontpage #nav-list {
+  #app #nav-list {
     display: none;
   }
-  #app #frontpage #frontpage-content {
+  #app #frontpage-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
-  #app #frontpage #frontpage-content div {
+  #app #frontpage-content div {
     margin: 0 1rem;
     /* All flex items have same width */
     -webkit-box-flex: 1;
         -ms-flex: 1 1 0px;
             flex: 1 1 0px;
+    padding-top: 2rem;
   }
-  #app #frontpage #frontpage-content .frontpage-img {
+  #app #frontpage-content .frontpage-img {
     width: 470px;
     height: 420px;
   }
-  #app #frontpage #frontpage-content h5 {
+  #app #frontpage-content .frontpage-textbox {
+    max-width: 500px;
+  }
+  #app #frontpage-content .frontpage-textbox h5 {
+    text-align: start;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+  }
+  #app #frontpage-content .frontpage-textbox p {
     text-align: start;
     padding: 1rem 1rem;
   }
-  #app #frontpage #frontpage-content p {
-    text-align: start;
-    padding: 1rem 1rem;
-  }
-  #app #frontpage #frontpage-content .frontpage-buttons {
+  #app #frontpage-content .frontpage-textbox .frontpage-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 2rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    margin-top: 7rem;
   }
-  #app #frontpage #frontpage-content #log-button {
+  #app #frontpage-content .frontpage-textbox #log-button {
     margin-top: 0.5rem;
-    width: 16rem;
+    width: 10rem;
   }
-  #app #frontpage #frontpage-content #calendar-button {
+  #app #frontpage-content .frontpage-textbox #calendar-button {
     margin-top: 0.5rem;
     display: block;
-    width: 16rem;
+    width: 10rem;
   }
 }
 
-#app #calendarpage {
+#calendarpage {
   background-color: #F3F3F3;
 }
 
 @media only screen and (min-width: 768px) {
-  #app #calendarpage .mobile-header {
+  #calendarpage .mobile-header {
     display: none;
   }
 }
 
-#app #symptompage {
+#symptompage {
   background-color: #F3F3F3;
 }
 
 @media only screen and (min-width: 768px) {
-  #app #symptompage .mobile-header {
+  #symptompage .mobile-header {
     display: none;
   }
 }
