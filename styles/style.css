@@ -72,6 +72,15 @@ $accent-color: #add8e6; */
     font-weight: 300;
     margin-bottom: 50px;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav-sidebar ul .nav-link:hover {
     background-color: #E76F51;
@@ -744,7 +753,7 @@ $accent-color: #add8e6; */
 }
 
 .activeColor {
-  border: 2px solid black;
+  border: 2px solid #2F6584;
 }
 
 /* chosen color output */
@@ -929,7 +938,7 @@ h4 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
   color: #D8D5D5;
 }
 
@@ -948,7 +957,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .calendar-advice {
@@ -956,7 +965,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .strength-wrapper p {
@@ -964,7 +973,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 label {
@@ -972,7 +981,7 @@ label {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .calendar-advice {
@@ -1189,6 +1198,7 @@ nav img {
     line-height: auto;
     line-height: 160.4%;
     letter-spacing: 1%;
+    font-weight: bold;
   }
   #app #frontpage-content .frontpage-textbox p {
     text-align: start;
@@ -1308,7 +1318,7 @@ nav img {
   color: #393939;
   font-size: 20px;
   line-height: auto;
-  font-weight: 300;
+  font-weight: 400;
   color: #D8D5D5;
 }
 
