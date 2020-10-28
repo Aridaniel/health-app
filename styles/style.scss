@@ -32,10 +32,22 @@ p{
     
 }
 
-/* nav ul div h4{
-    @include phoneHeader;
-    color: #D8D5D5;
-} */
+h2{
+    @include desktopFrontpage-menu;
+    
+
+}
+h4{
+    @include desktopFrontpage-menu;
+    
+
+}
+
+h6{
+    @include desktopFrontpage-menu;
+    
+
+}
 
 h4{
     @include phoneHeader;
@@ -63,7 +75,30 @@ label
     @include phoneHeader;
 }
 
+.calendar-advice
+{
+    @include phoneBody;
+}
 
+.condition-descr
+{
+    @include phoneBody
+}
+
+
+
+/* Media query fyrir fonta */
+
+
+@media only screen and (min-width: 768px)
+{
+    p{
+        @include desktopBody
+    
+        
+    }
+
+}
 
 
 /* Navigation */
@@ -121,6 +156,9 @@ nav {
     }
 
 }
+
+
+
 
 /* Pages */
 
