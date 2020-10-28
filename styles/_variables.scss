@@ -8,18 +8,10 @@ $accent-color: #add8e6; */
 
 
 /* Fonts */
-<<<<<<< HEAD
 
 $mainFont : 'Saira', sans-serif;
 $calenderFont : 'Inter', sans-serif;
 
-=======
-$mainFont : 'Saira',
-sans-serif;
-$calenderFont : 'Inter',
-sans-serif;
-;
->>>>>>> 1ba60f1cef6f8da72159dd1c687a06d9feab4139
 
 $mainTextColor : #393939;
 $HeaderTextColor : #FFFCF9;
@@ -40,13 +32,9 @@ $fontWeightLarge : 400;
 
 
 
-<<<<<<< HEAD
 /* Phone mixin */
 
  @mixin phoneBody{
-=======
-@mixin phoneBody {
->>>>>>> 1ba60f1cef6f8da72159dd1c687a06d9feab4139
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
@@ -70,31 +58,20 @@ $fontWeightLarge : 400;
   color: $mainTextColor;
   font-size: $fontSizeLarge;
   line-height: auto;
-<<<<<<< HEAD
   font-weight: $fontWeightMedium;
-  
-=======
->>>>>>> 1ba60f1cef6f8da72159dd1c687a06d9feab4139
+}
 
 
-<<<<<<< HEAD
 
 
  /* Desktop Mixin */
 
  @mixin desktopBody{
-=======
-}
-
-@mixin desktopBody {
->>>>>>> 1ba60f1cef6f8da72159dd1c687a06d9feab4139
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeMedium;
   line-height: 160.4%;
   letter-spacing: 2%;
-
-
 }
 
 @mixin desktopFrontpage-menu {
@@ -107,9 +84,6 @@ $fontWeightLarge : 400;
   color: #E76F51;
 
   letter-spacing: 1%;
-
-
-
 }
 
 @mixin desktopHeadlines {
@@ -119,19 +93,6 @@ $fontWeightLarge : 400;
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 0%;
-
-
-
-}
-
-  {
-  font-family: $mainFont;
-  color: $mainTextColor;
-  font-size: $fontSizeBig;
-  line-height: auto;
-  letter-spacing: 1%;
-
-
 }
 
 

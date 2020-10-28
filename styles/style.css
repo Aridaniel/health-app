@@ -447,6 +447,7 @@ $accent-color: #add8e6; */
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-family: "Saira", sans-serif;
   color: white;
   padding: 12px 16px;
 }
@@ -909,7 +910,17 @@ h2 {
   line-height: 160.4%;
   color: #E76F51;
   letter-spacing: 1%;
-  color: #FFFFFF;
+}
+
+h4 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: auto;
+  line-height: 160.4%;
+  color: #E76F51;
+  letter-spacing: 1%;
 }
 
 h4 {
@@ -1158,9 +1169,6 @@ nav img {
     height: 80vh;
     overflow: hidden;
   }
-  #app #frontpage-content div {
-    /* All flex items have same width */
-  }
   #app #frontpage-content .frontpage-img {
     max-width: 40rem;
     min-width: 25rem;
@@ -1176,8 +1184,10 @@ nav img {
     font-family: "Saira", sans-serif;
     color: #393939;
     font-size: 24px;
+    font-weight: 300;
     line-height: auto;
     line-height: 160.4%;
+    color: #E76F51;
     letter-spacing: 1%;
   }
   #app #frontpage-content .frontpage-textbox p {
@@ -1187,8 +1197,10 @@ nav img {
     font-family: "Saira", sans-serif;
     color: #393939;
     font-size: 24px;
+    font-weight: 300;
     line-height: auto;
     line-height: 160.4%;
+    color: #E76F51;
     letter-spacing: 1%;
   }
   #app #frontpage-content .frontpage-textbox .frontpage-buttons {
