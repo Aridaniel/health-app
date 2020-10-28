@@ -7,6 +7,8 @@ $font-size: 2em;
 $primary-color: #e6d149;
 $accent-color: #add8e6; */
 /* Fonts */
+/* Phone mixin */
+/* Desktop Mixin */
 /* Colors */
 /* Button */
 /*
@@ -58,7 +60,7 @@ $accent-color: #add8e6; */
     display: block;
     text-align: center;
     margin-bottom: 4.5rem;
-    color: #F3F3F3;
+    /* color: $background-secondary; */
   }
   .nav-sidebar ul .nav-link {
     margin: 0;
@@ -70,6 +72,15 @@ $accent-color: #add8e6; */
     font-weight: 300;
     margin-bottom: 50px;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav-sidebar ul .nav-link:hover {
     background-color: #E76F51;
@@ -81,26 +92,10 @@ $accent-color: #add8e6; */
     display: none;
   }
   .nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: absolute;
     width: 100%;
-    height: 170px;
+    height: 100px;
     background: #2F6584;
-    z-index: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .nav ul {
     display: -webkit-box;
@@ -144,12 +139,6 @@ $accent-color: #add8e6; */
   }
   .frontpage-img {
     width: 10px;
-  }
-  .frontpage-footer {
-    background-color: #2F6584;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
   }
 }
 
@@ -198,6 +187,7 @@ $accent-color: #add8e6; */
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 0%;
+  font-weight: 400;
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-control {
@@ -251,6 +241,7 @@ $accent-color: #add8e6; */
   font-size: 18px;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: 300;
 }
 
 /* Condition container next to calendar, when items have been selected */
@@ -275,6 +266,7 @@ $accent-color: #add8e6; */
   font-size: 18px;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: 300;
 }
 
 .condition-icons .condition-label {
@@ -792,7 +784,7 @@ $accent-color: #add8e6; */
 }
 
 .activeColor {
-  border: 2px solid black;
+  border: 2px solid #2F6584;
 }
 
 /* chosen color output */
@@ -1000,27 +992,20 @@ h2 {
   font-family: "Saira", sans-serif;
   color: #393939;
   font-size: 24px;
+  font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 1%;
+  color: #FFFFFF;
 }
 
-h4 {
+h3 {
   font-family: "Saira", sans-serif;
   color: #393939;
-  font-size: 24px;
-  line-height: auto;
+  font-size: 18px;
   line-height: 160.4%;
-  letter-spacing: 1%;
-}
-
-h6 {
-  font-family: "Saira", sans-serif;
-  color: #393939;
-  font-size: 24px;
-  line-height: auto;
-  line-height: 160.4%;
-  letter-spacing: 1%;
+  letter-spacing: 2%;
+  font-weight: 300;
 }
 
 h4 {
@@ -1028,7 +1013,18 @@ h4 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 400;
   color: #D8D5D5;
+}
+
+h6 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: auto;
+  line-height: 160.4%;
+  letter-spacing: 1%;
 }
 
 h5 {
@@ -1036,6 +1032,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 400;
 }
 
 .calendar-advice {
@@ -1043,6 +1040,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 400;
 }
 
 .strength-wrapper p {
@@ -1050,6 +1048,7 @@ h5 {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 400;
 }
 
 label {
@@ -1057,6 +1056,7 @@ label {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 400;
 }
 
 .calendar-advice {
@@ -1081,6 +1081,7 @@ label {
     font-size: 18px;
     line-height: 160.4%;
     letter-spacing: 2%;
+    font-weight: 300;
   }
 }
 
@@ -1193,7 +1194,7 @@ nav img {
 
 #app #frontpage #log-button {
   display: block;
-  margin: auto 1rem;
+  margin: 0 auto;
 }
 
 #app #frontpage #calendar-button {
@@ -1225,10 +1226,14 @@ nav img {
     display: none;
   }
   #app .frontpage-logo {
-    margin-right: auto;
-    margin-left: 10rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    max-width: 20rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 2.5rem;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
   #app #frontpage-content {
     display: -webkit-box;
@@ -1246,27 +1251,41 @@ nav img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  #app #frontpage-content div {
-    margin: 0 1rem;
-    /* All flex items have same width */
+    height: 80vh;
+    overflow: hidden;
   }
   #app #frontpage-content .frontpage-img {
-    width: 100%;
     max-width: 40rem;
     min-width: 25rem;
   }
   #app #frontpage-content .frontpage-textbox {
     max-width: 500px;
+    padding-left: 2rem;
   }
   #app #frontpage-content .frontpage-textbox h5 {
     text-align: start;
     padding: 1rem 1rem;
-    margin-top: 2rem;
+    font-size: 36px;
+    font-family: "Saira", sans-serif;
+    color: #393939;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: auto;
+    line-height: 160.4%;
+    letter-spacing: 1%;
+    font-weight: bold;
   }
   #app #frontpage-content .frontpage-textbox p {
     text-align: start;
-    padding: 1rem 1rem;
+    padding: 1rem 1rem 3rem;
+    font-size: 24px;
+    font-family: "Saira", sans-serif;
+    color: #393939;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: auto;
+    line-height: 160.4%;
+    letter-spacing: 1%;
   }
   #app #frontpage-content .frontpage-textbox .frontpage-buttons {
     display: -webkit-box;
@@ -1295,6 +1314,7 @@ nav img {
     margin-top: 0.5rem;
     display: block;
     width: 10rem;
+    margin-left: 15px;
   }
 }
 
@@ -1373,6 +1393,7 @@ nav img {
   color: #393939;
   font-size: 20px;
   line-height: auto;
+  font-weight: 400;
   color: #D8D5D5;
 }
 

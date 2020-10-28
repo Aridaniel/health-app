@@ -8,9 +8,10 @@ $accent-color: #add8e6; */
 
 
 /* Fonts */
+
 $mainFont : 'Saira', sans-serif;
 $calenderFont : 'Inter', sans-serif;
-;
+
 
 $mainTextColor : #393939;
 $HeaderTextColor : #FFFCF9;
@@ -23,37 +24,48 @@ $fontSizeBig : 24px;
 $fontSizeDesktopHeadlines : 36px;
 
 
+$fontWeightSmall : 200;
+$fontWeightMedium : 300;
+$fontWeightLarge : 400;
 
 
+
+
+
+/* Phone mixin */
 
  @mixin phoneBody{
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
   letter-spacing: 1%;
-  
 
-  
- }
 
- @mixin phoneBigButton
- {
+
+}
+
+@mixin phoneBigButton {
   font-family: $mainFont;
-  color: $HeaderTextColor ;
+  color: $HeaderTextColor;
   font-size: $fontSizeLarge;
-  
-  
 
- }
- @mixin phoneHeader
- {
+
+
+}
+
+@mixin phoneHeader {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeLarge;
   line-height: auto;
-  
+  font-weight: $fontWeightLarge;
 
- }
+
+}
+
+
+
+ /* Desktop Mixin */
 
  @mixin desktopBody{
   font-family: $mainFont;
@@ -61,48 +73,38 @@ $fontSizeDesktopHeadlines : 36px;
   font-size: $fontSizeMedium;
   line-height: 160.4%;
   letter-spacing: 2%;
-  
-
+  font-weight: $fontWeightMedium;
 }
- @mixin desktopFrontpage-menu{
+
+@mixin desktopFrontpage-menu {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeBig;
+  font-weight: $fontWeightMedium ;
   line-height: auto;
   line-height: 160.4%;
-
-  letter-spacing: 1%;
-
   
 
+  letter-spacing: 1%;
 }
- @mixin desktopHeadlines{
+
+@mixin desktopHeadlines {
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeDesktopHeadlines;
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 0%;
-
-  
-
+  font-weight: $fontWeightLarge;
 }
- @mixin desktopButton{
+
+@mixin desktopButton{
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeBig;
   line-height: auto;
   letter-spacing: 1%;
-  
-
 }
-
-
-
-
-
-
-
 
 /* Colors */
 $background-primary: #2F6584;
@@ -135,6 +137,7 @@ $border: 1px solid #EBEBEB;
   text-align: center;
   font-size: 1rem;
   @include phoneBigButton;
+
   &:hover {
     box-shadow: 4px 4px 20px 2px $drop-shadow;
   }
