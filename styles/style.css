@@ -905,13 +905,14 @@ p {
 
 h2 {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: white;
   font-size: 24px;
   font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 1%;
-  color: #FFFFFF;
+  /* color: red; */
 }
 
 h3 {
@@ -925,34 +926,24 @@ h3 {
 
 h4 {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
-  color: #D8D5D5;
-}
-
-h6 {
-  font-family: "Saira", sans-serif;
-  color: #393939;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: auto;
-  line-height: 160.4%;
-  letter-spacing: 1%;
 }
 
 h5 {
   font-family: "Saira", sans-serif;
   color: #393939;
-  font-size: 20px;
-  line-height: auto;
-  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1%;
 }
 
 .calendar-advice {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
@@ -960,7 +951,8 @@ h5 {
 
 .strength-wrapper p {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
@@ -968,7 +960,8 @@ h5 {
 
 label {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
@@ -1088,6 +1081,14 @@ nav img {
 #app #frontpage h5 {
   text-align: center;
   padding: 1rem 1rem;
+  font-family: "Saira", sans-serif;
+  /* color: $mainTextColor; */
+  color: #393939;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: auto;
+  line-height: 160.4%;
+  letter-spacing: 1%;
   font-weight: bold;
 }
 
@@ -1180,14 +1181,7 @@ nav img {
   #app #frontpage-content .frontpage-textbox h5 {
     text-align: start;
     padding: 1rem 1rem;
-    font-size: 36px;
-    font-family: "Saira", sans-serif;
-    color: #393939;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: auto;
-    line-height: 160.4%;
-    letter-spacing: 1%;
+    /* font-size: $fontSizeDesktopHeadlines; */
     font-weight: bold;
   }
   #app #frontpage-content .frontpage-textbox p {
@@ -1195,6 +1189,7 @@ nav img {
     padding: 1rem 1rem 3rem;
     font-size: 24px;
     font-family: "Saira", sans-serif;
+    /* color: $mainTextColor; */
     color: #393939;
     font-size: 24px;
     font-weight: 300;
@@ -1305,7 +1300,8 @@ nav img {
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;

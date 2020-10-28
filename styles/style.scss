@@ -30,8 +30,8 @@ p {
 }
 
 h2 {
-    @include desktopFrontpage-menu;
-    color: #FFFFFF;
+    @include desktopFrontpage-menu(white);
+    /* color: red; */
     
 
 }
@@ -42,22 +42,18 @@ h3
 
 h4 {
     @include phoneHeader;
-    color: #D8D5D5;
+    
 }
-
-
-
-h6{
-    @include desktopFrontpage-menu;
-
-
-}
-
 
 
 h5 {
-    @include phoneHeader
+    @include phoneBody()
 }
+
+
+
+
+
 
 
 .calendar-advice {
@@ -91,6 +87,7 @@ label {
         @include desktopBody
     }
 
+    
 }
 
 
@@ -179,6 +176,9 @@ nav {
         h5 {
             text-align: center;
             padding: 1rem 1rem;
+            
+            @include desktopFrontpage-menu($mainTextColor);
+             
             font-weight: bold;
         }
 
@@ -273,8 +273,8 @@ nav {
                 h5 {
                     text-align: start;
                     padding: 1rem 1rem;
-                    font-size: $fontSizeDesktopHeadlines;
-                    @include desktopFrontpage-menu();
+                    /* font-size: $fontSizeDesktopHeadlines; */
+                    
                     font-weight: bold;
 
                 }
@@ -283,7 +283,7 @@ nav {
                     text-align: start;
                     padding: 1rem 1rem 3rem;
                     font-size: $fontSizeBig;
-                    @include desktopFrontpage-menu;
+                    @include desktopFrontpage-menu($mainTextColor );
                 }
 
                 .frontpage-buttons {

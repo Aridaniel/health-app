@@ -34,7 +34,7 @@ $fontWeightLarge : 400;
 
 /* Phone mixin */
 
- @mixin phoneBody{
+ @mixin phoneBody(){
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
@@ -53,9 +53,10 @@ $fontWeightLarge : 400;
 
 }
 
-@mixin phoneHeader {
+@mixin phoneHeader() {
   font-family: $mainFont;
-  color: $mainTextColor;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;;
   font-size: $fontSizeLarge;
   line-height: auto;
   font-weight: $fontWeightLarge;
@@ -78,9 +79,10 @@ $fontWeightLarge : 400;
 
 }
 
-@mixin desktopFrontpage-menu {
+@mixin desktopFrontpage-menu($colorfont) {
   font-family: $mainFont;
-  color: $mainTextColor;
+  /* color: $mainTextColor; */
+  color: $colorfont;
   font-size: $fontSizeBig;
   font-weight: $fontWeightMedium ;
   line-height: auto;
