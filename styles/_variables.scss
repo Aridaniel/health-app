@@ -5,7 +5,104 @@ $font-size: 2em;
 $primary-color: #e6d149;
 $accent-color: #add8e6; */
 
-/* Font */
+
+
+/* Fonts */
+$mainFont : 'Saira', sans-serif;
+$calenderFont : 'Inter', sans-serif;
+;
+
+$mainTextColor : #393939;
+$HeaderTextColor : #FFFCF9;
+
+
+$fontSizeSmall : 16px;
+$fontSizeMedium : 18px;
+$fontSizeLarge : 20px;
+$fontSizeBig : 24px;
+$fontSizeDesktopHeadlines : 36px;
+
+
+
+
+
+ @mixin phoneBody{
+  font-family: $mainFont;
+  color: $mainTextColor;
+  font-size: $fontSizeSmall;
+  letter-spacing: 1%;
+  
+
+  
+ }
+
+ @mixin phoneBigButton
+ {
+  font-family: $mainFont;
+  color: $HeaderTextColor ;
+  font-size: $fontSizeLarge;
+  
+  
+
+ }
+ @mixin phoneHeader
+ {
+  font-family: $mainFont;
+  color: $mainTextColor;
+  font-size: $fontSizeLarge;
+  line-height: auto;
+  
+
+ }
+
+ @mixin desktopBody{
+  font-family: $mainFont;
+  color: $mainTextColor;
+  font-size: $fontSizeMedium;
+  line-height: 160.4%;
+  letter-spacing: 2%;
+  
+
+}
+ @mixin desktopFrontpage-menu{
+  font-family: $mainFont;
+  color: $mainTextColor;
+  font-size: $fontSizeBig;
+  line-height: auto;
+  line-height: 160.4%;
+
+  letter-spacing: 1%;
+
+  
+
+}
+ @mixin desktopHeadlines{
+  font-family: $mainFont;
+  color: $mainTextColor;
+  font-size: $fontSizeDesktopHeadlines;
+  line-height: auto;
+  line-height: 160.4%;
+  letter-spacing: 0%;
+
+  
+
+}
+ @mixin desktopButton{
+  font-family: $mainFont;
+  color: $mainTextColor;
+  font-size: $fontSizeBig;
+  line-height: auto;
+  letter-spacing: 1%;
+  
+
+}
+
+
+
+
+
+
+
 
 /* Colors */
 $background-primary: #2F6584;
@@ -17,6 +114,13 @@ $grey-font: #393939;
 $drop-shadow: rgba(0, 0, 0, 0.25);
 
 $border: 1px solid #EBEBEB;
+
+
+
+
+
+
+
 
 /* Button */
 
@@ -30,6 +134,7 @@ $border: 1px solid #EBEBEB;
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  @include phoneBigButton;
   &:hover {
     box-shadow: 4px 4px 20px 2px $drop-shadow;
   }

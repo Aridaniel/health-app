@@ -8,7 +8,11 @@ const dateSelection = document.getElementById('log-date');
 const addToDropDwnBtn = document.getElementById('addToDropDwnBtn');
 const otherInfo = document.getElementById('annad');
 const selectError = document.getElementById('select-error');
+const successMessage = document.getElementById('mySuccessMessage');
+const closeSuccess = document.getElementById('close-success');
 let chosenStrength = null;
+
+
 //let conditionsInStorage = [];
 
 // Handle submit event
@@ -45,7 +49,7 @@ const handleSubmit = (e) => {
             }
             
             else if (element.name === "annad") {
-                customErrorMessage = "*Þú verður að skrifa eitthvað!"
+                customErrorMessage = "*Þú verður að skrifa eitthvað"
                 success = false;     
             }            
             // Create a new div next to relevant element and display the custom error message
@@ -73,7 +77,7 @@ const handleSubmit = (e) => {
         addConditionToStorage(newCondition);
         //location.reload()
         logForm.reset();
-        
+        successMessage.style.display = "block";
     }
 };
 
@@ -106,6 +110,13 @@ function hideDropdown() {
         dropdownOptions.classList.add('hide-dropdown');
     }
 }
+
+function closeMessage() {
+    successMessage.style.display = "none";
+    openCalendar();
+    /*location.href = "/#calendar-page";*/
+};
+
 // Event listener for submit event of all forms 
 document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('form');
@@ -118,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectButton.addEventListener('click', showDropDown);
     logLink.addEventListener('click', openLogPage);
     logButton.addEventListener('click', openLogPage);
+    closeSuccess.addEventListener('click', closeMessage);
 });
 
 function showDropDown(ev) {

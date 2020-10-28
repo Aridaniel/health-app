@@ -1,12 +1,18 @@
 /* Media query for desktop version */
 
 @media only screen and (min-width: 768px) {
+
     /* For desktop: */
     // Hide mobile header
+
+    .icon {
+        display: none;
+    }
+
     .hide-desktop {
         display: none;
     }
-    
+
     body {
         --nav-width: 340px;
         /*margin: 0 0 0 var(--nav-width);*/
@@ -19,16 +25,17 @@
         top: 0;
         left: 0;
         width: var(--nav-width);
-        height: 100vh;
-        
+        height: 200vh;
+
         ul {
             display: block;
+
             #sidebar-logo {
                 display: inline;
                 width: 186px;
                 height: 41px;
                 margin-left: 1rem;
-                margin-top: 1rem;
+                margin-top: 2rem;
             }
 
             .sidebar-profile {
@@ -37,30 +44,43 @@
                 height: 155px;
                 border-radius: 50%;
                 margin: 1rem auto;
+                margin-top: 4rem;
+                margin-bottom: 1rem;
             }
 
             h4 {
                 display: block;
                 text-align: center;
-                padding-bottom: 2rem;
+                margin-bottom: 4.5rem;
+                color: $background-secondary;
             }
-        }
 
-        .nav-link {
-            margin: 0;
-            height: auto;
-            width: auto;
-            text-decoration: none;
-            color: $pure-white;
-            background-color: $button-primary;
-            font-weight: 500;
+
+            .nav-link {
+                margin: 0;
+                height: 47px;
+                width: auto;
+                text-decoration: none;
+                color: $pure-white;
+                background-color: $button-primary;
+                font-weight: 300;
+                margin-bottom: 50px;
+                text-align: center;
+
+                &:hover {
+                    background-color: $button-secondary
+                }
+            }
+
+            h2 {
+                display: block;
+            }
+
             img {
                 display: none;
             }
-            p {
-                display: inline-block;
-            }
         }
+
     }
     
     .nav {
@@ -68,19 +88,20 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 100px;
+        height: 170px;
         background: $background-primary;
         z-index: 1;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        
+
         ul {
+            display: flex;
             display: none;
             list-style: none;
         }
-    
+        
         .nav-link {
             display: block;
             margin: 0 0.5rem;
@@ -103,7 +124,6 @@
             }
         }
     }
-
     /* Calendar */
 
     .calendar-container {
@@ -123,11 +143,6 @@
         line-height: 60px;
     }
 
-
-     // Veit ekki alveg með allt hér fyrir neðan!!
-    // #frontpage {
-    // position: absolute;
-    // z-index: 10;
     .frontpage-img{
         width: 10px;
     }
@@ -139,5 +154,5 @@
         position: absolute;
         bottom: 0;
     }
-   // }
+
 }

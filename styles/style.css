@@ -6,7 +6,7 @@
 $font-size: 2em;
 $primary-color: #e6d149;
 $accent-color: #add8e6; */
-/* Font */
+/* Fonts */
 /* Colors */
 /* Button */
 /*
@@ -16,6 +16,9 @@ $accent-color: #add8e6; */
 /* Media query for desktop version */
 @media only screen and (min-width: 768px) {
   /* For desktop: */
+  .icon {
+    display: none;
+  }
   .hide-desktop {
     display: none;
   }
@@ -30,7 +33,7 @@ $accent-color: #add8e6; */
     top: 0;
     left: 0;
     width: var(--nav-width);
-    height: 100vh;
+    height: 200vh;
   }
   .nav-sidebar ul {
     display: block;
@@ -40,7 +43,7 @@ $accent-color: #add8e6; */
     width: 186px;
     height: 41px;
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .nav-sidebar ul .sidebar-profile {
     display: block;
@@ -48,33 +51,41 @@ $accent-color: #add8e6; */
     height: 155px;
     border-radius: 50%;
     margin: 1rem auto;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
   }
   .nav-sidebar ul h4 {
     display: block;
     text-align: center;
-    padding-bottom: 2rem;
+    margin-bottom: 4.5rem;
+    color: #F3F3F3;
   }
-  .nav-sidebar .nav-link {
+  .nav-sidebar ul .nav-link {
     margin: 0;
-    height: auto;
+    height: 47px;
     width: auto;
     text-decoration: none;
     color: #FFFFFF;
     background-color: #489FB5;
-    font-weight: 500;
+    font-weight: 300;
+    margin-bottom: 50px;
+    text-align: center;
   }
-  .nav-sidebar .nav-link img {
+  .nav-sidebar ul .nav-link:hover {
+    background-color: #E76F51;
+  }
+  .nav-sidebar ul h2 {
+    display: block;
+  }
+  .nav-sidebar ul img {
     display: none;
-  }
-  .nav-sidebar .nav-link p {
-    display: inline-block;
   }
   .nav {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 170px;
     background: #2F6584;
     z-index: 1;
     display: -webkit-box;
@@ -92,6 +103,9 @@ $accent-color: #add8e6; */
             align-items: center;
   }
   .nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     display: none;
     list-style: none;
   }
@@ -144,11 +158,11 @@ $accent-color: #add8e6; */
   width: 90%;
   border-radius: 10px;
   background-color: white;
-  padding: 0 2rem;
-  padding-top: 1rem;
+  padding: 2rem;
   margin: 0 auto;
   margin-top: 1rem;
   border: 1px solid #EBEBEB;
+  max-width: 540px;
 }
 
 .calendar-container .calendar-grid {
@@ -156,7 +170,7 @@ $accent-color: #add8e6; */
   display: grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
-  gap: 0.8rem;
+  gap: 1rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -180,7 +194,6 @@ $accent-color: #add8e6; */
 }
 
 .calendar-container .calendar-grid #calendar-header .calendar-control {
-  padding: 0.5rem 0.5rem;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
@@ -201,7 +214,7 @@ $accent-color: #add8e6; */
 .calendar-container .calendar-grid .calendar-weekdays {
   height: 100%;
   width: 100%;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,6 +235,7 @@ $accent-color: #add8e6; */
   border-radius: 10px;
   background-color: #FFFFFF;
   border: 1px solid #EBEBEB;
+  max-width: 540px;
 }
 
 .condition-preview {
@@ -239,6 +253,11 @@ $accent-color: #add8e6; */
   background-color: white;
   border: 1px solid #EBEBEB;
   border-radius: 10px;
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 18px;
+  line-height: 160.4%;
+  letter-spacing: 2%;
 }
 
 .condition-icons .condition-label {
@@ -250,6 +269,7 @@ $accent-color: #add8e6; */
   color: white;
   margin-bottom: 1rem;
   padding: 0.5rem 0;
+  font-family: 'Saira', sans-serif;
 }
 
 .condition-icons img {
@@ -310,12 +330,6 @@ $accent-color: #add8e6; */
 }
 
 /* From js */
-.calendar-control {
-  padding: 0.5rem 0.5rem;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-
 .calendar-item {
   height: 24px;
   border-radius: 50%;
@@ -325,8 +339,8 @@ $accent-color: #add8e6; */
   line-height: 24px;
   font-size: 18px;
   font-weight: bold;
-  width: 100%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,6 +350,7 @@ $accent-color: #add8e6; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto;
 }
 
 .calendar-date:hover {
@@ -345,8 +360,23 @@ $accent-color: #add8e6; */
 }
 
 .current-day {
-  height: 100%;
-  border: 2px solid #E76F51;
+  /* height: 100%;
+    width: 100%;
+    border: 2px solid $button-secondary; */
+  color: #E76F51;
+}
+
+@media only screen and (min-width: 768px) {
+  .calendar-page {
+    margin: 200px 40px 200px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .calendar-advice {
+    margin: 20px 40px 0 40px;
+    max-width: 400px;
+  }
 }
 
 /* Condition Form */
@@ -409,6 +439,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .condition-form select:hover {
@@ -426,6 +459,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .condition-form button:hover {
@@ -443,6 +479,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
   text-align: left;
 }
 
@@ -467,6 +506,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .condition-form .confirm-btn:hover {
@@ -488,8 +530,8 @@ $accent-color: #add8e6; */
   display: none;
   position: absolute;
   z-index: 1;
-  left: 140px;
-  top: 170px;
+  top: 112px;
+  width: 100%;
   /* Add modal Content/Box */
   /* The Close Button */
 }
@@ -522,6 +564,9 @@ $accent-color: #add8e6; */
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
 .add-modal .add-modal-content button:hover {
@@ -685,6 +730,124 @@ $accent-color: #add8e6; */
   background-color: white;
 }
 
+/* Success Message */
+.success-message {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.success-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  height: 100%;
+  width: 300px;
+  border: 1px solid #EBEBEB;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.success-content h4 {
+  padding: 10px 0 10px 0;
+}
+
+.success-content button {
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  background-color: #E76F51;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
+}
+
+.success-content button:hover {
+  -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (min-width: 768px) {
+  .condition-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 820px;
+    margin: auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .condition-form select {
+    width: 320px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .condition-form .strength-wrapper {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    height: 187px;
+  }
+  .condition-form button {
+    width: 320px;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .condition-form input {
+    width: 320px;
+    text-align: left;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .condition-form label {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .condition-form textarea {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+    width: 100%;
+  }
+  .condition-form .confirm-btn {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+    width: 230px;
+  }
+}
+
 /* Main structure */
 * {
   padding: 0;
@@ -694,10 +857,105 @@ $accent-color: #add8e6; */
 }
 
 body {
-  margin-bottom: 100px;
   font-size: 18px;
   padding: 0;
   background-color: #F3F3F3;
+  /* font-family: 'Saira', sans-serif; */
+}
+
+p {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+h2 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 24px;
+  line-height: auto;
+  line-height: 160.4%;
+  letter-spacing: 1%;
+}
+
+h4 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 24px;
+  line-height: auto;
+  line-height: 160.4%;
+  letter-spacing: 1%;
+}
+
+h6 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 24px;
+  line-height: auto;
+  line-height: 160.4%;
+  letter-spacing: 1%;
+}
+
+h4 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+  color: #D8D5D5;
+}
+
+h5 {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+.calendar-advice {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+.strength-wrapper p {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+label {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+}
+
+.calendar-advice {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+.condition-descr {
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+/* Media query fyrir fonta */
+@media only screen and (min-width: 768px) {
+  p {
+    font-family: "Saira", sans-serif;
+    color: #393939;
+    font-size: 18px;
+    line-height: 160.4%;
+    letter-spacing: 2%;
+  }
 }
 
 /* Navigation */
@@ -745,25 +1003,21 @@ nav ul h4 {
 
 nav .nav-link {
   display: block;
-  margin: 0 0.5rem;
+  margin: 0 1rem;
   height: 50px;
   width: 50px;
-  background-color: seagreen;
-  padding: 12px 18px;
+  padding: 12px;
   -ms-flex-line-pack: center;
       align-content: center;
 }
 
-nav .nav-link p {
+nav h2 {
   display: none;
 }
 
-nav .nav-link img {
-  display: none;
-}
-
-nav .nav-link:hover {
-  background: #E76F51;
+nav img {
+  display: block;
+  height: 100%;
 }
 
 /* Pages */
@@ -789,43 +1043,38 @@ nav .nav-link:hover {
   background-color: #F3F3F3;
 }
 
-#app #frontpage #frontpage-content {
-  display: block;
-  padding: 24px;
+#app #frontpage h5 {
+  text-align: center;
+  padding: 1rem 1rem;
+  font-weight: bold;
 }
 
-#app #frontpage #frontpage-content h5 {
+#app #frontpage p {
   text-align: center;
   padding: 1rem 1rem;
 }
 
-#app #frontpage #frontpage-content p {
-  text-align: center;
-  padding: 1rem 1rem;
-}
-
-#app #frontpage #frontpage-content .frontpage-img {
+#app #frontpage .frontpage-img {
   display: block;
   margin: auto;
   width: 80%;
+  padding-bottom: 3rem;
 }
 
-#app #frontpage #frontpage-content .frontpage-buttons {
+#app #frontpage .frontpage-buttons {
   display: block;
 }
 
-#app #frontpage #frontpage-content #log-button {
+#app #frontpage #log-button {
   display: block;
-  margin-top: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto 1rem;
 }
 
-#app #frontpage #frontpage-content #calendar-button {
+#app #frontpage #calendar-button {
   display: none;
 }
 
-#app #frontpage .btn-type1 {
+#app .btn-type1 {
   border-radius: 10px;
   border: none;
   color: #FFFFFF;
@@ -835,83 +1084,110 @@ nav .nav-link:hover {
   height: 50px;
   text-align: center;
   font-size: 1rem;
+  font-family: "Saira", sans-serif;
+  color: #FFFCF9;
+  font-size: 20px;
 }
 
-#app #frontpage .btn-type1:hover {
+#app .btn-type1:hover {
   -webkit-box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
           box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 @media only screen and (min-width: 768px) {
-  #app #frontpage #nav-list {
+  #app #nav-list {
     display: none;
   }
-  #app #frontpage #frontpage-content {
+  #app .frontpage-logo {
+    margin-right: auto;
+    margin-left: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  #app #frontpage-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  #app #frontpage #frontpage-content div {
+  #app #frontpage-content div {
     margin: 0 1rem;
     /* All flex items have same width */
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 0px;
-            flex: 1 1 0px;
   }
-  #app #frontpage #frontpage-content .frontpage-img {
-    width: 470px;
-    height: 420px;
+  #app #frontpage-content .frontpage-img {
+    width: 100%;
+    max-width: 40rem;
+    min-width: 25rem;
   }
-  #app #frontpage #frontpage-content h5 {
+  #app #frontpage-content .frontpage-textbox {
+    max-width: 500px;
+  }
+  #app #frontpage-content .frontpage-textbox h5 {
+    text-align: start;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+  }
+  #app #frontpage-content .frontpage-textbox p {
     text-align: start;
     padding: 1rem 1rem;
   }
-  #app #frontpage #frontpage-content p {
-    text-align: start;
-    padding: 1rem 1rem;
-  }
-  #app #frontpage #frontpage-content .frontpage-buttons {
+  #app #frontpage-content .frontpage-textbox .frontpage-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 2rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
   }
-  #app #frontpage #frontpage-content #log-button {
+  #app #frontpage-content .frontpage-textbox #log-button {
     margin-top: 0.5rem;
-    width: 16rem;
+    width: 10rem;
   }
-  #app #frontpage #frontpage-content #calendar-button {
+  #app #frontpage-content .frontpage-textbox #calendar-button {
     margin-top: 0.5rem;
     display: block;
-    width: 16rem;
+    width: 10rem;
   }
 }
 
-#app #calendarpage {
+#calendarpage {
   background-color: #F3F3F3;
 }
 
 @media only screen and (min-width: 768px) {
-  #app #calendarpage .mobile-header {
+  #calendarpage .mobile-header {
     display: none;
   }
 }
 
-#app #symptompage {
+#symptompage {
   background-color: #F3F3F3;
 }
 
 @media only screen and (min-width: 768px) {
-  #app #symptompage .mobile-header {
+  #symptompage .mobile-header {
     display: none;
   }
 }
@@ -964,10 +1240,14 @@ nav .nav-link:hover {
   margin-right: 25px;
 }
 
-.mobile-header .profile h4 {
-  color: #FFFFFF;
+.mobile-header .profile p {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  font-family: "Saira", sans-serif;
+  color: #393939;
+  font-size: 20px;
+  line-height: auto;
+  color: #D8D5D5;
 }
 
 .hide-section {

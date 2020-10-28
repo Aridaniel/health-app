@@ -50,7 +50,7 @@
     input {
         @include button-style($button-primary, 100%);
         text-align: left;
-    }
+    }    
 
     textarea {
         border: $border;
@@ -73,8 +73,8 @@
     display: none; 
     position: absolute; 
     z-index: 1; 
-    left: 140px;
-    top: 170px;
+    top: 112px;
+    width: 100%;
     
 
     /* Add modal Content/Box */
@@ -241,4 +241,89 @@
         border-radius: 50%;
         background-color: white;
     }
+}
+
+
+/* Success Message */
+
+.success-message {
+    display: none; 
+    position: absolute; 
+    z-index: 1;
+    width: 100%;
+}
+    .success-content {
+        background-color: white;
+        margin: 15% auto; 
+        padding: 20px;
+        height: 100%;
+        width: 300px;
+        border: $border;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+            padding: 10px 0 10px 0;
+        }
+      
+        button {
+            @include button-style($button-secondary, 100%)
+        }   
+    }
+
+@media only screen and (min-width: 768px) {
+
+    .condition-form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 820px;
+        margin: auto;
+        justify-content: space-between;
+
+        select {
+            width: 320px;
+            order: 1;
+            //align-self: ;
+        }
+
+        .strength-wrapper {
+            order: 4;
+            height: 187px;
+            //align-self: flex-end;
+        }
+    
+        button {
+            width: 320px;
+            order: 3;
+            //align-self: flex-start;
+        }
+    
+        input {
+            width: 320px;
+            text-align: left;
+            order: 2;
+            //align-self: flex-start;
+        }    
+        
+        label {
+            order: 5;
+            //align-self: flex-start;
+        }
+        textarea {
+            order: 6;
+            width: 100%;
+        }
+        .confirm-btn {
+            order: 7;
+            width: 230px;
+            //align-self: flex-end;
+        }
+    }
+    
 }
