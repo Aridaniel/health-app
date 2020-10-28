@@ -47,7 +47,7 @@
         .calendar-weekdays {
             height: 100%;
             width: 100%;
-            font-weight: bold;
+            /* font-weight: bold; */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -78,6 +78,7 @@
     background-color: white;
     border: $border;
     border-radius: 10px;
+    @include desktopBody;
 }
 
 .condition-icons {
@@ -90,6 +91,7 @@
         color: white;
         margin-bottom: 1rem;
         padding: 0.5rem 0;
+        font-family: 'Saira', sans-serif;
     }
 
     img {

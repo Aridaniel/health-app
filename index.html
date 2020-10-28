@@ -32,7 +32,18 @@
         </ul>
     </nav>
 
+
+
+
+
+
     <main id="app">
+
+
+
+
+
+         <!-- Frontpage -->
 
         <div class="page active" id="frontpage">
             <header class="mobile-header">
@@ -57,7 +68,16 @@
             </div>
         </div>
 
+
+
+        
+        
+        
+        <!-- Sympton Page -->
+        
         <div class="page" id="symptompage">
+            
+            
             <!-- Mobile header -->
             <header class="mobile-header hide-desktop">
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
@@ -67,16 +87,26 @@
                 </div>
             </header>
             <form id="logForm" class="condition-form">
+                
+                
+                
                 <!-- The dropdown -->
                 <div class="form-buttons">
                     <select name="velja-lidan" id="velja-lidan" required>
                         <option value="" disabled selected>Velja líðan</option>
                     </select>
+                    
+                    
                     <!-- Button to open add modal -->
                     <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við</button>
                 </div>
+                
+                
+                
                 <!-- Date input -->
                 <input type="date" id="log-date" name="log-date" required><br>
+                
+                
                 <!-- Choosing strength -->
                 <div class="strength-wrapper">
                     <p>Veldu styrk líðans</p>
@@ -86,17 +116,20 @@
                         <div class="strength-pick" id="strength-three"></div>
                     </div>
                 </div>
+                
                 <!-- Multi line textarea -->
                 <label for="annad">Lýstu líðan þinni nánar:</label><br>
                 <textarea name="annad" id="annad" cols="30" rows="10" value=""></textarea><br>
+                
+                
                 <!-- Submit button -->
                 <button class="confirm-btn" type="submit" form="logForm" id="submitBtn"
-                    value="stadfesta">Staðfesta</button>
+                value="stadfesta">Staðfesta</button>
                 <div id="mySuccessMessage" class="success-message">
                     <div class="success-content">
                         <h4>Skráning staðfest</h4>
                         <button type="button" class="nav-link" data-target="calendarpage"
-                            id="close-success">Loka</button>
+                        id="close-success">Loka</button>
                     </div>
                 </div>
             </form>
@@ -123,14 +156,23 @@
                 </div>
             </div>
         </div>
+        
+        
+        
+        
+        
+
+        <!-- Calender Page -->
+
 
         <div class="page" id="calendarpage">
-            <!-- Mobile header -->
+            
+                <!-- Mobile header -->
             <header class="mobile-header" id="calendar-header">
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
                 <div class="profile">
                     <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <h4>Jóna Jónsdóttir</h4>
+                    <p>Jóna Jónsdóttir</p>
                 </div>
             </header>
             <div class="calendar-page">
@@ -175,6 +217,11 @@
                 </div>
             </div>
         </div>
+
+       
+
+        
+      
 
     </main>
     <!-- js for storage -->
