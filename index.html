@@ -72,13 +72,104 @@
 
 
 
+        
+        
+        
+        <!-- Sympton Page -->
+        
+        <div class="page" id="symptompage">
+            
+            
+            <!-- Mobile header -->
+            <header class="mobile-header hide-desktop">
+                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
+                <div class="profile">
+                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
+                    <p>Jóna Jónsdóttir</p>
+                </div>
+            </header>
+            <form id="logForm" class="condition-form">
+                
+                
+                
+                <!-- The dropdown -->
+                <div class="form-buttons">
+                    <select name="velja-lidan" id="velja-lidan" required>
+                        <option value="" disabled selected>Velja líðan</option>
+                    </select>
+                    
+                    
+                    <!-- Button to open add modal -->
+                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við</button>
+                </div>
+                
+                
+                
+                <!-- Date input -->
+                <input type="date" id="log-date" name="log-date" required><br>
+                
+                
+                <!-- Choosing strength -->
+                <div class="strength-wrapper">
+                    <p>Veldu styrk líðans</p>
+                    <div id="strength-container">
+                        <div class="strength-pick" id="strength-one"></div>
+                        <div class="strength-pick" id="strength-two"></div>
+                        <div class="strength-pick" id="strength-three"></div>
+                    </div>
+                </div>
+                
+                <!-- Multi line textarea -->
+                <label for="annad">Lýstu líðan þinni nánar:</label><br>
+                <textarea name="annad" id="annad" cols="30" rows="10" value=""></textarea><br>
+                
+                
+                <!-- Submit button -->
+                <button class="confirm-btn" type="submit" form="logForm" id="submitBtn"
+                value="stadfesta">Staðfesta</button>
+                <div id="mySuccessMessage" class="success-message">
+                    <div class="success-content">
+                        <h4>Skráning staðfest</h4>
+                        <button type="button" class="nav-link" data-target="calendarpage"
+                        id="close-success">Loka</button>
+                    </div>
+                </div>
+            </form>
+            <!-- The add modal -->
+            <div id="myAddModal" class="add-modal">
+                <div class="add-modal-content">
+                    <!-- Close (x) for modal -->
+                    <span class="close-modal">&times;</span>
+                    <form id="addForm">
+                        <!-- Text input field -->
+                        <label for="addInput"><h4>Bæta við</h4></label><br>
+                        <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
+                        <div class="color-wrapper">
+                            <h4 class="colorHeader">Veldu lit</h4>
+                            <div id="color-container"></div>
+                        </div>
+                        <div class="output-wrapper">
+                            <h3>Output Litur</h3>
+                            <div id="output-color"></div>
+                        </div>
+                        <!-- Button to submit new option to dropdown -->
+                        <button type="button" form="addForm" value="beata-vid" id="addToDropDwnBtn">Bæta við</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
 
         <!-- Calender Page -->
 
 
         <div class="page" id="calendarpage">
             
-             <!-- Mobile header -->
+                <!-- Mobile header -->
             <header class="mobile-header" id="calendar-header">
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
                 <div class="profile">
@@ -130,153 +221,10 @@
             </div>
         </div>
 
-
-
-        <!-- Sympton Page -->
-
-        <div class="page" id="symptompage">
-
-
-            <!-- Mobile header -->
-            <header class="mobile-header hide-desktop">
-                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
-                <div class="profile">
-                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <p>Jóna Jónsdóttir</p>
-                </div>
-            </header>
-            <form id="logForm" class="condition-form">
-
-
-
-                <!-- The dropdown -->
-                <div class="form-buttons">
-                    <select name="velja-lidan" id="velja-lidan" required>
-                        <option value="" disabled selected>Velja líðan</option>
-                    </select>
-
-
-                    <!-- Button to open add modal -->
-                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við</button>
-                </div>
-
-
-
-                <!-- Date input -->
-                <input type="date" id="log-date" name="log-date" required><br>
-
-
-                <!-- Choosing strength -->
-                <div class="strength-wrapper">
-                    <p>Veldu styrk líðans</p>
-                    <div id="strength-container">
-                        <div class="strength-pick" id="strength-one"></div>
-                        <div class="strength-pick" id="strength-two"></div>
-                        <div class="strength-pick" id="strength-three"></div>
-                    </div>
-                </div>
-
-                <!-- Multi line textarea -->
-                <label for="annad">Lýstu líðan þinni nánar:</label><br>
-                <textarea name="annad" id="annad" cols="30" rows="10" value=""></textarea><br>
-
-
-                <!-- Submit button -->
-                <button class="confirm-btn" type="submit" form="logForm" id="submitBtn"
-                    value="stadfesta">Staðfesta</button>
-                <div id="mySuccessMessage" class="success-message">
-                    <div class="success-content">
-                        <h4>Skráning staðfest</h4>
-                        <button type="button" class="nav-link" data-target="calendarpage"
-                            id="close-success">Loka</button>
-                    </div>
-                </div>
-            </form>
-            <!-- The add modal -->
-            <div id="myAddModal" class="add-modal">
-                <div class="add-modal-content">
-                    <!-- Close (x) for modal -->
-                    <span class="close-modal">&times;</span>
-                    <form id="addForm">
-                        <!-- Text input field -->
-                        <label for="addInput"><h4>Bæta við</h4></label><br>
-                        <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
-                        <div class="color-wrapper">
-                            <h4 class="colorHeader">Veldu lit</h4>
-                            <div id="color-container"></div>
-                        </div>
-                        <div class="output-wrapper">
-                            <h3>Output Litur</h3>
-                            <div id="output-color"></div>
-                        </div>
-                        <!-- Button to submit new option to dropdown -->
-                        <button type="button" form="addForm" value="beata-vid" id="addToDropDwnBtn">Bæta við</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-<<<<<<< HEAD
-
-
-
-
-
        
 
         
       
-=======
-        <div class="page" id="calendarpage">
-            <!-- Mobile header -->
-            <header class="mobile-header" id="calendar-header">
-                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
-                <div class="profile">
-                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <h4>Jóna Jónsdóttir</h4>
-                </div>
-            </header>
-            <div class="calendar-container">
-                <div class="calendar-grid" id="calendar">
-                    <div id="calendar-header">
-                        <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg"
-                                alt="Previous month"></button>
-                        <div class="calendar-text">
-                            <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
-                        </div>
-                        <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg"
-                                alt="Next month"></button>
-                    </div>
-                    <div class="calendar-weekdays">S</div>
-                    <div class="calendar-weekdays">M</div>
-                    <div class="calendar-weekdays">Þ</div>
-                    <div class="calendar-weekdays">M</div>
-                    <div class="calendar-weekdays">F</div>
-                    <div class="calendar-weekdays">F</div>
-                    <div class="calendar-weekdays">L</div>
-                </div>
-            </div>
-            <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
-            <div id="calendar-advice" class="calendar-advice">
-                Ýttu á lit á dagatalinu til að skoða nánar
-            </div>
-            <div id="condition-preview" class="condition-preview">
-                <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði
-                </div>
-                <div class="condition-icons">
-                    <div id="condition-label" class="condition-label">Condition</div>
-                    <!-- Strength bar display -->
-                    <div class="strength-display-wrapper" title="Styrkur einkenna">
-                        <div id="strength-display-container">
-                            <div class="strength-display-pick" id="strength-display-one"></div>
-                            <div class="strength-display-pick" id="strength-display-two"></div>
-                            <div class="strength-display-pick" id="strength-display-three"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
->>>>>>> 86352d62fa14d24d14a9540fde863fd531663b23
 
     </main>
     <!-- js for storage -->
