@@ -31,12 +31,13 @@ p {
 
 h2 {
     @include desktopFrontpage-menu;
-
+    color: #FFFFFF;
+    
 
 }
-
-h4 {
-    @include desktopFrontpage-menu;
+h3
+{
+    @include desktopBody
 }
 
 h4 {
@@ -44,7 +45,9 @@ h4 {
     color: #D8D5D5;
 }
 
-h6 {
+
+
+h6{
     @include desktopFrontpage-menu;
 
 }

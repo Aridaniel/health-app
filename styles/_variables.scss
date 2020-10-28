@@ -72,6 +72,7 @@ $fontWeightLarge : 400;
   font-size: $fontSizeMedium;
   line-height: 160.4%;
   letter-spacing: 2%;
+  font-weight: $fontWeightMedium;
 }
 
 @mixin desktopFrontpage-menu {
@@ -93,6 +94,10 @@ $fontWeightLarge : 400;
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 0%;
+  font-weight: $fontWeightLarge;
+
+
+
 }
 
 
