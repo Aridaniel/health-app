@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <title>Calendar Proto</title>
 </head>
 
@@ -54,6 +57,53 @@
 
             </div>
         </div>
+    
+        <div class="page" id="calendarpage">
+             <!-- Mobile header -->
+            <header class="mobile-header" id="calendar-header">
+                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
+                <div class="profile">
+                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
+                    <p>Jóna Jónsdóttir</p>
+                </div>
+            </header>
+            <div class="calendar-container">
+                <div class="calendar-grid" id="calendar">
+                    <div id="calendar-header">
+                        <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg" alt="Previous month"></button>
+                        <div class="calendar-text">
+                            <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
+                        </div>
+                        <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg" alt="Next month"></button>
+                    </div>
+                    <div class="calendar-weekdays">S</div>
+                    <div class="calendar-weekdays">M</div>
+                    <div class="calendar-weekdays">Þ</div>
+                    <div class="calendar-weekdays">M</div>
+                    <div class="calendar-weekdays">F</div>
+                    <div class="calendar-weekdays">F</div>
+                    <div class="calendar-weekdays">L</div>
+                </div>
+            </div>
+            <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
+            <div id="calendar-advice" class="calendar-advice">
+                Ýttu á lit á dagatalinu til að skoða nánar
+            </div>
+            <div id="condition-preview" class="condition-preview">
+                <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði</div>
+                <div class="condition-icons">
+                    <div id="condition-label" class="condition-label">Condition</div>
+                    <!-- Strength bar display -->
+                    <div class="strength-display-wrapper" title="Styrkur einkenna">
+                        <div id="strength-display-container">
+                            <div class="strength-display-pick" id="strength-display-one"></div>
+                            <div class="strength-display-pick" id="strength-display-two"></div>
+                            <div class="strength-display-pick" id="strength-display-three"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="page" id="symptompage">
             <!-- Mobile header -->
@@ -61,7 +111,7 @@
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
                 <div class="profile">
                     <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <h4>Jóna Jónsdóttir</h4>
+                    <p>Jóna Jónsdóttir</p>
                 </div>
             </header>
             <form id="logForm" class="condition-form">
@@ -71,14 +121,13 @@
                         <option value="" disabled selected>Velja líðan</option>
                     </select>
                     <!-- Button to open add modal -->
-                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við
-                        líðan</button>
+                    <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn">Bæta við</button>
                 </div>
                 <!-- Date input -->
                 <input type="date" id="log-date" name="log-date" required><br>
                 <!-- Choosing strength -->
                 <div class="strength-wrapper">
-                    <h4>Veldu styrk líðans</h4>
+                    <p>Veldu styrk líðans</p>
                     <div id="strength-container">
                         <div class="strength-pick" id="strength-one"></div>
                         <div class="strength-pick" id="strength-two"></div>
@@ -106,9 +155,7 @@
                     <span class="close-modal">&times;</span>
                     <form id="addForm">
                         <!-- Text input field -->
-                        <label for="addInput">
-                            <h4>Bæta við líðan</h4>
-                        </label><br>
+                        <label for="addInput"><h4>Bæta við</h4></label><br>
                         <input type="text" id="addInput" name="addInput" placeholder="..." required><br>
                         <div class="color-wrapper">
                             <h4 class="colorHeader">Veldu lit</h4>

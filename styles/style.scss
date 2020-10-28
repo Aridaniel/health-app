@@ -20,7 +20,51 @@ body {
     font-size: 18px;
     padding: 0;
     background-color: $background-secondary;
+    /* font-family: 'Saira', sans-serif; */
 }
+
+
+
+//Font styles
+p{
+    @include phoneBody
+
+    
+}
+
+/* nav ul div h4{
+    @include phoneHeader;
+    color: #D8D5D5;
+} */
+
+h4{
+    @include phoneHeader;
+    color: #D8D5D5;
+}
+
+h5
+{
+    @include phoneHeader
+}
+
+
+.calendar-advice
+{
+    @include phoneHeader
+}
+
+.strength-wrapper p{
+    @include phoneHeader;
+    
+}
+
+label
+{
+    @include phoneHeader;
+}
+
+
+
 
 /* Navigation */
 
@@ -120,11 +164,15 @@ nav {
             h5 {
                 text-align: center;
                 padding: 1rem 1rem;
+                
+                font-weight: bold;
             }
 
             p {
                 text-align: center;
                 padding: 1rem 1rem;
+                
+
             }
 
             .frontpage-img {
@@ -136,6 +184,7 @@ nav {
 
             .frontpage-buttons {
                 display: block;
+                
             }
 
             #log-button {
@@ -278,10 +327,11 @@ nav {
             border-radius: 50%;
             margin-right: 25px;
         }
-
-        h4 {
-            color: $pure-white;
+        p {
+            
             align-self: flex-end;
+            @include phoneHeader;
+            color: #D8D5D5;
         }
     }
 
