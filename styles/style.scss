@@ -16,7 +16,6 @@
 }
 
 body {
-    margin-bottom: 100px;
     font-size: 18px;
     padding: 0;
     background-color: $background-secondary;
@@ -144,13 +143,6 @@ nav {
         background-color: $background-secondary;
 
 
-        .frontpage-logo {
-            margin-right: auto;
-            margin-left: 10rem;
-            padding-top: 2rem;
-            padding-bottom: 1rem;
-        }
-
         // Front page header
         // #frontpage-content {
         //     display: block;
@@ -183,14 +175,14 @@ nav {
 
         #log-button {
             display: block;
-            margin-top: 1rem;
-            margin-left: auto;
-            margin-right: auto;
+            margin: auto 1rem;
+
         }
 
         #calendar-button {
             display: none;
         }
+    //}
     }
 
     .btn-type1 {
@@ -203,6 +195,14 @@ nav {
 
         }
 
+        .frontpage-logo {
+            margin-right: auto;
+            margin-left: 10rem;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        
         //------------- Desktop frontpage !! ----------------// 
         #frontpage-content {
             display: flex;
@@ -210,20 +210,26 @@ nav {
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            align-content: stretch;
-            margin-left: 10rem;
-            margin-right: 10rem;
+            //align-content: stretch;
+            // margin-left: 10rem;
+            // margin-right: 10rem;
+            //background-color: aqua;
+            //height: 70vh;
+
 
             div {
                 margin: 0 1rem;
                 /* All flex items have same width */
-                flex: 1 1 0px;
-                padding-top: 2rem;
+                //flex: 1 1 0px;
+                //padding-top: 2rem;
+                //background-color: blueviolet;
             }
 
             .frontpage-img {
-                width: 470px;
-                height: 420px;
+                width: 100%;
+                max-width: 40rem;
+                min-width: 25rem;
+               // background-color: chocolate;
             }
 
             .frontpage-textbox {
@@ -244,10 +250,10 @@ nav {
                     display: flex;
                     flex-direction: row-reverse;
                     flex-wrap: wrap;
-                    justify-content: center;
+                    justify-content: flex-end;
                     align-items: stretch;
                     align-content: stretch;
-                    margin-top: 7rem;
+                    //margin-top: 7rem;
                 }
 
                 #log-button {

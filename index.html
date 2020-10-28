@@ -48,60 +48,12 @@
                         þínu. </p>
                     <div class="frontpage-buttons">
                         <button class="btn-type1 nav-link" data-target="symptompage" id="log-button">Skrá líðan</button>
-                        <button class="btn-type1 nav-link" data-target="calendarpage"
-                            id="calendar-button">Dagatal</button>
+                        <button class="btn-type1 nav-link" data-target="calendarpage" id="calendar-button">Dagatal</button>
                     </div>
                 </div>
             </div>
             <div class="frontpage-footer">
 
-            </div>
-        </div>
-    
-        <div class="page" id="calendarpage">
-             <!-- Mobile header -->
-            <header class="mobile-header" id="calendar-header">
-                <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
-                <div class="profile">
-                    <img src="images/profile_pic.jpg" alt="Profile image" class="profile-img">
-                    <p>Jóna Jónsdóttir</p>
-                </div>
-            </header>
-            <div class="calendar-container">
-                <div class="calendar-grid" id="calendar">
-                    <div id="calendar-header">
-                        <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg" alt="Previous month"></button>
-                        <div class="calendar-text">
-                            <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
-                        </div>
-                        <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg" alt="Next month"></button>
-                    </div>
-                    <div class="calendar-weekdays">S</div>
-                    <div class="calendar-weekdays">M</div>
-                    <div class="calendar-weekdays">Þ</div>
-                    <div class="calendar-weekdays">M</div>
-                    <div class="calendar-weekdays">F</div>
-                    <div class="calendar-weekdays">F</div>
-                    <div class="calendar-weekdays">L</div>
-                </div>
-            </div>
-            <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
-            <div id="calendar-advice" class="calendar-advice">
-                Ýttu á lit á dagatalinu til að skoða nánar
-            </div>
-            <div id="condition-preview" class="condition-preview">
-                <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði</div>
-                <div class="condition-icons">
-                    <div id="condition-label" class="condition-label">Condition</div>
-                    <!-- Strength bar display -->
-                    <div class="strength-display-wrapper" title="Styrkur einkenna">
-                        <div id="strength-display-container">
-                            <div class="strength-display-pick" id="strength-display-one"></div>
-                            <div class="strength-display-pick" id="strength-display-two"></div>
-                            <div class="strength-display-pick" id="strength-display-three"></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -181,41 +133,43 @@
                     <h4>Jóna Jónsdóttir</h4>
                 </div>
             </header>
-            <div class="calendar-container">
-                <div class="calendar-grid" id="calendar">
-                    <div id="calendar-header">
-                        <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg"
-                                alt="Previous month"></button>
-                        <div class="calendar-text">
-                            <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
+            <div class="calendar-page">
+                <div class="calendar-container">
+                    <div class="calendar-grid" id="calendar">
+                        <div id="calendar-header">
+                            <button class="calendar-control" id="prev-month" type="button"><img src="images/previous.svg"
+                                    alt="Previous month"></button>
+                            <div class="calendar-text">
+                                <span id="current-month">MonthName</span>&nbsp;<span id="current-year">1999</span>
+                            </div>
+                            <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg"
+                                    alt="Next month"></button>
                         </div>
-                        <button class="calendar-control" id="next-month" type="button"><img src="images/next.svg"
-                                alt="Next month"></button>
+                        <div class="calendar-weekdays">S</div>
+                        <div class="calendar-weekdays">M</div>
+                        <div class="calendar-weekdays">Þ</div>
+                        <div class="calendar-weekdays">M</div>
+                        <div class="calendar-weekdays">F</div>
+                        <div class="calendar-weekdays">F</div>
+                        <div class="calendar-weekdays">L</div>
                     </div>
-                    <div class="calendar-weekdays">S</div>
-                    <div class="calendar-weekdays">M</div>
-                    <div class="calendar-weekdays">Þ</div>
-                    <div class="calendar-weekdays">M</div>
-                    <div class="calendar-weekdays">F</div>
-                    <div class="calendar-weekdays">F</div>
-                    <div class="calendar-weekdays">L</div>
                 </div>
-            </div>
-            <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
-            <div id="calendar-advice" class="calendar-advice">
-                Ýttu á lit á dagatalinu til að skoða nánar
-            </div>
-            <div id="condition-preview" class="condition-preview">
-                <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði
+                <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
+                <div id="calendar-advice" class="calendar-advice">
+                    Ýttu á lit á dagatalinu til að skoða nánar
                 </div>
-                <div class="condition-icons">
-                    <div id="condition-label" class="condition-label">Condition</div>
-                    <!-- Strength bar display -->
-                    <div class="strength-display-wrapper" title="Styrkur einkenna">
-                        <div id="strength-display-container">
-                            <div class="strength-display-pick" id="strength-display-one"></div>
-                            <div class="strength-display-pick" id="strength-display-two"></div>
-                            <div class="strength-display-pick" id="strength-display-three"></div>
+                <div id="condition-preview" class="condition-preview">
+                    <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði
+                    </div>
+                    <div class="condition-icons">
+                        <div id="condition-label" class="condition-label">Condition</div>
+                        <!-- Strength bar display -->
+                        <div class="strength-display-wrapper" title="Styrkur einkenna">
+                            <div id="strength-display-container">
+                                <div class="strength-display-pick" id="strength-display-one"></div>
+                                <div class="strength-display-pick" id="strength-display-two"></div>
+                                <div class="strength-display-pick" id="strength-display-three"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

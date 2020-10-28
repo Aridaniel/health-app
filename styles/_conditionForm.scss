@@ -248,18 +248,50 @@
 
     .condition-form {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 820px;
+        margin: auto;
+        justify-content: space-between;
+
         select {
             width: 320px;
+            order: 1;
+            //align-self: ;
+        }
+
+        .strength-wrapper {
+            order: 4;
+            height: 187px;
+            //align-self: flex-end;
         }
     
         button {
             width: 320px;
+            order: 3;
+            //align-self: flex-start;
         }
     
         input {
             width: 320px;
             text-align: left;
+            order: 2;
+            //align-self: flex-start;
         }    
+        
+        label {
+            order: 5;
+            //align-self: flex-start;
+        }
+        textarea {
+            order: 6;
+            width: 100%;
+        }
+        .confirm-btn {
+            order: 7;
+            width: 230px;
+            //align-self: flex-end;
+        }
     }
     
 }
