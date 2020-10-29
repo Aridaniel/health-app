@@ -102,6 +102,7 @@ function openLogPage(ev) {
     loadOptionsFromStorage();
     resetSelectButton();
     strengthArray.forEach(element => element.classList.remove('strength-active'));
+    dateSelection.value = new Date().toISOString().split('T')[0];
 }
 
 function hideDropdown() {
