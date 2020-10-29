@@ -66,6 +66,9 @@
                 font-weight: 300;
                 margin-bottom: 50px;
                 text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 &:hover {
                     background-color: $button-secondary

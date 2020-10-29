@@ -24,6 +24,7 @@
                 .dropdown-item {
                     display: flex;
                     justify-content: space-between;
+                    font-family: $mainFont;
                     color: white;
                     padding: 12px 16px;
                     span {
@@ -223,7 +224,7 @@
 
 
 .activeColor {
-    border: 2px solid black;
+    border: 2px solid #2F6584;
 }
 
 

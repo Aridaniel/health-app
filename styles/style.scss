@@ -16,6 +16,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column-reverse;
     font-size: 18px;
     padding: 0;
     background-color: $background-secondary;
@@ -41,15 +43,14 @@ h3
 }
 
 h4 {
-    @include phoneHeader;
+    @include phoneHeader(#D8D5D5);
     
 }
 
 
 h5 {
-    @include phoneBody()
+    @include phoneFrontPageHeader
 }
-
 
 
 
@@ -57,16 +58,16 @@ h5 {
 
 
 .calendar-advice {
-    @include phoneHeader
+    @include phoneHeader(purple)
 }
 
 .strength-wrapper p {
-    @include phoneHeader;
+    @include phoneHeader($mainTextColor);
 
 }
 
 label {
-    @include phoneHeader;
+    @include phoneHeader($mainTextColor);
 }
 
 .calendar-advice {
@@ -86,7 +87,10 @@ label {
     p {
         @include desktopBody
     }
-
+    
+    .condition-descr {
+        @include desktopBody
+    }
     
 }
 
@@ -94,7 +98,7 @@ label {
 /* Navigation */
 // Yup
 nav {
-    position: fixed;
+    flex: 0 0 100px;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -105,7 +109,6 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
 
     ul {
         display: flex;
@@ -177,9 +180,9 @@ nav {
             text-align: center;
             padding: 1rem 1rem;
             
-            @include desktopFrontpage-menu($mainTextColor);
+            /* @include desktopFrontpage-menu($mainTextColor); */
              
-            font-weight: bold;
+            /* font-weight: bold; */
         }
 
         p {
@@ -204,11 +207,12 @@ nav {
         #log-button {
             display: block;
             margin: 0 auto;
-
+            margin-bottom: 2rem;
         }
 
         #calendar-button {
             display: none;
+            margin-bottom: 2rem;
         }
 
         //}
@@ -273,7 +277,7 @@ nav {
                 h5 {
                     text-align: start;
                     padding: 1rem 1rem;
-                    /* font-size: $fontSizeDesktopHeadlines; */
+                    @include desktopFrontpage-menu($mainTextColor);
                     
                     font-weight: bold;
 
@@ -370,7 +374,7 @@ nav {
         p {
 
             align-self: flex-end;
-            @include phoneHeader;
+            @include phoneHeader(orange);
             color: #D8D5D5;
         }
     }

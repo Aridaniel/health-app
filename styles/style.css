@@ -8,13 +8,10 @@ $primary-color: #e6d149;
 $accent-color: #add8e6; */
 /* Fonts */
 /* Phone mixin */
+/* #D8D5D5; */
 /* Desktop Mixin */
 /* Colors */
 /* Button */
-/*
-.btn-1 {
-    @extend %button-style;
-  } */
 /* Media query for desktop version */
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -72,6 +69,15 @@ $accent-color: #add8e6; */
     font-weight: 300;
     margin-bottom: 50px;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav-sidebar ul .nav-link:hover {
     background-color: #E76F51;
@@ -450,6 +456,7 @@ $accent-color: #add8e6; */
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-family: "Saira", sans-serif;
   color: white;
   padding: 12px 16px;
 }
@@ -743,7 +750,7 @@ $accent-color: #add8e6; */
 }
 
 .activeColor {
-  border: 2px solid black;
+  border: 2px solid #2F6584;
 }
 
 /* chosen color output */
@@ -890,6 +897,13 @@ $accent-color: #add8e6; */
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   font-size: 18px;
   padding: 0;
   background-color: #F3F3F3;
@@ -935,15 +949,14 @@ h4 {
 
 h5 {
   font-family: "Saira", sans-serif;
+  font-size: 18px;
   color: #393939;
-  font-size: 16px;
-  letter-spacing: 1%;
 }
 
 .calendar-advice {
   font-family: "Saira", sans-serif;
   /* color: $mainTextColor; */
-  color: #D8D5D5;
+  color: purple;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
@@ -952,7 +965,7 @@ h5 {
 .strength-wrapper p {
   font-family: "Saira", sans-serif;
   /* color: $mainTextColor; */
-  color: #D8D5D5;
+  color: #393939;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
@@ -961,7 +974,7 @@ h5 {
 label {
   font-family: "Saira", sans-serif;
   /* color: $mainTextColor; */
-  color: #D8D5D5;
+  color: #393939;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
@@ -991,11 +1004,21 @@ label {
     letter-spacing: 2%;
     font-weight: 300;
   }
+  .condition-descr {
+    font-family: "Saira", sans-serif;
+    color: #393939;
+    font-size: 18px;
+    line-height: 160.4%;
+    letter-spacing: 2%;
+    font-weight: 300;
+  }
 }
 
 /* Navigation */
 nav {
-  position: fixed;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1081,15 +1104,8 @@ nav img {
 #app #frontpage h5 {
   text-align: center;
   padding: 1rem 1rem;
-  font-family: "Saira", sans-serif;
-  /* color: $mainTextColor; */
-  color: #393939;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: auto;
-  line-height: 160.4%;
-  letter-spacing: 1%;
-  font-weight: bold;
+  /* @include desktopFrontpage-menu($mainTextColor); */
+  /* font-weight: bold; */
 }
 
 #app #frontpage p {
@@ -1111,10 +1127,12 @@ nav img {
 #app #frontpage #log-button {
   display: block;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 #app #frontpage #calendar-button {
   display: none;
+  margin-bottom: 2rem;
 }
 
 #app .btn-type1 {
@@ -1181,7 +1199,14 @@ nav img {
   #app #frontpage-content .frontpage-textbox h5 {
     text-align: start;
     padding: 1rem 1rem;
-    /* font-size: $fontSizeDesktopHeadlines; */
+    font-family: "Saira", sans-serif;
+    /* color: $mainTextColor; */
+    color: #393939;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: auto;
+    line-height: 160.4%;
+    letter-spacing: 1%;
     font-weight: bold;
   }
   #app #frontpage-content .frontpage-textbox p {
@@ -1301,7 +1326,7 @@ nav img {
       align-self: flex-end;
   font-family: "Saira", sans-serif;
   /* color: $mainTextColor; */
-  color: #D8D5D5;
+  color: orange;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
