@@ -34,8 +34,8 @@ $fontWeightLarge : 400;
 
 /* Phone mixin */
 
- @mixin phoneBody(){
-  font-family: $mainFont;
+ @mixin phoneBody($fontfam){
+  font-family: $fontfam;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
   letter-spacing: 1%;
