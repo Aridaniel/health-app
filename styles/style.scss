@@ -30,8 +30,8 @@ p {
 }
 
 h2 {
-    @include desktopFrontpage-menu;
-    color: #FFFFFF;
+    @include desktopFrontpage-menu(white);
+    /* color: red; */
     
 
 }
@@ -41,44 +41,48 @@ h3
 }
 
 h4 {
-    @include phoneHeader;
-    color: #D8D5D5;
+    @include phoneHeader(#D8D5D5);
+    
 }
-
-
-
-h6{
-    @include desktopFrontpage-menu;
-
-}
-
 
 
 h5 {
-    @include phoneHeader
+    @include phoneFrontPageHeader
 }
 
 
-.calendar-advice {
-    @include phoneHeader
-}
 
+/* Auka textar sem þurfa styles */
+
+
+/* Velja líðan síðann */
 .strength-wrapper p {
-    @include phoneHeader;
-
+    @include phoneHeader($mainTextColor);
+    
 }
 
 label {
-    @include phoneHeader;
+    @include phoneHeader($mainTextColor);
 }
+
+
+/* Calendar */
+
+
+
 
 .calendar-advice {
     @include phoneBody;
+    /* @include phoneHeader */
 }
 
 .condition-descr {
     @include phoneBody
 }
+
+
+
+
 
 
 
@@ -89,7 +93,16 @@ label {
     p {
         @include desktopBody
     }
+    
+    .condition-descr {
+        @include desktopBody
+    }
 
+    .calendar-advice {
+        @include desktopBody;
+        
+    }
+    
 }
 
 
@@ -177,7 +190,10 @@ nav {
         h5 {
             text-align: center;
             padding: 1rem 1rem;
-            font-weight: bold;
+            
+            /* @include desktopFrontpage-menu($mainTextColor); */
+             
+            /* font-weight: bold; */
         }
 
         p {
@@ -270,8 +286,8 @@ nav {
                 h5 {
                     text-align: start;
                     padding: 1rem 1rem;
-                    font-size: $fontSizeDesktopHeadlines;
-                    @include desktopFrontpage-menu();
+                    @include desktopFrontpage-menu($mainTextColor);
+                    
                     font-weight: bold;
 
                 }
@@ -280,7 +296,7 @@ nav {
                     text-align: start;
                     padding: 1rem 1rem 3rem;
                     font-size: $fontSizeBig;
-                    @include desktopFrontpage-menu;
+                    @include desktopFrontpage-menu($mainTextColor );
                 }
 
                 .frontpage-buttons {
@@ -367,7 +383,7 @@ nav {
         p {
 
             align-self: flex-end;
-            @include phoneHeader;
+            @include phoneHeader(orange);
             color: #D8D5D5;
         }
     }

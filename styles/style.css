@@ -8,13 +8,10 @@ $primary-color: #e6d149;
 $accent-color: #add8e6; */
 /* Fonts */
 /* Phone mixin */
+/* #D8D5D5; */
 /* Desktop Mixin */
 /* Colors */
 /* Button */
-/*
-.btn-1 {
-    @extend %button-style;
-  } */
 /* Media query for desktop version */
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -1004,13 +1001,14 @@ p {
 
 h2 {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: white;
   font-size: 24px;
   font-weight: 300;
   line-height: auto;
   line-height: 160.4%;
   letter-spacing: 1%;
-  color: #FFFFFF;
+  /* color: red; */
 }
 
 h3 {
@@ -1024,41 +1022,24 @@ h3 {
 
 h4 {
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: #D8D5D5;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
-  color: #D8D5D5;
-}
-
-h6 {
-  font-family: "Saira", sans-serif;
-  color: #393939;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: auto;
-  line-height: 160.4%;
-  letter-spacing: 1%;
 }
 
 h5 {
   font-family: "Saira", sans-serif;
+  font-size: 18px;
   color: #393939;
-  font-size: 20px;
-  line-height: auto;
-  font-weight: 400;
 }
 
-.calendar-advice {
-  font-family: "Saira", sans-serif;
-  color: #393939;
-  font-size: 20px;
-  line-height: auto;
-  font-weight: 400;
-}
-
+/* Auka textar sem þurfa styles */
+/* Velja líðan síðann */
 .strength-wrapper p {
   font-family: "Saira", sans-serif;
+  /* color: $mainTextColor; */
   color: #393939;
   font-size: 20px;
   line-height: auto;
@@ -1067,17 +1048,20 @@ h5 {
 
 label {
   font-family: "Saira", sans-serif;
+  /* color: $mainTextColor; */
   color: #393939;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;
 }
 
+/* Calendar */
 .calendar-advice {
   font-family: "Saira", sans-serif;
   color: #393939;
   font-size: 16px;
   letter-spacing: 1%;
+  /* @include phoneHeader */
 }
 
 .condition-descr {
@@ -1090,6 +1074,22 @@ label {
 /* Media query fyrir fonta */
 @media only screen and (min-width: 768px) {
   p {
+    font-family: "Saira", sans-serif;
+    color: #393939;
+    font-size: 18px;
+    line-height: 160.4%;
+    letter-spacing: 2%;
+    font-weight: 300;
+  }
+  .condition-descr {
+    font-family: "Saira", sans-serif;
+    color: #393939;
+    font-size: 18px;
+    line-height: 160.4%;
+    letter-spacing: 2%;
+    font-weight: 300;
+  }
+  .calendar-advice {
     font-family: "Saira", sans-serif;
     color: #393939;
     font-size: 18px;
@@ -1187,7 +1187,8 @@ nav img {
 #app #frontpage h5 {
   text-align: center;
   padding: 1rem 1rem;
-  font-weight: bold;
+  /* @include desktopFrontpage-menu($mainTextColor); */
+  /* font-weight: bold; */
 }
 
 #app #frontpage p {
@@ -1279,8 +1280,8 @@ nav img {
   #app #frontpage-content .frontpage-textbox h5 {
     text-align: start;
     padding: 1rem 1rem;
-    font-size: 36px;
     font-family: "Saira", sans-serif;
+    /* color: $mainTextColor; */
     color: #393939;
     font-size: 24px;
     font-weight: 300;
@@ -1294,6 +1295,7 @@ nav img {
     padding: 1rem 1rem 3rem;
     font-size: 24px;
     font-family: "Saira", sans-serif;
+    /* color: $mainTextColor; */
     color: #393939;
     font-size: 24px;
     font-weight: 300;
@@ -1404,7 +1406,8 @@ nav img {
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-family: "Saira", sans-serif;
-  color: #393939;
+  /* color: $mainTextColor; */
+  color: orange;
   font-size: 20px;
   line-height: auto;
   font-weight: 400;

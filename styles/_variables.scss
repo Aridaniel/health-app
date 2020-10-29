@@ -34,7 +34,7 @@ $fontWeightLarge : 400;
 
 /* Phone mixin */
 
- @mixin phoneBody{
+ @mixin phoneBody(){
   font-family: $mainFont;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
@@ -42,6 +42,12 @@ $fontWeightLarge : 400;
 
 
 
+}
+
+@mixin phoneFrontPageHeader{
+  font-family: $mainFont;
+  font-size: $fontSizeMedium;
+  color: $mainTextColor;
 }
 
 @mixin phoneBigButton {
@@ -53,9 +59,11 @@ $fontWeightLarge : 400;
 
 }
 
-@mixin phoneHeader {
+/* #D8D5D5; */
+@mixin phoneHeader($colorFonts) {
   font-family: $mainFont;
-  color: $mainTextColor;
+  /* color: $mainTextColor; */
+  color: $colorFonts;
   font-size: $fontSizeLarge;
   line-height: auto;
   font-weight: $fontWeightLarge;
@@ -76,9 +84,10 @@ $fontWeightLarge : 400;
   font-weight: $fontWeightMedium;
 }
 
-@mixin desktopFrontpage-menu {
+@mixin desktopFrontpage-menu($colorfont) {
   font-family: $mainFont;
-  color: $mainTextColor;
+  /* color: $mainTextColor; */
+  color: $colorfont;
   font-size: $fontSizeBig;
   font-weight: $fontWeightMedium ;
   line-height: auto;
@@ -105,6 +114,11 @@ $fontWeightLarge : 400;
   line-height: auto;
   letter-spacing: 1%;
 }
+
+
+
+
+
 
 /* Colors */
 $background-primary: #2F6584;
@@ -143,18 +157,3 @@ $border: 1px solid #EBEBEB;
   }
 }
 
-// %button-style {
-//     border-radius: 10px;
-//     color: $pure-white;
-//     &:hover {
-//       box-shadow: 4px 4px 20px 2px $drop-shadow;
-//     }
-// }
-
-/*
-.btn-1 {
-    @extend %button-style;
-  } */
-
-
-// Mixin for background color og width??
