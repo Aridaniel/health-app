@@ -13,10 +13,13 @@
         display: none;
     }
 
-    body {
-        --nav-width: 340px;
-        /*margin: 0 0 0 var(--nav-width);*/
-        font-size: 18px;
+    html {
+        body {
+            min-height: auto;
+            --nav-width: 340px;
+            /*margin: 0 0 0 var(--nav-width);*/
+            font-size: 18px;
+        }
     }
 
     .nav-sidebar {
