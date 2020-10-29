@@ -1,28 +1,19 @@
 /*  Variables store information that you want to use throughout your stylesheet using the $ symbol */
 
-/* Dæmi:
-$font-size: 2em;
-$primary-color: #e6d149;
-$accent-color: #add8e6; */
-
-
 
 /* Fonts */
 
 $mainFont : 'Saira', sans-serif;
 $calenderFont : 'Inter', sans-serif;
 
-
 $mainTextColor : #393939;
 $HeaderTextColor : #FFFCF9;
-
 
 $fontSizeSmall : 16px;
 $fontSizeMedium : 18px;
 $fontSizeLarge : 20px;
 $fontSizeBig : 24px;
 $fontSizeDesktopHeadlines : 36px;
-
 
 $fontWeightSmall : 200;
 $fontWeightMedium : 300;
@@ -39,9 +30,6 @@ $fontWeightLarge : 400;
   color: $mainTextColor;
   font-size: $fontSizeSmall;
   letter-spacing: 1%;
-
-
-
 }
 
 @mixin phoneFrontPageHeader{
@@ -54,21 +42,15 @@ $fontWeightLarge : 400;
   font-family: $mainFont;
   color: $HeaderTextColor;
   font-size: $fontSizeLarge;
-
-
-
 }
 
-/* #D8D5D5; */
+
 @mixin phoneHeader($colorFonts) {
   font-family: $mainFont;
-  /* color: $mainTextColor; */
   color: $colorFonts;
   font-size: $fontSizeLarge;
   line-height: auto;
   font-weight: $fontWeightLarge;
-
-
 }
 
 
@@ -86,14 +68,11 @@ $fontWeightLarge : 400;
 
 @mixin desktopFrontpage-menu($colorfont) {
   font-family: $mainFont;
-  /* color: $mainTextColor; */
   color: $colorfont;
   font-size: $fontSizeBig;
   font-weight: $fontWeightMedium ;
   line-height: auto;
   line-height: 160.4%;
-  
-
   letter-spacing: 1%;
 }
 
@@ -128,7 +107,6 @@ $button-secondary: #E76F51;
 $pure-white: #FFFFFF;
 $grey-font: #393939;
 $drop-shadow: rgba(0, 0, 0, 0.25);
-
 $border: 1px solid #EBEBEB;
 
 

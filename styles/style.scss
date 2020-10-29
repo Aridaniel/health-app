@@ -23,7 +23,7 @@ body {
     font-size: 18px;
     padding: 0;
     background-color: $background-secondary;
-    /* font-family: 'Saira', sans-serif; */
+    
 }
 
 
@@ -35,9 +35,6 @@ p {
 
 h2 {
     @include desktopFrontpage-menu(white);
-    /* color: red; */
-    
-
 }
 h3
 {
@@ -73,14 +70,13 @@ input{
     @include phoneBody($calenderFont)
 }
 
+
+
 /* Calendar */
-
-
 
 
 .calendar-advice {
     @include phoneBody($mainFont);
-    /* @include phoneHeader */
 }
 
 .condition-descr {
@@ -114,7 +110,7 @@ input{
 
 
 /* Navigation */
-// Yup
+
 nav {
     flex: 0 0 100px;
     bottom: 0;
@@ -197,10 +193,6 @@ nav {
         h5 {
             text-align: center;
             padding: 1rem 1rem;
-            
-            /* @include desktopFrontpage-menu($mainTextColor); */
-             
-            /* font-weight: bold; */
         }
 
         p {
@@ -233,7 +225,7 @@ nav {
             margin-bottom: 2rem;
         }
 
-        //}
+        
     }
 
     .btn-type1 {
@@ -249,14 +241,10 @@ nav {
         }
 
         .frontpage-logo {
-            // margin-right: auto;
-            // margin-left: 10rem;
             max-width: 20rem;
             display: flex;
             padding-left: 2.5rem;
             align-items: stretch;
-            // padding-top: 2rem;
-            // padding-bottom: 1rem;
         }
 
         #frontpage-content {
@@ -265,31 +253,17 @@ nav {
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            // margin-left: 10rem;
-            // margin-right: 10rem;
-            // background-color: aqua;
             height: 80vh;
             overflow: hidden;
-
-
-            // div {
-            //     // margin: 1rem;
-            //     /* All flex items have same width */
-            //     //flex: 1 1 0px;
-            //     //padding-top: 2rem;
-            //     // background-color: blueviolet;
-            // }
 
             .frontpage-img {
                 max-width: 40rem;
                 min-width: 25rem;
-                // background-color: chocolate;
             }
 
             .frontpage-textbox {
                 max-width: 500px;
                 padding-left: 2rem;
-                //background-color: salmon;
 
 
                 h5 {
@@ -315,7 +289,6 @@ nav {
                     justify-content: flex-end;
                     align-items: stretch;
                     align-content: stretch;
-                    //margin-top: 7rem;
                 }
 
                 #log-button {

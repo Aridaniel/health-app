@@ -1,7 +1,7 @@
+/* Dom Elements */
 const logForm = document.getElementById('logForm');
 const logLink = document.getElementById('log-condition');
 const logButton = document.getElementById('log-button');
-//const selectBox = document.getElementById('velja-lidan');
 const selectButton = document.getElementById('select-condition');
 const dropdownOptions = document.getElementById('dropdown-options');
 const dateSelection = document.getElementById('log-date');
@@ -13,7 +13,6 @@ const closeSuccess = document.getElementById('close-success');
 let chosenStrength = null;
 
 
-//let conditionsInStorage = [];
 
 // Handle submit event
 const handleSubmit = (e) => {
@@ -66,7 +65,6 @@ const handleSubmit = (e) => {
     const conditionIntensity = chosenStrength;
     const conditionColor = selectButton.getAttribute('data-color');
     const newCondition = new Condition(conditionName, other, conditionDate, conditionIntensity, conditionColor);
-    //conditionsInStorage.push(newCondition);
     if (success) {
         console.log('Success!');
         console.log('pushed: ' + newCondition);
