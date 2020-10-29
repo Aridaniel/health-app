@@ -16,6 +16,10 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 100vh;
+    justify-content: space-between;
     font-size: 18px;
     padding: 0;
     background-color: $background-secondary;
@@ -112,7 +116,7 @@ input{
 /* Navigation */
 // Yup
 nav {
-    position: fixed;
+    flex: 0 0 100px;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -221,10 +225,12 @@ nav {
         #log-button {
             display: block;
             margin: 0 auto;
+            margin-bottom: 2rem;
         }
 
         #calendar-button {
             display: none;
+            margin-bottom: 2rem;
         }
 
         //}
