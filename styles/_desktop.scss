@@ -25,7 +25,9 @@
         top: 0;
         left: 0;
         width: var(--nav-width);
-        height: 200vh;
+        height: 100%;
+        overflow: auto;
+
 
         ul {
             display: block;
