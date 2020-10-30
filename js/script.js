@@ -1,40 +1,40 @@
-// js for navigation, changing pages and main structure
+// JS for navigation, changing pages and main structure
 const navContainer = document.getElementById('nav-container');
 const navList = document.getElementById('nav-list');
 
 const app = {
     pages: [],
-    // to say when the page has been shown we dispatch the event 
+    // To say when the page has been shown we dispatch the event 
     show: new Event('show'),
     init: function() {
-        // finding everything with the class page
+        // Finding everything with the class page
         app.pages = document.querySelectorAll('.page');
         app.pages.forEach((pg) => {
-            // calling event and function
+            // Calling event and function
             pg.addEventListener('show', app.pageShown)
         })
-        // looping through all of the links in the html
+        // Looping through all of the links in the html
         document.querySelectorAll('.nav-link').forEach((link) => {
             link.addEventListener('click', app.nav);
         })
 
-        // to know what page we are on, title and id that will be placed into the location bar
+        // To know what page we are on, title and id that will be placed into the location bar
         history.replaceState({}, 'forsida', '#frontpage');
-        // for handeling the backbutton
+        // For handeling the backbutton
         window.addEventListener('popstate', app.poppin);
     },
 
     nav: function(ev) {
         ev.preventDefault();
-        // taking the current page and getting the data target
+        // Taking the current page and getting the data target
         let currentPage = this.getAttribute('data-target');
-        // first we remove the active class from one of the pages
+        // First we remove the active class from one of the pages
         document.querySelector('.active').classList.remove('active');
-        // adding the class active to show the correct page
+        // Adding the class active to show the correct page
         document.getElementById(currentPage).classList.add('active');
-        // adding a new entry to the location bar
+        // Adding a new entry to the location bar
         history.pushState({}, currentPage, `#${currentPage}`);
-        // telling the app that we went to a new page
+        // Telling the app that we went to a new page
         document.getElementById(currentPage).dispatchEvent(app.show);
     },
 
@@ -45,7 +45,6 @@ const app = {
             navContainer.classList.remove('nav-sidebar');
             navContainer.classList.add('nav');
         } else {
-            //document.getElementById('calendar-header').classList.add('hide-section');
             document.body.style.marginLeft = 'var(--nav-width)';
             navContainer.classList.remove('nav');
             navContainer.classList.add('nav-sidebar');
@@ -61,7 +60,7 @@ const app = {
     }
 }
 
-// when everything has been read call the app.init function
+// When everything has been read call the app.init function
 document.addEventListener('DOMContentLoaded', () => {
     app.init();
 });

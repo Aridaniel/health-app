@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <title>Heilsan mín</title>
 </head>
 
@@ -34,7 +32,6 @@
 
     <main id="app">
          <!-- Frontpage -->
-
         <div class="page active" id="frontpage">
             <header class="mobile-header">
                 <img src="images/health_logo.svg" alt="logo" class="frontpage-logo">
@@ -58,12 +55,8 @@
             </div>
         </div>        
         
-        
         <!-- Sympton Page -->
-        
         <div class="page" id="symptompage">
-            
-            
             <!-- Mobile header -->
             <header class="mobile-header hide-desktop">
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
@@ -84,13 +77,8 @@
 
                 <!-- Button to open add modal -->
                 <button type="button" form="logForm" value="openAddModal" id="openAddModuleBtn" class="open-modal-btn">Bæta við</button>
-                
-                
-                
                 <!-- Date input -->
                 <input type="date" id="log-date" name="log-date" required><br>
-                
-                
                 <!-- Choosing strength -->
                 <div class="strength-wrapper">
                     <p>Veldu styrk líðans</p>
@@ -100,16 +88,14 @@
                         <div class="strength-pick" id="strength-three"></div>
                     </div>
                 </div>
-                
                 <!-- Multi line textarea -->
                 <div class="text-area">
-                <label for="annad">Lýstu líðan þinni nánar:</label><br>
-                <textarea name="annad" id="annad" cols="30" rows="10" value=""></textarea><br>
+                    <label for="annad">Lýstu líðan þinni nánar:</label><br>
+                    <textarea name="annad" id="annad" cols="30" rows="10" value=""></textarea><br>
                 </div>
                 
                 <!-- Submit button -->
-                <button class="confirm-btn" type="submit" form="logForm" id="submitBtn"
-                value="stadfesta">Staðfesta</button>
+                <button class="confirm-btn" type="submit" form="logForm" id="submitBtn" value="stadfesta">Staðfesta</button>
                 <div id="mySuccessMessage" class="success-message">
                     <div class="success-content">
                         <h4>Skráning staðfest</h4>
@@ -118,6 +104,7 @@
                     </div>
                 </div>
             </form>
+
             <!-- The add modal -->
             <div id="myAddModal" class="add-modal">
                 <div class="add-modal-content">
@@ -144,8 +131,7 @@
 
         <!-- Calender Page -->
         <div class="page" id="calendarpage">
-            
-                <!-- Mobile header -->
+            <!-- Mobile header -->
             <header class="mobile-header" id="calendar-header">
                 <img src="images/health_logo.svg" alt="logo" class="logo-mobile">
                 <div class="profile">
@@ -174,10 +160,11 @@
                         <div class="calendar-weekdays">L</div>
                     </div>
                 </div>
-                <!-- ToDo: Fela calendar advice þegar ýtt er á lit á dagatali, sýna condition-preview divið með upplýsingar um conditionið-->
+               
                 <div id="calendar-advice" class="calendar-advice">
                     Ýttu á lit á dagatalinu til að skoða nánar
                 </div>
+                <!-- Condition Info -->
                 <div id="condition-preview" class="condition-preview">
                     <div class="condition-descr" id="condition-other">Hérna kemur lýsing á liðan sem notandinn skrifaði
                     </div>
@@ -212,5 +199,4 @@
     <!-- js for calendar -->
     <script src="js/main.js"></script>
 </body>
-
 </html>

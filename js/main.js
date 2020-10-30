@@ -72,7 +72,7 @@ function getDaysInMonth(month, year) {
     return days;
 }
 
-// Remove every element that has the .date class from the site
+// Remove every element that has the .calendar-item class from the site
 function clearCalendar() {
     const datesArray = document.querySelectorAll('.calendar-item');
     for(let i = 0; i < datesArray.length; i++) {
@@ -106,11 +106,9 @@ function displayMonthInCalendar(month) {
         } else {
             dayElement.classList.add('calendar-filler');
         }
-
         dayElement.addEventListener('click', handleDateClick);
         calendarElement.appendChild(dayElement);
     }
-    //loadConditionsToCalendar(conditionList);
 }
 
 // Goes through a list of conditions and checks if any conditions year and month in the list matches the currently shown year and month
@@ -120,13 +118,15 @@ function loadConditionsToCalendar(conditions) {
     const currentYear = document.getElementById('current-year').innerHTML;
     const currentMonth = document.getElementById('current-month').innerHTML;
     let dateElements = document.querySelectorAll('.calendar-date');
-    // Tjekka á hvaða formi conditions er
     for(let i = 0; i < conditions.length; i++) {
         // If the current conditions year and month match the calendar year and month, give that element a different style
         // TODO: maybe change the way we access the correct dateElements element, currently we're using the condition date as index.
         if(conditions[i].date.getFullYear() === parseInt(currentYear) && allMonths[conditions[i].date.getMonth()] === currentMonth) {
+            // Change the date color to the condition's color
             dateElements[conditions[i].date.getDate() - 1].style.backgroundColor = conditions[i].color;
+            // Give the date element the data-date attribute  
             dateElements[conditions[i].date.getDate() - 1].setAttribute('data-date', conditions[i].date.getDate());
+            // Push the condition into an array representing this month's conditions
             thisMonthsConditions.push(conditions[i]);
         }
     }
@@ -142,7 +142,7 @@ function compareTwoDates(date1, date2) {
 
 // Each time the user clicks a date with a condition, display detailed info
 function handleDateClick(ev) {
-    // If the element has a data-date attribute do something
+    // If the element has a data-date attribute fetch the condition's info
     if(ev.currentTarget.hasAttribute('data-date')) {
         const clickedDate = ev.currentTarget.getAttribute('data-date');
         const condition = getCondition(parseInt(clickedDate));
@@ -154,12 +154,14 @@ function handleDateClick(ev) {
     }
 }
 
+// Fill the strength bar icons in the condition info window
 function fillStrengthBars(intensity) {
-    // check if it has a value
+    // If there is no intensity clear the bars
     if(intensity === null) {
         displayBars.forEach(element => element.classList.remove('strength-display-active'));
         return;
     }
+    // Add the strength-display-active class to the elements based on the intensity
     for(let i = 0; i < displayBars.length; i++) {
         if(i <= intensity) {
             displayBars[i].classList.add('strength-display-active');
@@ -169,6 +171,7 @@ function fillStrengthBars(intensity) {
     }
 }
 
+// Display the condition info window
 function showConditionInfo() {
     calAdvice.style.display = 'none';
     conditionPreview.style.display = 'flex';

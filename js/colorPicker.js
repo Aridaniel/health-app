@@ -1,4 +1,4 @@
-// colors to pick
+// Colors to pick
 let colorList = [
             "#AF8091"
           , "#7E9B7E"
@@ -18,36 +18,36 @@ let colorList = [
           , "#8E1189"
 ];
 
-// creating the divs for the colors
+// Creating the divs for the colors
 let colorContainer = document.getElementById('color-container');
-// looping through the color list and creating div circles
+// Looping through the color list and creating div circles
 for(let i = 0; i < colorList.length; i++) {
     colorContainer.innerHTML += '<div class="color-pick"></div>'
 }
 
-// class of each color div
+// Class of each color div
 let colorPicker = document.getElementsByClassName('color-pick');
-// chosen color frame
+// Chosen color frame
 let outputColor = document.getElementById('output-color');
 
 
-// assignin colors, looping through each circle
+// Assignin colors, looping through each circle
 for (let i=0; i < colorPicker.length; i++) {
-    // changing the color from the colorlist
+    // Changing the color from the colorlist
     colorPicker[i].style.backgroundColor = colorList[i];
-    // listening for the click on each color and calling changecolor function
+    // Listening for the click on each color and calling changecolor function
     colorPicker[i].addEventListener('click', function() {
         changeColor(colorList[i], i);
     })
 }
 
-// changing color on output by adding active class to the color-pick div
+// Changing color on output by adding active class to the color-pick div
 changeColor = (color, activeColor) => {
     for (let i = 0; i < colorPicker.length; i++) {
-        // first remove the active class from all elements
+        // First remove the active class from all elements
         colorPicker[i].classList.remove('activeColor');
     }
-    // then adding the active class and changing color
+    // Then adding the active class and changing color
     colorPicker[activeColor].classList.add('activeColor');
     outputColor.style.backgroundColor = color;
 }
